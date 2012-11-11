@@ -29,7 +29,7 @@ package uk.co.zutty.metronome
         private var _tickSfx:Sfx;
         private var _tockSfx:Sfx;
         private var _missSfx:Sfx;
-        private var _wasNegative:Boolean = false;
+        private var _shake:Boolean;
         
         public function Arm() {
             super();
@@ -45,6 +45,7 @@ package uk.co.zutty.metronome
             _missSfx = new Sfx(MISS_SOUND);
             
             _frame = 0;
+            _shake = false;
             bpm = 120;
             
             _gfx.angle = 15;
@@ -69,12 +70,19 @@ package uk.co.zutty.metronome
             var diff:Number = Math.abs(_period/2 - ((_frame + _period/2) % _period));
             (world as GameWorld).msg = ""+diff;
 
+            _shake = false;
             
             if(Input.pressed(Key.ANY)) {
                 var missed:Boolean = diff > 3;
+                if(missed) {
+                    _shake = true;
+                }
                 
                 ticktock(missed);
             }
+            
+            _gfx.scaleX = _shake ? 0.9 : 1.0;
+            _gfx.scaleY = _shake ? 1.02 : 1.0;
         }
     }
 }
