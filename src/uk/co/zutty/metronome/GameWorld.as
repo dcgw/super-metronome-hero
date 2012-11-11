@@ -7,8 +7,10 @@ package uk.co.zutty.metronome
         
         [Embed(source = 'assets/metronome_background.png')]
         private static const BG_IMAGE:Class;
-        [Embed(source = 'assets/metronome_overlay.png')]
+        [Embed(source = 'assets/overlay.png')]
         private static const OVERLAY_IMAGE:Class;
+        [Embed(source = 'assets/vignette.png')]
+        private static const VIGNETTE_IMAGE:Class;
         
         private var _arm:Arm;
         
@@ -21,6 +23,7 @@ package uk.co.zutty.metronome
             add(_arm);
 
             addGraphic(new Image(OVERLAY_IMAGE));
+            addGraphic(new Image(VIGNETTE_IMAGE));
         }
     }
 }
