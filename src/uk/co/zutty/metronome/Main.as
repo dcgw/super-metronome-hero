@@ -8,6 +8,9 @@ package uk.co.zutty.metronome
             super(640, 480, 60, true);
             
             FP.world = new GameWorld();
+            
+            FP.console.enable();
+            FP.console.debug = true;
         }
     }
 }
