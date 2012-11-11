@@ -6,6 +6,7 @@ package uk.co.zutty.metronome
     import net.flashpunk.Mask;
     import net.flashpunk.Sfx;
     import net.flashpunk.graphics.Image;
+    import net.flashpunk.graphics.Text;
     import net.flashpunk.utils.Input;
     import net.flashpunk.utils.Key;
     
@@ -18,15 +19,18 @@ package uk.co.zutty.metronome
         private const TICK_SOUND:Class;
         [Embed(source = 'assets/tock.mp3')]
         private const TOCK_SOUND:Class;
+        [Embed(source = 'assets/miss.mp3')]
+        private const MISS_SOUND:Class;
 
         private var _gfx:Image;
-        private var _time:Number;
-        private var _period:Number;
+        private var _frame:uint;
+        private var _period:uint;
         private var _tick:Boolean = true;
         private var _tickSfx:Sfx;
         private var _tockSfx:Sfx;
+        private var _missSfx:Sfx;
         private var _wasNegative:Boolean = false;
-
+        
         public function Arm() {
             super();
             
@@ -38,30 +42,38 @@ package uk.co.zutty.metronome
             
             _tickSfx = new Sfx(TICK_SOUND);
             _tockSfx = new Sfx(TOCK_SOUND);
+            _missSfx = new Sfx(MISS_SOUND);
             
-            _time = 0;
+            _frame = 0;
             bpm = 120;
             
             _gfx.angle = 15;
         }
         
         public function set bpm(b:Number):void {
-            _period = 60/b;
+            _period = 3600/b;
         }
         
+        public function ticktock(missed:Boolean):void {
+            _tick = !_tick;
+            (missed ? _missSfx : ((_tick) ? _tickSfx : _tockSfx)).play();
+        }
+
         override public function update():void {
             super.update();
             
-            _time += FP.elapsed;
+            _frame++;
             
-            _gfx.angle = Math.sin((_time / _period) * Math.PI) * 30;
+            _gfx.angle = Math.sin((_frame / _period) * Math.PI) * 30;
 
-            var isNegative:Boolean = _gfx.angle < 0;
+            var diff:Number = Math.abs(_period/2 - ((_frame + _period/2) % _period));
+            (world as GameWorld).msg = ""+diff;
+
             
-            if(isNegative != _wasNegative) {
-                _tick = !_tick;
-                ((_tick) ? _tickSfx : _tockSfx).play();
-                _wasNegative = isNegative;
+            if(Input.pressed(Key.ANY)) {
+                var missed:Boolean = diff > 3;
+                
+                ticktock(missed);
             }
         }
     }
