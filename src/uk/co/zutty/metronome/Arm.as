@@ -47,13 +47,14 @@ package uk.co.zutty.metronome
             _gfx.angle = 15;
         }
         
-        public function shake():void {
+        public function miss():void {
             _shake = true;
+            _missSfx.play();
         }
         
-        public function ticktock(missed:Boolean):void {
+        public function ticktock():void {
             _tick = !_tick;
-            (missed ? _missSfx : ((_tick) ? _tickSfx : _tockSfx)).play();
+            ((_tick) ? _tickSfx : _tockSfx).play();
         }
         
         public function set time(t:Number):void {

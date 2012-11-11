@@ -90,13 +90,13 @@ package uk.co.zutty.metronome
             if(Input.pressed(Key.ANY)) {
                 var missed:Boolean = diff > 3;
                 if(missed) {
-                    _arm.shake();
+                    _arm.miss();
+                } else {
+                    _arm.ticktock();
                 }
                 
                 var factor:Number = Math.max(0, 4 - diff);
                 score(factor * 100);
-                
-                _arm.ticktock(missed);
             }
         }
     }
