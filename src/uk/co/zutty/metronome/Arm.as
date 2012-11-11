@@ -1,6 +1,7 @@
 package uk.co.zutty.metronome
 {
     import net.flashpunk.Entity;
+    import net.flashpunk.FP;
     import net.flashpunk.Graphic;
     import net.flashpunk.Mask;
     import net.flashpunk.Sfx;
@@ -19,12 +20,12 @@ package uk.co.zutty.metronome
         private const TOCK_SOUND:Class;
 
         private var _gfx:Image;
-        private var _frame:uint;
+        private var _time:Number;
         private var _period:Number;
         private var _tick:Boolean = true;
         private var _tickSfx:Sfx;
         private var _tockSfx:Sfx;
-        private var _wasNegative:Boolean = true;
+        private var _wasNegative:Boolean = false;
 
         public function Arm() {
             super();
@@ -38,19 +39,23 @@ package uk.co.zutty.metronome
             _tickSfx = new Sfx(TICK_SOUND);
             _tockSfx = new Sfx(TOCK_SOUND);
             
-            _period = 20;
+            _time = 0;
+            bpm = 120;
             
             _gfx.angle = 15;
+        }
+        
+        public function set bpm(b:Number):void {
+            _period = 60/b;
         }
         
         override public function update():void {
             super.update();
             
-            _frame++;
+            _time += FP.elapsed;
             
-            _gfx.angle = Math.sin(_frame / _period) * 30;
+            _gfx.angle = Math.sin((_time / _period) * Math.PI) * 30;
 
-            //if(Math.abs(_gfx.angle) < 1) {
             var isNegative:Boolean = _gfx.angle < 0;
             
             if(isNegative != _wasNegative) {
