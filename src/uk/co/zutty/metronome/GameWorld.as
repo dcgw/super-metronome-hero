@@ -21,13 +21,12 @@ package uk.co.zutty.metronome
         private var _scoreText:Text;
 
         private var _score:Number;
-        private var _frame:uint;
-        private var _period:uint;
+        private var _timer:Timer;
         
         override public function begin():void {
             _score = 0;
-            _frame = 0;
-            bpm = 120;
+            _timer = new Timer();
+            _timer.bpm = 120;
             
             addGraphic(new Image(BG_IMAGE));
             
@@ -54,10 +53,6 @@ package uk.co.zutty.metronome
             addGraphic(new Image(VIGNETTE_IMAGE));
         }
         
-        public function set bpm(b:Number):void {
-            _period = 3600/b;
-        }
-        
         public function score(points:Number):void {
             _score += points;
             _scoreText.text = zeroPad(_score, 7);
@@ -79,12 +74,11 @@ package uk.co.zutty.metronome
 
         override public function update():void {
             super.update();
+            _timer.nextFrame();
             
-            _frame++;
+            _arm.time = _timer.beats;
             
-            _arm.time = _frame / _period;
-            
-            var diff:Number = Math.abs(_period/2 - ((_frame + _period/2) % _period));
+            var diff:Number = _timer.diffFrames;
             msg = ""+diff;
             
             if(Input.pressed(Key.ANY)) {
