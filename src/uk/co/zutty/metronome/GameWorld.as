@@ -4,8 +4,10 @@ package uk.co.zutty.metronome
     
     import net.flashpunk.FP;
     import net.flashpunk.World;
+    import net.flashpunk.graphics.Emitter;
     import net.flashpunk.graphics.Image;
     import net.flashpunk.graphics.Text;
+    import net.flashpunk.tweens.misc.ColorTween;
     import net.flashpunk.utils.Input;
     import net.flashpunk.utils.Key;
     
@@ -19,9 +21,10 @@ package uk.co.zutty.metronome
         private static const VIGNETTE_IMAGE:Class;
         
         private var _arm:Arm;
-        private var _msg:Text;
+        //private var _msg:Text;
         private var _scoreText:Text;
         private var _multiplierText:Text;
+        private var _multiplierFade:ColorTween;
 
         private var _score:Number;
         private var _multiplier:Number;
@@ -41,13 +44,7 @@ package uk.co.zutty.metronome
             _arm.y = 420;
             add(_arm);
             
-            _msg = new Text("099");
-            _msg.size = 72;
-            _msg.x = 100;
-            _msg.y = 50;
-            addGraphic(_msg);
-            
-            _scoreText = new Text(" 0000000");
+            _scoreText = new Text(" 000000");
             _scoreText.size = 48;
             _scoreText.align = "right";
             _scoreText.width = 300;
@@ -64,6 +61,9 @@ package uk.co.zutty.metronome
             _multiplierText.x = 520;
             _multiplierText.y = 55;
             addGraphic(_multiplierText);
+            
+            _multiplierFade = new ColorTween();
+            addTween(_multiplierFade);
 
             addGraphic(new Image(OVERLAY_IMAGE));
             addGraphic(new Image(VIGNETTE_IMAGE));
@@ -75,7 +75,7 @@ package uk.co.zutty.metronome
 
         public function set score(s:Number):void {
             _score = s;
-            _scoreText.text = zeroPad(Math.floor(_score), 7);
+            _scoreText.text = zeroPad(Math.floor(_score), 6);
         }
         
         public function get multiplier():Number {
@@ -95,10 +95,6 @@ package uk.co.zutty.metronome
             }
             
             return str;
-        }
-        
-        public function set msg(str:String):void {
-            _msg.text = str;
         }
         
         public function float(txt:String, colour:uint):void {
@@ -123,7 +119,8 @@ package uk.co.zutty.metronome
             _arm.time = _timer.beats;
             
             var diff:Number = _timer.diffFrames;
-            msg = ""+diff;
+            
+            _multiplierText.color = _multiplierFade.active ? _multiplierFade.color : 0xffffff;
             
             if(Input.pressed(Key.ANY)) {
                 var missed:Boolean = diff > 3;
@@ -137,6 +134,8 @@ package uk.co.zutty.metronome
                 
                 if(diff == 0) {
                     float("Perfect!", 0xd3cd08);
+                    multiplier += 4;
+                    _multiplierFade.tween(10, 0xd3cd08, 0xffffff);
                 } else if(diff <= 2) {
                     float("Good", 0x0bd308);
                 } else if(diff >= 4 && diff <= 6) {
@@ -147,8 +146,10 @@ package uk.co.zutty.metronome
                     float("Poor", 0xc41b18);
                 } 
                 
-                var factor:Number = Math.max(0, 4 - diff);
-                score += factor * multiplier * 100;
+                if(!missed) {
+                    var factor:Number = Math.max(0, 4 - diff);
+                    score += factor * multiplier * 5;
+                }
             }
         }
     }

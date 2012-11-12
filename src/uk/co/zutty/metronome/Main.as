@@ -16,8 +16,8 @@ package uk.co.zutty.metronome
             
             FP.world = new GameWorld();
             
-            FP.console.enable();
-            FP.console.debug = true;
+            //FP.console.enable();
+            //FP.console.debug = true;
         }
     }
 }
