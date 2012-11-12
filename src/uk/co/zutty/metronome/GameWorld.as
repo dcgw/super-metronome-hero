@@ -1,5 +1,7 @@
 package uk.co.zutty.metronome
 {
+    import flash.filters.GlowFilter;
+    
     import net.flashpunk.FP;
     import net.flashpunk.World;
     import net.flashpunk.graphics.Image;
@@ -24,6 +26,7 @@ package uk.co.zutty.metronome
         private var _score:Number;
         private var _multiplier:Number;
         private var _timer:Timer;
+        private var _firstFrame:Boolean = true;
         
         override public function begin():void {
             _score = 0;
@@ -44,18 +47,20 @@ package uk.co.zutty.metronome
             _msg.y = 50;
             addGraphic(_msg);
             
-            _scoreText = new Text("0000000");
+            _scoreText = new Text(" 0000000");
             _scoreText.size = 48;
             _scoreText.align = "right";
             _scoreText.width = 300;
+            _scoreText.field.filters = [new GlowFilter(0x000000, 1, 4, 4)];
             _scoreText.x = 320;
             _scoreText.y = 10;
             addGraphic(_scoreText);
             
-            _multiplierText = new Text("000");
+            _multiplierText = new Text(" 000");
             _multiplierText.size = 28;
             _multiplierText.align = "right";
             _multiplierText.width = 100;
+            _multiplierText.field.filters = [new GlowFilter(0x000000, 1, 3, 3)];
             _multiplierText.x = 520;
             _multiplierText.y = 55;
             addGraphic(_multiplierText);
@@ -95,10 +100,25 @@ package uk.co.zutty.metronome
         public function set msg(str:String):void {
             _msg.text = str;
         }
+        
+        public function float(txt:String, colour:uint):void {
+            var floater:Floater = create(Floater) as Floater;
+            floater.text = txt;
+            floater.x = 320;
+            floater.y = 240;
+            floater.colour = colour;
+        }
 
         override public function update():void {
             super.update();
             _timer.nextFrame();
+            
+            // Dodgy hack for the glow filter
+            if(_firstFrame) {
+                _firstFrame = false;
+                score = score;
+                multiplier = multiplier;
+            }
             
             _arm.time = _timer.beats;
             
@@ -114,6 +134,18 @@ package uk.co.zutty.metronome
                     _arm.ticktock();
                     multiplier++;
                 }
+                
+                if(diff == 0) {
+                    float("Perfect!", 0xd3cd08);
+                } else if(diff <= 2) {
+                    float("Good", 0x0bd308);
+                } else if(diff >= 4 && diff <= 6) {
+                    float("Miss", 0x5368b2);
+                } else if(diff > 10) {
+                    float("Awful!", 0xc41b18);
+                } else if(diff > 8) {
+                    float("Poor", 0xc41b18);
+                } 
                 
                 var factor:Number = Math.max(0, 4 - diff);
                 score += factor * multiplier * 100;
