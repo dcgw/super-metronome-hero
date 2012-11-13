@@ -25,17 +25,23 @@ package uk.co.zutty.metronome
         private var _scoreText:Text;
         private var _multiplierText:Text;
         private var _multiplierFade:ColorTween;
+        private var _tempoText:Text;
+        private var _bpmText:Text;
 
+        private var _tempo:String;
         private var _score:Number;
         private var _multiplier:Number;
         private var _timer:Timer;
         private var _firstFrame:Boolean = true;
+        private var _missedBeats:int;
         
         override public function begin():void {
             _score = 0;
             _multiplier = 0;
+            _missedBeats = 0;
             _timer = new Timer();
             _timer.bpm = 120;
+            _tempo = "Allegro";
             
             addGraphic(new Image(BG_IMAGE));
             
@@ -44,6 +50,23 @@ package uk.co.zutty.metronome
             _arm.y = 420;
             add(_arm);
             
+            addGraphic(new Image(OVERLAY_IMAGE));
+            addGraphic(new Image(VIGNETTE_IMAGE));
+
+            _tempoText = new Text("");
+            _tempoText.size = 36;
+            _tempoText.field.filters = [new GlowFilter(0x000000, 1, 4, 4)];
+            _tempoText.x = 20;
+            _tempoText.y = 20;
+            addGraphic(_tempoText);
+
+            _bpmText = new Text("");
+            _bpmText.size = 24;
+            _bpmText.field.filters = [new GlowFilter(0x000000, 1, 3, 3)];
+            _bpmText.x = 20;
+            _bpmText.y = 55;
+            addGraphic(_bpmText);
+
             _scoreText = new Text(" 000000");
             _scoreText.size = 48;
             _scoreText.align = "right";
@@ -64,9 +87,6 @@ package uk.co.zutty.metronome
             
             _multiplierFade = new ColorTween();
             addTween(_multiplierFade);
-
-            addGraphic(new Image(OVERLAY_IMAGE));
-            addGraphic(new Image(VIGNETTE_IMAGE));
         }
         
         public function get score():Number {
@@ -114,6 +134,8 @@ package uk.co.zutty.metronome
                 _firstFrame = false;
                 score = score;
                 multiplier = multiplier;
+                _tempoText.text = _tempo;
+                _bpmText.text = _timer.bpm + "bpm";
             }
             
             _arm.time = _timer.beats;
@@ -122,14 +144,20 @@ package uk.co.zutty.metronome
             
             _multiplierText.color = _multiplierFade.active ? _multiplierFade.color : 0xffffff;
             
+            if(diff == 0) {
+                _missedBeats++;
+            }
+            
             if(Input.pressed(Key.ANY)) {
                 var missed:Boolean = diff > 3;
                 if(missed) {
                     _arm.miss();
                     multiplier = 0;
+                    _multiplierFade.tween(10, 0xc41b18, 0xffffff);
                 } else {
                     _arm.ticktock();
                     multiplier++;
+                    _missedBeats--;
                 }
                 
                 if(diff == 0) {

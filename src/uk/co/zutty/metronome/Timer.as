@@ -10,6 +10,10 @@ package uk.co.zutty.metronome
             _period = 0;
         }
         
+        public function get bpm():Number {
+            return 3600/_period;
+        }
+
         public function set bpm(b:Number):void {
             _period = 3600/b;
         }
