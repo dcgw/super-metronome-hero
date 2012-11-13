@@ -54,6 +54,7 @@ package uk.co.zutty.metronome
             addGraphic(new Image(VIGNETTE_IMAGE));
 
             _tempoText = new Text("");
+			_tempoText.color = 0xeeeeee;
             _tempoText.size = 36;
             _tempoText.field.filters = [new GlowFilter(0x000000, 1, 4, 4)];
             _tempoText.x = 20;
@@ -61,6 +62,7 @@ package uk.co.zutty.metronome
             addGraphic(_tempoText);
 
             _bpmText = new Text("");
+			_bpmText.color = 0xeeeeee;
             _bpmText.size = 24;
             _bpmText.field.filters = [new GlowFilter(0x000000, 1, 3, 3)];
             _bpmText.x = 20;
@@ -68,6 +70,7 @@ package uk.co.zutty.metronome
             addGraphic(_bpmText);
 
             _scoreText = new Text(" 000000");
+			_scoreText.color = 0xeeeeee;
             _scoreText.size = 48;
             _scoreText.align = "right";
             _scoreText.width = 300;
@@ -77,6 +80,7 @@ package uk.co.zutty.metronome
             addGraphic(_scoreText);
             
             _multiplierText = new Text(" 000");
+			_multiplierText.color = 0xeeeeee;
             _multiplierText.size = 28;
             _multiplierText.align = "right";
             _multiplierText.width = 100;

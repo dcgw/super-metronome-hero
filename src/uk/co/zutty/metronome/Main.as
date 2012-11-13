@@ -14,10 +14,14 @@ package uk.co.zutty.metronome
             
             Text.font = "strait";
             
-            FP.world = new GameWorld();
+            FP.world = new TitleWorld();
             
-            //FP.console.enable();
-            //FP.console.debug = true;
+            FP.console.enable();
+            FP.console.debug = true;
         }
+		
+		public function playGame():void {
+			FP.world = new GameWorld();
+		}
     }
 }
