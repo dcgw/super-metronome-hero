@@ -11,6 +11,7 @@ package uk.co.zutty.metronome
     import net.flashpunk.tweens.misc.ColorTween;
     import net.flashpunk.tweens.misc.MultiVarTween;
     import net.flashpunk.tweens.misc.VarTween;
+    import net.flashpunk.tweens.sound.SfxFader;
     import net.flashpunk.utils.Input;
     import net.flashpunk.utils.Key;
     
@@ -86,6 +87,7 @@ package uk.co.zutty.metronome
 		private var _star3Sfx:Sfx;
 		private var _introSfx:Vector.<Sfx>;
 		private var _introBeat:int;
+		private var _musicFader:SfxFader;
 
         private var _tempo:String;
 		private var _bpm:int;
@@ -111,6 +113,9 @@ package uk.co.zutty.metronome
 			_introSfx[1] = new Sfx(INTRO2_SOUND);
 			_introSfx[2] = new Sfx(INTRO3_SOUND);
 			_introSfx[3] = new Sfx(INTRO4_SOUND);
+			
+			_musicFader = new SfxFader((FP.engine as Main).music);
+			addTween(_musicFader);
 
 			addGraphic(new Image(BG_IMAGE));
             
@@ -226,6 +231,7 @@ package uk.co.zutty.metronome
 			
 			_messageFade.tween(_messageText, "alpha", 1, 20);
 			_readySfx.play();
+			_musicFader.fadeTo(0, 30);
 		}
 
 		public function set tempo(t:String):void {

@@ -5,6 +5,7 @@ package uk.co.zutty.metronome
 	import net.flashpunk.World;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.tweens.misc.VarTween;
+	import net.flashpunk.tweens.sound.SfxFader;
 	import net.flashpunk.utils.Ease;
 	import net.flashpunk.utils.Input;
 	import net.flashpunk.utils.Key;
@@ -21,11 +22,15 @@ package uk.co.zutty.metronome
 		private var _scrollTween:VarTween;
 		private var _blipSfx:Sfx;
 		private var _selectSfx:Sfx;
-
-		override public function begin():void {
+		private var _musicFader:SfxFader;
+		
+		public function MenuWorld() {
 			_blipSfx = new Sfx(BLIP_SOUND);
 			_selectSfx = new Sfx(SELECT_SOUND);
-
+			
+			_musicFader = new SfxFader((FP.engine as Main).music);
+			addTween(_musicFader);
+			
 			_scrollTween = new VarTween();
 			addTween(_scrollTween);
 			
@@ -43,9 +48,13 @@ package uk.co.zutty.metronome
 			addItem("Prestissimo", 208);
 			addItem("Hyper-Prestississississimo\nExtreme to the Max!", 350, 32);
 			_items[0].unlock();
-
+			
 			_selectedIndex = 0;
 			selectedItem.selected = true;
+		}
+
+		override public function begin():void {
+			_musicFader.fadeTo(1, 30);
 		}
 		
 		public function get selectedIndex():int {
