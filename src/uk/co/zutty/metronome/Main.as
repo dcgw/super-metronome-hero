@@ -20,6 +20,10 @@ package uk.co.zutty.metronome
             FP.console.debug = true;
         }
 		
+		public function showMenu():void {
+			FP.world = new MenuWorld();
+		}
+		
 		public function playGame():void {
 			FP.world = new GameWorld();
 		}

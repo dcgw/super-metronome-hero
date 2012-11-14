@@ -12,7 +12,7 @@ package uk.co.zutty.metronome
 	public class TitleWorld extends World {
 
 		[Embed(source = 'assets/title_background.png')]
-		private static const BG_IMAGE:Class;
+		public static const BG_IMAGE:Class;
 		[Embed(source = 'assets/title_body.png')]
 		private static const BODY_IMAGE:Class;
 		[Embed(source = 'assets/title_smallarm.png')]
@@ -76,7 +76,7 @@ package uk.co.zutty.metronome
 			_bigArm.angle = Math.sin(_bigTimer.beats * Math.PI) * 50;
 			
 			if(Input.pressed(Key.ANY)) {
-				(FP.engine as Main).playGame();
+				(FP.engine as Main).showMenu();
 			}
 		}
 	}
