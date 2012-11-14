@@ -30,8 +30,10 @@ package uk.co.zutty.metronome
 
 		override public function begin():void {
 			_smallTimer = new Timer();
+			_smallTimer.start();
 			_smallTimer.bpm = 60;
 			_bigTimer = new Timer();
+			_bigTimer.start();
 			_bigTimer.bpm = 30;
 			
 			addGraphic(new Image(BG_IMAGE));

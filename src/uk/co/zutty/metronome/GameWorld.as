@@ -30,6 +30,14 @@ package uk.co.zutty.metronome
 		private const STAR2_SOUND:Class;
 		[Embed(source = 'assets/sounds/star3.mp3')]
 		private const STAR3_SOUND:Class;
+		[Embed(source = 'assets/sounds/one.mp3')]
+		private const INTRO1_SOUND:Class;
+		[Embed(source = 'assets/sounds/two.mp3')]
+		private const INTRO2_SOUND:Class;
+		[Embed(source = 'assets/sounds/three.mp3')]
+		private const INTRO3_SOUND:Class;
+		[Embed(source = 'assets/sounds/four.mp3')]
+		private const INTRO4_SOUND:Class;
 
 		[Embed(source = 'assets/metronome_background.png')]
         private static const BG_IMAGE:Class;
@@ -42,15 +50,16 @@ package uk.co.zutty.metronome
 		[Embed(source = 'assets/big_star_blank.png')]
 		private static const STAR_BLANK_IMAGE:Class;
 		
-		private static const INTRO_TIME:int = 150;
+		private static const INTRO_TIME:int = 30;
 		private static const OUTRO_TIME:int = 50;
 		
-		private static const STATE_COUNTDOWN:int = 1;
-		private static const STATE_PLAY:int = 2;
-		private static const STATE_OUTRO:int = 3;
-		private static const STATE_RESULT:int = 4;
-		private static const STATE_DONE:int = 5;
-		private static const STATE_RETURN:int = 6;
+		private static const STATE_INTRO:int = 1;
+		private static const STATE_COUNTIN:int = 2;
+		private static const STATE_PLAY:int = 3;
+		private static const STATE_OUTRO:int = 4;
+		private static const STATE_RESULT:int = 5;
+		private static const STATE_DONE:int = 6;
+		private static const STATE_RETURN:int = 7;
         
         private var _arm:Arm;
         private var _scoreText:Text;
@@ -75,6 +84,8 @@ package uk.co.zutty.metronome
 		private var _star1Sfx:Sfx;
 		private var _star2Sfx:Sfx;
 		private var _star3Sfx:Sfx;
+		private var _introSfx:Vector.<Sfx>;
+		private var _introBeat:int;
 
         private var _tempo:String;
         private var _score:Number;
@@ -94,6 +105,11 @@ package uk.co.zutty.metronome
 			_star1Sfx = new Sfx(STAR1_SOUND);
 			_star2Sfx = new Sfx(STAR2_SOUND);
 			_star3Sfx = new Sfx(STAR3_SOUND);
+			_introSfx = new Vector.<Sfx>();
+			_introSfx[0] = new Sfx(INTRO1_SOUND);
+			_introSfx[1] = new Sfx(INTRO2_SOUND);
+			_introSfx[2] = new Sfx(INTRO3_SOUND);
+			_introSfx[3] = new Sfx(INTRO4_SOUND);
 
 			addGraphic(new Image(BG_IMAGE));
             
@@ -185,11 +201,13 @@ package uk.co.zutty.metronome
 			_score = 0;
 			_multiplier = 0;
 			_missedBeats = 0;
+			_introBeat = 0;
 			_timer.reset();
+			_arm.time = 0;
 			_tempoText.text = _tempo;
 			_bpmText.text = _timer.bpm + "bpm";
 			_beats = 16;
-			_state = STATE_COUNTDOWN;
+			_state = STATE_INTRO;
 			_frame = INTRO_TIME;
 			
 			_star1Blank.alpha = 0;
@@ -256,7 +274,11 @@ package uk.co.zutty.metronome
 		private function transition(s:int):void {
 			_state = s;
 			
-			if(_state == STATE_PLAY) {
+			if(_state == STATE_COUNTIN) {
+				_timer.start();
+				//_messageFade.tween(_messageText, "alpha", 0, 20);
+				
+			} else if(_state == STATE_PLAY) {
 				_messageFade.tween(_messageText, "alpha", 0, 20);
 			} else if(_state == STATE_OUTRO) {
 				_messageText.text = (_missedBeats < 5) ? "Great!" : "You Suck";
@@ -292,15 +314,24 @@ package uk.co.zutty.metronome
 
         override public function update():void {
             super.update();
+			_timer.nextFrame();
 
-			if(_state == STATE_COUNTDOWN) {
+			if(_state == STATE_INTRO) {
 				// Pause a bit before starting
 				_frame--;
 				if(_frame <= 0) {
-					transition(STATE_PLAY);
+					transition(STATE_COUNTIN);
+				}
+			} else if(_state == STATE_COUNTIN) {
+				if(_timer.isBeat) {
+					_introSfx[_introBeat].play();
+					_introBeat++
+						
+					if(_introBeat >= 4) {
+						transition(STATE_PLAY);
+					}
 				}
 			} else if(_state == STATE_PLAY) {
-				_timer.nextFrame();
 	            _arm.time = _timer.beats;
 	            var diff:Number = _timer.diffFrames;
 	            
@@ -350,6 +381,8 @@ package uk.co.zutty.metronome
 					transition(STATE_OUTRO);
 				}
 			} else if(_state == STATE_OUTRO) {
+				_arm.time = _timer.beats;
+
 				// Fade in all stars at the same time
 				_star3Blank.alpha = _star2Blank.alpha = _star1Blank.alpha;
 
