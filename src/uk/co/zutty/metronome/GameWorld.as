@@ -88,6 +88,7 @@ package uk.co.zutty.metronome
 		private var _introBeat:int;
 
         private var _tempo:String;
+		private var _bpm:int;
         private var _score:Number;
         private var _multiplier:Number;
         private var _timer:Timer;
@@ -205,7 +206,7 @@ package uk.co.zutty.metronome
 			_timer.reset();
 			_arm.time = 0;
 			_tempoText.text = _tempo;
-			_bpmText.text = _timer.bpm + "bpm";
+			_bpmText.text = _bpm + "bpm";
 			_beats = 16;
 			_state = STATE_INTRO;
 			_frame = INTRO_TIME;
@@ -232,6 +233,7 @@ package uk.co.zutty.metronome
 		}
 		
 		public function set bpm(b:int):void {
+			_bpm = b;
 			_timer.bpm = b;
 		}
 
