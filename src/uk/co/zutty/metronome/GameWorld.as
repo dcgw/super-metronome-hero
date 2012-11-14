@@ -199,8 +199,8 @@ package uk.co.zutty.metronome
 		}
 
 		override public function begin():void {
-			_score = 0;
-			_multiplier = 0;
+			score = 0;
+			multiplier = 0;
 			_missedBeats = 0;
 			_introBeat = 0;
 			_timer.reset();
