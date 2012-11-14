@@ -11,9 +11,9 @@ package uk.co.zutty.metronome
 	
 	public class MenuWorld extends World {
 		
-		[Embed(source = 'assets/blip.mp3')]
+		[Embed(source = 'assets/sounds/blip.mp3')]
 		private const BLIP_SOUND:Class;
-		[Embed(source = 'assets/select.mp3')]
+		[Embed(source = 'assets/sounds/select.mp3')]
 		private const SELECT_SOUND:Class;
 
 		private var _items:Vector.<MenuItem>;

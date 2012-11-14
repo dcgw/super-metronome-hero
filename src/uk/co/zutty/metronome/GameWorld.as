@@ -16,19 +16,19 @@ package uk.co.zutty.metronome
     
     public class GameWorld extends World {
         
-		[Embed(source = 'assets/ready.mp3')]
+		[Embed(source = 'assets/sounds/ready.mp3')]
 		private const READY_SOUND:Class;
-		[Embed(source = 'assets/chime.mp3')]
+		[Embed(source = 'assets/sounds/chime.mp3')]
 		private const CHIME_SOUND:Class;
-		[Embed(source = 'assets/boo.mp3')]
+		[Embed(source = 'assets/sounds/boo.mp3')]
 		private const BOO_SOUND:Class;
-		[Embed(source = 'assets/cheer.mp3')]
+		[Embed(source = 'assets/sounds/cheer.mp3')]
 		private const CHEER_SOUND:Class;
-		[Embed(source = 'assets/star1.mp3')]
+		[Embed(source = 'assets/sounds/star1.mp3')]
 		private const STAR1_SOUND:Class;
-		[Embed(source = 'assets/star2.mp3')]
+		[Embed(source = 'assets/sounds/star2.mp3')]
 		private const STAR2_SOUND:Class;
-		[Embed(source = 'assets/star3.mp3')]
+		[Embed(source = 'assets/sounds/star3.mp3')]
 		private const STAR3_SOUND:Class;
 
 		[Embed(source = 'assets/metronome_background.png')]

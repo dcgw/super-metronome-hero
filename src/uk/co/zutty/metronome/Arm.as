@@ -15,11 +15,11 @@ package uk.co.zutty.metronome
         [Embed(source = 'assets/metronome_arm.png')]
         private static const ARM_IMAGE:Class;
         
-        [Embed(source = 'assets/tick.mp3')]
+        [Embed(source = 'assets/sounds/tick.mp3')]
         private const TICK_SOUND:Class;
-        [Embed(source = 'assets/tock.mp3')]
+        [Embed(source = 'assets/sounds/tock.mp3')]
         private const TOCK_SOUND:Class;
-        [Embed(source = 'assets/miss.mp3')]
+        [Embed(source = 'assets/sounds/miss.mp3')]
         private const MISS_SOUND:Class;
 
         private var _gfx:Image;
