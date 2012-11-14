@@ -43,8 +43,6 @@ package uk.co.zutty.metronome
             _missSfx = new Sfx(MISS_SOUND);
             
             _shake = false;
-            
-            _gfx.angle = 15;
         }
         
         public function miss():void {

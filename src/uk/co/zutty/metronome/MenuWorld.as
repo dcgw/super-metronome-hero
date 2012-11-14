@@ -1,6 +1,7 @@
 package uk.co.zutty.metronome
 {
 	import net.flashpunk.FP;
+	import net.flashpunk.Sfx;
 	import net.flashpunk.World;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.tweens.misc.VarTween;
@@ -10,11 +11,21 @@ package uk.co.zutty.metronome
 	
 	public class MenuWorld extends World {
 		
+		[Embed(source = 'assets/blip.mp3')]
+		private const BLIP_SOUND:Class;
+		[Embed(source = 'assets/select.mp3')]
+		private const SELECT_SOUND:Class;
+
 		private var _items:Vector.<MenuItem>;
 		private var _selectedIndex:int;
 		private var _scrollTween:VarTween;
+		private var _blipSfx:Sfx;
+		private var _selectSfx:Sfx;
 
 		override public function begin():void {
+			_blipSfx = new Sfx(BLIP_SOUND);
+			_selectSfx = new Sfx(SELECT_SOUND);
+
 			_scrollTween = new VarTween();
 			addTween(_scrollTween);
 			
@@ -66,19 +77,22 @@ package uk.co.zutty.metronome
 			super.update();
 			
 			if(Input.pressed(Key.UP)) {
+				_blipSfx.play();
 				selectedIndex--;
 
 				if(selectedItem.y < FP.camera.y) {
 					_scrollTween.tween(FP.camera, "y", selectedItem.y - 60, 20, Ease.cubeOut);
 				}
 			} else if(Input.pressed(Key.DOWN)) {
+				_blipSfx.play();
 				selectedIndex++;
 				
 				if(selectedItem.y + 100 > FP.screen.height + FP.camera.y) {
 					_scrollTween.tween(FP.camera, "y", selectedItem.y + 150 - FP.screen.height, 20, Ease.cubeOut);
 				}
 			} else if(Input.pressed(Key.ENTER)) {
-				(FP.engine as Main).playGame();
+				_selectSfx.play();
+				(FP.engine as Main).playGame(selectedItem.tempo, selectedItem.bpm);
 			}
 		}
 	}

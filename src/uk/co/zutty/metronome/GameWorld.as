@@ -3,47 +3,99 @@ package uk.co.zutty.metronome
     import flash.filters.GlowFilter;
     
     import net.flashpunk.FP;
+    import net.flashpunk.Sfx;
     import net.flashpunk.World;
     import net.flashpunk.graphics.Emitter;
     import net.flashpunk.graphics.Image;
     import net.flashpunk.graphics.Text;
     import net.flashpunk.tweens.misc.ColorTween;
+    import net.flashpunk.tweens.misc.MultiVarTween;
+    import net.flashpunk.tweens.misc.VarTween;
     import net.flashpunk.utils.Input;
     import net.flashpunk.utils.Key;
     
     public class GameWorld extends World {
         
-        [Embed(source = 'assets/metronome_background.png')]
+		[Embed(source = 'assets/ready.mp3')]
+		private const READY_SOUND:Class;
+		[Embed(source = 'assets/chime.mp3')]
+		private const CHIME_SOUND:Class;
+		[Embed(source = 'assets/boo.mp3')]
+		private const BOO_SOUND:Class;
+		[Embed(source = 'assets/cheer.mp3')]
+		private const CHEER_SOUND:Class;
+		[Embed(source = 'assets/star1.mp3')]
+		private const STAR1_SOUND:Class;
+		[Embed(source = 'assets/star2.mp3')]
+		private const STAR2_SOUND:Class;
+		[Embed(source = 'assets/star3.mp3')]
+		private const STAR3_SOUND:Class;
+
+		[Embed(source = 'assets/metronome_background.png')]
         private static const BG_IMAGE:Class;
         [Embed(source = 'assets/overlay.png')]
         private static const OVERLAY_IMAGE:Class;
         [Embed(source = 'assets/vignette.png')]
         private static const VIGNETTE_IMAGE:Class;
+		[Embed(source = 'assets/big_star.png')]
+		private static const STAR_IMAGE:Class;
+		[Embed(source = 'assets/big_star_blank.png')]
+		private static const STAR_BLANK_IMAGE:Class;
+		
+		private static const INTRO_TIME:int = 150;
+		private static const OUTRO_TIME:int = 50;
+		
+		private static const STATE_COUNTDOWN:int = 1;
+		private static const STATE_PLAY:int = 2;
+		private static const STATE_OUTRO:int = 3;
+		private static const STATE_RESULT:int = 4;
+		private static const STATE_DONE:int = 5;
+		private static const STATE_RETURN:int = 6;
         
         private var _arm:Arm;
-        //private var _msg:Text;
         private var _scoreText:Text;
         private var _multiplierText:Text;
         private var _multiplierFade:ColorTween;
         private var _tempoText:Text;
         private var _bpmText:Text;
+		private var _messageText:Text;
+		private var _messageFade:VarTween;
+		private var _star1Blank:Image;
+		private var _star2Blank:Image;
+		private var _star3Blank:Image;
+		private var _star1:Image;
+		private var _star2:Image;
+		private var _star3:Image;
+		private var _starTween:MultiVarTween;
+
+		private var _readySfx:Sfx;
+		private var _chimeSfx:Sfx;
+		private var _booSfx:Sfx;
+		private var _cheerSfx:Sfx;
+		private var _star1Sfx:Sfx;
+		private var _star2Sfx:Sfx;
+		private var _star3Sfx:Sfx;
 
         private var _tempo:String;
         private var _score:Number;
         private var _multiplier:Number;
         private var _timer:Timer;
-        private var _firstFrame:Boolean = true;
         private var _missedBeats:int;
-        
-        override public function begin():void {
-            _score = 0;
-            _multiplier = 0;
-            _missedBeats = 0;
-            _timer = new Timer();
-            _timer.bpm = 120;
-            _tempo = "Allegro";
-            
-            addGraphic(new Image(BG_IMAGE));
+		private var _beats:int;
+		private var _state:int;
+		private var _frame:int;
+
+		public function GameWorld() {
+			_timer = new Timer();
+			_readySfx = new Sfx(READY_SOUND);
+			_chimeSfx = new Sfx(CHIME_SOUND);
+			_booSfx = new Sfx(BOO_SOUND);
+			_cheerSfx = new Sfx(CHEER_SOUND);
+			_star1Sfx = new Sfx(STAR1_SOUND);
+			_star2Sfx = new Sfx(STAR2_SOUND);
+			_star3Sfx = new Sfx(STAR3_SOUND);
+
+			addGraphic(new Image(BG_IMAGE));
             
             _arm = new Arm();
             _arm.x = 320;
@@ -69,31 +121,103 @@ package uk.co.zutty.metronome
             _bpmText.y = 55;
             addGraphic(_bpmText);
 
-            _scoreText = new Text(" 000000");
+            _scoreText = new Text("");
 			_scoreText.color = 0xeeeeee;
             _scoreText.size = 48;
             _scoreText.align = "right";
             _scoreText.width = 300;
             _scoreText.field.filters = [new GlowFilter(0x000000, 1, 4, 4)];
+			_scoreText.text = "000000";
             _scoreText.x = 320;
             _scoreText.y = 10;
             addGraphic(_scoreText);
             
-            _multiplierText = new Text(" 000");
+            _multiplierText = new Text("");
 			_multiplierText.color = 0xeeeeee;
             _multiplierText.size = 28;
             _multiplierText.align = "right";
             _multiplierText.width = 100;
             _multiplierText.field.filters = [new GlowFilter(0x000000, 1, 3, 3)];
+			_multiplierText.text = "000";
             _multiplierText.x = 520;
             _multiplierText.y = 55;
             addGraphic(_multiplierText);
             
             _multiplierFade = new ColorTween();
             addTween(_multiplierFade);
-        }
-        
-        public function get score():Number {
+
+			_messageText = new Text("");
+			_messageText.color = 0xeeeeee;
+			_messageText.size = 72;
+			_messageText.align = "center";
+			_messageText.field.filters = [new GlowFilter(0x000000, 1, 4, 4)];
+			_messageText.text = "Ready?";
+			_messageText.x = 0;
+			_messageText.width = 640;
+			_messageText.y = 160;
+			_messageText.alpha = 0;
+			addGraphic(_messageText);
+			
+			_messageFade = new VarTween();
+			addTween(_messageFade);
+
+			// Initialise stars
+			_star1Blank = makeStar(STAR_BLANK_IMAGE, 180);
+			_star2Blank = makeStar(STAR_BLANK_IMAGE, 320);
+			_star3Blank = makeStar(STAR_BLANK_IMAGE, 460);
+			_star1 = makeStar(STAR_IMAGE, 180);
+			_star2 = makeStar(STAR_IMAGE, 320);
+			_star3 = makeStar(STAR_IMAGE, 460);
+			_starTween = new MultiVarTween();
+			addTween(_starTween);
+		}
+		
+		private function makeStar(img:Class, x:Number):Image {
+			var star:Image = new Image(img);
+			star.x = x;
+			star.y = 300;
+			star.centerOrigin();
+			addGraphic(star);
+			return star;
+		}
+
+		override public function begin():void {
+			_score = 0;
+			_multiplier = 0;
+			_missedBeats = 0;
+			_timer.reset();
+			_tempoText.text = _tempo;
+			_bpmText.text = _timer.bpm + "bpm";
+			_beats = 16;
+			_state = STATE_COUNTDOWN;
+			_frame = INTRO_TIME;
+			
+			_star1Blank.alpha = 0;
+			_star2Blank.alpha = 0;
+			_star3Blank.alpha = 0;
+			_star1.alpha = 0;
+			_star2.alpha = 0;
+			_star3.alpha = 0;
+			_star1.scale = 0.6;
+			_star2.scale = 0.6;
+			_star3.scale = 0.6;
+		
+			_messageText.alpha = 0;
+			_messageText.text = "Ready?";
+			
+			_messageFade.tween(_messageText, "alpha", 1, 20);
+			_readySfx.play();
+		}
+
+		public function set tempo(t:String):void {
+			_tempo = t;
+		}
+		
+		public function set bpm(b:int):void {
+			_timer.bpm = b;
+		}
+
+		public function get score():Number {
             return _score;
         }
 
@@ -128,60 +252,116 @@ package uk.co.zutty.metronome
             floater.y = 240;
             floater.colour = colour;
         }
+		
+		private function transition(s:int):void {
+			_state = s;
+			
+			if(_state == STATE_PLAY) {
+				_messageFade.tween(_messageText, "alpha", 0, 20);
+			} else if(_state == STATE_OUTRO) {
+				_messageText.text = (_missedBeats < 5) ? "Great!" : "You Suck";
+				_messageFade.tween(_messageText, "alpha", 1, 20);
+
+				_starTween.tween(_star1Blank, {alpha: 1}, 30);
+				_star3Blank.alpha = _star2Blank.alpha = _star1Blank.alpha;
+
+				_frame = OUTRO_TIME;
+				((_missedBeats < 5) ? _cheerSfx : _booSfx).play();
+			} else if(_state == STATE_RESULT) {
+				_star1Sfx.play();
+				_starTween.tween(_star1, {alpha: 1, scale: 1}, 10);
+				_starTween.complete = function ():void {
+					_star2Sfx.play();
+					_starTween.tween(_star2, {alpha: 1, scale: 1}, 10);
+					_starTween.complete = function ():void {
+						_star3Sfx.play();
+						_starTween.tween(_star3, {alpha: 1, scale: 1}, 10);
+						_starTween.complete = function ():void {
+							_starTween.complete = null;
+							transition(STATE_DONE);
+						}
+					}
+				}
+			} else if(_state == STATE_RETURN) {
+				_cheerSfx.stop();
+				_booSfx.stop();
+				(FP.engine as Main).returnResult(3);
+				(FP.engine as Main).showMenu();
+			}
+		}
 
         override public function update():void {
             super.update();
-            _timer.nextFrame();
-            
-            // Dodgy hack for the glow filter
-            if(_firstFrame) {
-                _firstFrame = false;
-                score = score;
-                multiplier = multiplier;
-                _tempoText.text = _tempo;
-                _bpmText.text = _timer.bpm + "bpm";
-            }
-            
-            _arm.time = _timer.beats;
-            
-            var diff:Number = _timer.diffFrames;
-            
-            _multiplierText.color = _multiplierFade.active ? _multiplierFade.color : 0xffffff;
-            
-            if(diff == 0) {
-                _missedBeats++;
-            }
-            
-            if(Input.pressed(Key.ANY)) {
-                var missed:Boolean = diff > 3;
-                if(missed) {
-                    _arm.miss();
-                    multiplier = 0;
-                    _multiplierFade.tween(10, 0xc41b18, 0xffffff);
-                } else {
-                    _arm.ticktock();
-                    multiplier++;
-                    _missedBeats--;
-                }
-                
-                if(diff == 0) {
-                    float("Perfect!", 0xd3cd08);
-                    multiplier += 4;
-                    _multiplierFade.tween(10, 0xd3cd08, 0xffffff);
-                } else if(diff <= 2) {
-                    float("Good", 0x0bd308);
-                } else if(diff >= 4 && diff <= 6) {
-                    float("Miss", 0x5368b2);
-                } else if(diff > 10) {
-                    float("Awful!", 0xc41b18);
-                } else if(diff > 8) {
-                    float("Poor", 0xc41b18);
-                } 
-                
-                if(!missed) {
-                    var factor:Number = Math.max(0, 4 - diff);
-                    score += factor * multiplier * 5;
-                }
+
+			if(_state == STATE_COUNTDOWN) {
+				// Pause a bit before starting
+				_frame--;
+				if(_frame <= 0) {
+					transition(STATE_PLAY);
+				}
+			} else if(_state == STATE_PLAY) {
+				_timer.nextFrame();
+	            _arm.time = _timer.beats;
+	            var diff:Number = _timer.diffFrames;
+	            
+	            // Register the beat
+	            if(diff == 0) {
+	                _missedBeats++;
+					_beats--;
+	            }
+	            
+	            if(Input.pressed(Key.ANY)) {
+	                var missed:Boolean = diff > 3;
+	                if(missed) {
+	                    _arm.miss();
+	                    multiplier = 0;
+	                    _multiplierFade.tween(10, 0xc41b18, 0xffffff);
+	                } else {
+	                    _arm.ticktock();
+	                    multiplier++;
+	                    _missedBeats = 0;
+	                }
+	                
+					// What kind of hit did we register?
+	                if(diff == 0) {
+	                    float("Perfect!", 0xd3cd08);
+	                    multiplier += 4;
+	                    _multiplierFade.tween(10, 0xd3cd08, 0xffffff);
+						_chimeSfx.play();
+	                } else if(diff <= 2) {
+	                    float("Good", 0x0bd308);
+	                } else if(diff >= 4 && diff <= 6) {
+	                    float("Miss", 0x5368b2);
+	                } else if(diff > 10) {
+	                    float("Awful!", 0xc41b18);
+	                } else if(diff > 8) {
+	                    float("Poor", 0xc41b18);
+	                } 
+	                
+					// Score some ponts if we hit
+	                if(!missed) {
+	                    var factor:Number = Math.max(0, 4 - diff);
+	                    score += factor * multiplier * 5;
+	                }
+				}
+
+				// Check to see if we should transition out of the play state
+				if(_beats < 0 || _missedBeats >= 5) {
+					transition(STATE_OUTRO);
+				}
+			} else if(_state == STATE_OUTRO) {
+				// Fade in all stars at the same time
+				_star3Blank.alpha = _star2Blank.alpha = _star1Blank.alpha;
+
+				// Pause a bit before showing result
+				_frame--;
+				if(_frame <= 0) {
+					transition(STATE_RESULT);
+				}
+			} else if(_state == STATE_DONE) {
+				if(Input.pressed(Key.ANY)) {
+					transition(STATE_RETURN);
+				}
             }
         }
     }

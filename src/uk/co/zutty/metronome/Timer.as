@@ -29,5 +29,9 @@ package uk.co.zutty.metronome
         public function nextFrame():void {
             _frame++;
         }
+		
+		public function reset():void {
+			_frame = 0;
+		}
     }
 }
