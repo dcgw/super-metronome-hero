@@ -56,6 +56,7 @@ package uk.co.zutty.metronome
 		private static const SCORE_THRESHOLD_3STAR:Number = 8000;
 		private static const SCORE_THRESHOLD_2STAR:Number = 3000;
 		private static const SCORE_THRESHOLD_1STAR:Number = 1;
+		private static const MAX_MISSED_BEATS:int = 4;
 		
 		private static const STATE_INTRO:int = 1;
 		private static const STATE_COUNTIN:int = 2;
@@ -294,14 +295,14 @@ package uk.co.zutty.metronome
 			} else if(_state == STATE_PLAY) {
 				_messageFade.tween(_messageText, "alpha", 0, 20);
 			} else if(_state == STATE_OUTRO) {
-				_messageText.text = (_missedBeats < 5) ? "Great!" : "You Suck";
+				_messageText.text = (_missedBeats <= MAX_MISSED_BEATS) ? "Great!" : "You Suck";
 				_messageFade.tween(_messageText, "alpha", 1, 20);
 
 				_starTween.tween(_star1Blank, {alpha: 1}, 30);
 				_star3Blank.alpha = _star2Blank.alpha = _star1Blank.alpha;
 
 				_frame = OUTRO_TIME;
-				((_missedBeats < 5) ? _cheerSfx : _booSfx).play();
+				((_missedBeats <= MAX_MISSED_BEATS) ? _cheerSfx : _booSfx).play();
 			} else if(_state == STATE_RESULT) {
 				_finalStars = calcFinalStars();
 				
@@ -337,7 +338,9 @@ package uk.co.zutty.metronome
 		}
 		
 		private function calcFinalStars():int {
-			if(_score > SCORE_THRESHOLD_3STAR) {
+			if(_missedBeats > MAX_MISSED_BEATS) {
+				return 0;
+			} else if(_score > SCORE_THRESHOLD_3STAR) {
 				return 3;
 			} else if(_score > SCORE_THRESHOLD_2STAR) {
 				return 2;
@@ -413,7 +416,7 @@ package uk.co.zutty.metronome
 				}
 
 				// Check to see if we should transition out of the play state
-				if(_beats < 0 || _missedBeats >= 5) {
+				if(_beats < 0 || _missedBeats > MAX_MISSED_BEATS) {
 					transition(STATE_OUTRO);
 				}
 			} else if(_state == STATE_OUTRO) {
