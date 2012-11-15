@@ -53,6 +53,9 @@ package uk.co.zutty.metronome
 		
 		private static const INTRO_TIME:int = 30;
 		private static const OUTRO_TIME:int = 50;
+		private static const SCORE_THRESHOLD_3STAR:Number = 8000;
+		private static const SCORE_THRESHOLD_2STAR:Number = 3000;
+		private static const SCORE_THRESHOLD_1STAR:Number = 1;
 		
 		private static const STATE_INTRO:int = 1;
 		private static const STATE_COUNTIN:int = 2;
@@ -98,6 +101,7 @@ package uk.co.zutty.metronome
 		private var _beats:int;
 		private var _state:int;
 		private var _frame:int;
+		private var _finalStars:int;
 
 		public function GameWorld() {
 			_timer = new Timer();
@@ -206,6 +210,7 @@ package uk.co.zutty.metronome
 		override public function begin():void {
 			score = 0;
 			multiplier = 0;
+			_finalStars = 0;
 			_missedBeats = 0;
 			_introBeat = 0;
 			_timer.reset();
@@ -298,25 +303,48 @@ package uk.co.zutty.metronome
 				_frame = OUTRO_TIME;
 				((_missedBeats < 5) ? _cheerSfx : _booSfx).play();
 			} else if(_state == STATE_RESULT) {
-				_star1Sfx.play();
-				_starTween.tween(_star1, {alpha: 1, scale: 1}, 10);
-				_starTween.complete = function ():void {
-					_star2Sfx.play();
-					_starTween.tween(_star2, {alpha: 1, scale: 1}, 10);
-					_starTween.complete = function ():void {
-						_star3Sfx.play();
-						_starTween.tween(_star3, {alpha: 1, scale: 1}, 10);
-						_starTween.complete = function ():void {
-							_starTween.complete = null;
-							transition(STATE_DONE);
-						}
-					}
-				}
+				_finalStars = calcFinalStars();
+				
+				// Chain star tweens together
+				((_finalStars > 0) ? starTween_1 : starTween_done)();
 			} else if(_state == STATE_RETURN) {
 				_cheerSfx.stop();
 				_booSfx.stop();
-				(FP.engine as Main).returnResult(3);
+				(FP.engine as Main).returnResult(_finalStars);
 				(FP.engine as Main).showMenu();
+			}
+		}
+		
+		// Star tween callback functions
+		private function starTween_1():void {
+			_star1Sfx.play();
+			_starTween.tween(_star1, {alpha: 1, scale: 1}, 10);
+			_starTween.complete = (_finalStars > 1) ? starTween_2 : starTween_done;
+		}
+		private function starTween_2():void {
+			_star2Sfx.play();
+			_starTween.tween(_star2, {alpha: 1, scale: 1}, 10);
+			_starTween.complete = (_finalStars > 2) ? starTween_3 : starTween_done;
+		}
+		private function starTween_3():void {
+			_star3Sfx.play();
+			_starTween.tween(_star3, {alpha: 1, scale: 1}, 10);
+			_starTween.complete = starTween_done;
+		}
+		private function starTween_done():void {
+			_starTween.complete = null;
+			transition(STATE_DONE);
+		}
+		
+		private function calcFinalStars():int {
+			if(_score > SCORE_THRESHOLD_3STAR) {
+				return 3;
+			} else if(_score > SCORE_THRESHOLD_2STAR) {
+				return 2;
+			} else if(_score > SCORE_THRESHOLD_1STAR) {
+				return 1;
+			} else {
+				return 0;
 			}
 		}
 
