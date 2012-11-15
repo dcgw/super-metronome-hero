@@ -171,6 +171,7 @@ package uk.co.zutty.metronome
             addGraphic(_multiplierText);
             
             _multiplierFade = new ColorTween();
+			_multiplierFade.color = 0xffffff;
             addTween(_multiplierFade);
 
 			_messageText = new Text("");
@@ -354,6 +355,7 @@ package uk.co.zutty.metronome
         override public function update():void {
             super.update();
 			_timer.nextFrame();
+			_multiplierText.color = _multiplierFade.color;
 
 			if(_state == STATE_INTRO) {
 				// Pause a bit before starting
