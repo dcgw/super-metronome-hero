@@ -53,9 +53,10 @@ package uk.co.zutty.metronome
 		
 		private static const INTRO_TIME:int = 30;
 		private static const OUTRO_TIME:int = 50;
-		private static const SCORE_THRESHOLD_3STAR:Number = 8000;
-		private static const SCORE_THRESHOLD_2STAR:Number = 3000;
+		private static const SCORE_THRESHOLD_3STAR:Number = 6000;
+		private static const SCORE_THRESHOLD_2STAR:Number = 2000;
 		private static const SCORE_THRESHOLD_1STAR:Number = 1;
+		private static const BASE_SCORE:Number = 7;
 		private static const MAX_MISSED_BEATS:int = 4;
 		
 		private static const STATE_INTRO:int = 1;
@@ -413,7 +414,7 @@ package uk.co.zutty.metronome
 					// Score some ponts if we hit
 	                if(!missed) {
 	                    var factor:Number = Math.max(0, 4 - diff);
-	                    score += factor * multiplier * 5;
+	                    score += factor * multiplier * BASE_SCORE;
 	                }
 				}
 
