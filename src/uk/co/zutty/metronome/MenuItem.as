@@ -96,7 +96,26 @@ package uk.co.zutty.metronome
 
 		public function set selected(sel:Boolean):void {
 			_selected = sel;
-			_body.play((_locked ? "locked" : "unlocked") + (sel ? "_glow" : ""));
+			updateBody();
+		}
+		
+		private function updateBody():void {
+			_body.play((_locked ? "locked" : "unlocked") + (_selected ? "_glow" : ""));
+		}
+		
+		public function get stars():int {
+			var r:String = _rating.currentAnim;
+			return (r == "locked") ? 0 : int(r);
+		}
+		
+		public function set stars(s:int):void {
+			if(s > 0 && s < 4) {
+				_rating.play(String(s));
+			}
+		}
+		
+		public function get locked():Boolean {
+			return _locked;
 		}
 		
 		public function unlock():void {
@@ -107,6 +126,7 @@ package uk.co.zutty.metronome
 			_locked = false;
 			_text.text = _tempo;
 			_subText.text = String(_bpm) + "bpm";
+			updateBody();
 		}
 	}
 }

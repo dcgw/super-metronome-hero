@@ -40,7 +40,7 @@ package uk.co.zutty.metronome
 		}
 		
 		public function returnResult(stars:int):void {
-			
+			_menuWorld.returnResult(stars);
 		} 
 		
 		public function showMenu():void {

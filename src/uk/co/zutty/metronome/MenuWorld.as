@@ -23,6 +23,7 @@ package uk.co.zutty.metronome
 		private var _blipSfx:Sfx;
 		private var _selectSfx:Sfx;
 		private var _musicFader:SfxFader;
+		private var _firstLocked:int;
 		
 		public function MenuWorld() {
 			_blipSfx = new Sfx(BLIP_SOUND);
@@ -47,10 +48,18 @@ package uk.co.zutty.metronome
 			addItem("Presto", 168);
 			addItem("Prestissimo", 208);
 			addItem("Hyper-Prestississississimo\nExtreme to the Max!", 350, 32);
-			_items[0].unlock();
+			_firstLocked = 0;
+			unlockNext();
 			
 			_selectedIndex = 0;
 			selectedItem.selected = true;
+		}
+		
+		private function unlockNext():void {
+			if(_firstLocked < _items.length) {
+				_items[_firstLocked].unlock();
+				_firstLocked++;
+			}
 		}
 
 		override public function begin():void {
@@ -82,6 +91,16 @@ package uk.co.zutty.metronome
 			_items[_items.length] = item;
 		}
 		
+		public function returnResult(stars:int):void {
+			if(stars > 0) {
+				selectedItem.stars = stars;
+				
+				if(_firstLocked < _items.length && _items[_firstLocked].locked) {
+					unlockNext();
+				}
+			}
+		}
+		
 		override public function update():void {
 			super.update();
 			
@@ -99,7 +118,7 @@ package uk.co.zutty.metronome
 				if(selectedItem.y + 100 > FP.screen.height + FP.camera.y) {
 					_scrollTween.tween(FP.camera, "y", selectedItem.y + 150 - FP.screen.height, 20, Ease.cubeOut);
 				}
-			} else if(Input.pressed(Key.ENTER)) {
+			} else if(Input.pressed(Key.ENTER) && !selectedItem.locked) {
 				_selectSfx.play();
 				(FP.engine as Main).playGame(selectedItem.tempo, selectedItem.bpm);
 			}
