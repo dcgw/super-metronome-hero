@@ -1,9 +1,12 @@
 package uk.co.zutty.metronome
 {
+	import flash.filters.GlowFilter;
+	
 	import net.flashpunk.FP;
 	import net.flashpunk.Sfx;
 	import net.flashpunk.World;
 	import net.flashpunk.graphics.Image;
+	import net.flashpunk.graphics.Text;
 	import net.flashpunk.tweens.misc.VarTween;
 	import net.flashpunk.tweens.sound.SfxFader;
 	import net.flashpunk.utils.Ease;
@@ -16,6 +19,8 @@ package uk.co.zutty.metronome
 		private const BLIP_SOUND:Class;
 		[Embed(source = 'assets/sounds/select.mp3')]
 		private const SELECT_SOUND:Class;
+		
+		private const INSTRUCTION_TIME:uint = 150;
 
 		private var _items:Vector.<MenuItem>;
 		private var _selectedIndex:int;
@@ -23,6 +28,10 @@ package uk.co.zutty.metronome
 		private var _blipSfx:Sfx;
 		private var _selectSfx:Sfx;
 		private var _musicFader:SfxFader;
+		private var _instructionText:Text;
+		private var _instructionFade:VarTween;
+		private var _instructionTimer:uint;
+		private var _showInstructions:Boolean;
 		
 		public function MenuWorld() {
 			_blipSfx = new Sfx(BLIP_SOUND);
@@ -51,6 +60,25 @@ package uk.co.zutty.metronome
 			
 			_selectedIndex = 0;
 			selectedItem.selected = true;
+			
+			_instructionText = new Text("");
+			_instructionText.color = 0xeeeeee;
+			_instructionText.size = 32;
+			_instructionText.align = "center";
+			_instructionText.field.filters = [new GlowFilter(0x000000, 1, 4, 4)];
+			_instructionText.text = "Navigate with UP, DOWN, and ENTER";
+			_instructionText.x = 0;
+			_instructionText.width = 640;
+			_instructionText.y = 370;
+			_instructionText.scrollX = 0;
+			_instructionText.scrollY = 0;
+			_instructionText.alpha = 0;
+			addGraphic(_instructionText);
+			
+			_instructionFade = new VarTween();
+			addTween(_instructionFade);
+			
+			_showInstructions = true;
 		}
 
 		override public function begin():void {
@@ -77,7 +105,7 @@ package uk.co.zutty.metronome
 			item.bpm = bpm;
 			item.textSize = size;
 			item.x = 70;
-			item.y = 60 + _items.length * 120;
+			item.y = 50 + _items.length * 120;
 			add(item);
 			_items[_items.length] = item;
 		}
@@ -94,15 +122,24 @@ package uk.co.zutty.metronome
 		
 		override public function update():void {
 			super.update();
+			_instructionTimer++;
+			
+			if(_showInstructions && _instructionTimer == INSTRUCTION_TIME) {
+				_instructionFade.tween(_instructionText, "alpha", 1, 30);
+			} else if(_instructionText.alpha > 0 && _instructionTimer == INSTRUCTION_TIME * 2) {
+				_instructionFade.tween(_instructionText, "alpha", 0, 30);
+			}
 			
 			if(Input.pressed(Key.UP)) {
+				_showInstructions = false;
 				_blipSfx.play();
 				selectedIndex--;
 
 				if(selectedItem.y < FP.camera.y) {
-					_scrollTween.tween(FP.camera, "y", selectedItem.y - 60, 20, Ease.cubeOut);
+					_scrollTween.tween(FP.camera, "y", selectedItem.y - 50, 20, Ease.cubeOut);
 				}
 			} else if(Input.pressed(Key.DOWN)) {
+				_showInstructions = false;
 				_blipSfx.play();
 				selectedIndex++;
 				
@@ -110,6 +147,7 @@ package uk.co.zutty.metronome
 					_scrollTween.tween(FP.camera, "y", selectedItem.y + 150 - FP.screen.height, 20, Ease.cubeOut);
 				}
 			} else if(Input.pressed(Key.ENTER) && !selectedItem.locked) {
+				_showInstructions = false;
 				_selectSfx.play();
 				(FP.engine as Main).playGame(selectedItem.tempo, selectedItem.bpm);
 			}

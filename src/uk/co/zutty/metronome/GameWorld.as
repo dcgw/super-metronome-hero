@@ -82,6 +82,9 @@ package uk.co.zutty.metronome
 		private var _star2:Image;
 		private var _star3:Image;
 		private var _starTween:MultiVarTween;
+		private var _instructionText:Text;
+		private var _instructionFade:VarTween;
+		private var _showInstructions:Boolean;
 
 		private var _readySfx:Sfx;
 		private var _chimeSfx:Sfx;
@@ -199,6 +202,26 @@ package uk.co.zutty.metronome
 			_star3 = makeStar(STAR_IMAGE, 460);
 			_starTween = new MultiVarTween();
 			addTween(_starTween);
+			
+			// Init instructions
+			_instructionText = new Text("");
+			_instructionText.color = 0xeeeeee;
+			_instructionText.size = 32;
+			_instructionText.align = "center";
+			_instructionText.field.filters = [new GlowFilter(0x000000, 1, 4, 4)];
+			_instructionText.text = "Press ANY key in time with the pendulum";
+			_instructionText.x = 0;
+			_instructionText.width = 640;
+			_instructionText.y = 370;
+			_instructionText.scrollX = 0;
+			_instructionText.scrollY = 0;
+			_instructionText.alpha = 0;
+			addGraphic(_instructionText);
+
+			_instructionFade = new VarTween();
+			addTween(_instructionFade);
+			
+			_showInstructions = true;
 		}
 		
 		private function makeStar(img:Class, x:Number):Image {
@@ -292,8 +315,10 @@ package uk.co.zutty.metronome
 			
 			if(_state == STATE_COUNTIN) {
 				_timer.start();
-				//_messageFade.tween(_messageText, "alpha", 0, 20);
 				
+				if(_showInstructions) {
+					_instructionFade.tween(_instructionText, "alpha", 1, 30);
+				}
 			} else if(_state == STATE_PLAY) {
 				_messageFade.tween(_messageText, "alpha", 0, 20);
 			} else if(_state == STATE_OUTRO) {
@@ -384,6 +409,11 @@ package uk.co.zutty.metronome
 	            }
 	            
 	            if(Input.pressed(Key.ANY)) {
+					if(_showInstructions && _instructionText.alpha == 1) {
+						_instructionFade.tween(_instructionText, "alpha", 0, 30);
+						_showInstructions = false;
+					}
+					
 	                var missed:Boolean = diff > 3;
 	                if(missed) {
 	                    _arm.miss();
