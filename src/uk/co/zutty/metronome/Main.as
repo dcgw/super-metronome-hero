@@ -18,12 +18,11 @@ package uk.co.zutty.metronome
 		private var _gameWorld:GameWorld;
 		private var _musicSfx:Sfx;
 
+		[Frame(factoryClass="uk.co.zutty.metronome.Preloader")]
         public function Main() {
             super(640, 480, 60, true);
             
             Text.font = "strait";
-            //FP.console.enable();
-            //FP.console.debug = true;
 			
 			_musicSfx = new Sfx(MUSIC_SOUND);
 			
