@@ -506,7 +506,7 @@
   resolved "https://registry.yarnpkg.com/@softwareventures/chain/-/chain-0.1.2.tgz#2cba555b5c916643c4956ba55b5c538041f20c27"
   integrity sha512-4eMBnTKQBLHQi7fbKtqf/i8LH5fsGb4JDTXDWo4o7TnUq+3TSdC2gqSopVxb7zQD/jgQTzyGSVDUcIFtlbjMeQ==
 
-"@softwareventures/dictionary@^0.2.1":
+"@softwareventures/dictionary@0.2.1":
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-0.2.1.tgz#a80522356f8feca7bf888beb1440a6f77c2f51b7"
   integrity sha512-CxhoMPy+tYZeNMI49pt6g/3qYrGuHoX6dM1BKnf4R2YyXjo9HVr7WrD9HPnUS+h3MdbWRzAdVKvhnm8sPlJV6g==
