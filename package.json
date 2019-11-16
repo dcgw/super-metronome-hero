@@ -30,6 +30,10 @@
     "test": "tslint --project . && ava"
   },
   "dependencies": {
+    "@softwareventures/dictionary": "^0.2.1",
+    "@types/domready": "1.0.0",
+    "domready": "1.0.8",
+    "excalibur": "0.23.0",
     "tslib": "1.10.0"
   },
   "devDependencies": {
