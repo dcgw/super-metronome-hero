@@ -1,5 +1,5 @@
 {
-  "extends": "@softwareventures/tsconfig",
+  "extends": "@softwareventures/webpack-config/tsconfig/general",
   "exclude": [
     "**/*.test.ts",
     "**/test.ts"
