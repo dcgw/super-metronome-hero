@@ -1,0 +1,58 @@
+{
+  "private": true,
+  "name": "@dcgw/super-metronome-hero",
+  "version": "0.0.0-development",
+  "description": "A rhythm game made for FuckThisJam",
+  "keywords": [
+    "game",
+    "typescript",
+    "fuck-this-jam"
+  ],
+  "author": {
+    "name": "George Weller",
+    "email": "george.weller@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Daniel Cassidy",
+      "email": "mail@danielcassidy.me.uk",
+      "url": "https://www.danielcassidy.me.uk/"
+    }
+  ],
+  "homepage": "https://github.com/dcgw/super-metronome-hero",
+  "bugs": "https://github.com/dcgw/super-metronome-hero",
+  "repository": "github:dcgw/super-metronome-hero",
+  "license": "UNLICENSED",
+  "scripts": {
+    "prepare": "tsc",
+    "semantic-release": "semantic-release",
+    "test": "tslint --project . && ava"
+  },
+  "dependencies": {
+    "tslib": "1.10.0"
+  },
+  "devDependencies": {
+    "@softwareventures/tsconfig": "2.1.0",
+    "@softwareventures/tslint-rules": "0.7.1",
+    "ava": "2.4.0",
+    "cz-conventional-changelog": "3.0.2",
+    "semantic-release": "15.13.30",
+    "ts-node": "8.5.2",
+    "tslint": "5.20.1",
+    "typescript": "3.7.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "ava": {
+    "compileEnhancements": false,
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  }
+}
