@@ -25,7 +25,6 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "webpack --env.production",
-    "prepare": "tsc",
     "semantic-release": "semantic-release",
     "start": "webpack-dev-server --open",
     "test": "tslint --project . && ava"
