@@ -1,7 +1,3 @@
 {
-  "extends": "@softwareventures/webpack-config/tsconfig/general",
-  "exclude": [
-    "**/*.test.ts",
-    "**/test.ts"
-  ]
+  "extends": "@softwareventures/webpack-config/tsconfig/general"
 }
