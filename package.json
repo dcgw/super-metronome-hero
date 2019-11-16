@@ -37,6 +37,7 @@
     "ava": "2.4.0",
     "cz-conventional-changelog": "3.0.2",
     "semantic-release": "15.13.30",
+    "semantic-release-s3-upload": "0.2.22",
     "ts-node": "8.5.2",
     "tslint": "5.20.1",
     "typescript": "3.7.2"
@@ -53,6 +54,40 @@
     ],
     "require": [
       "ts-node/register"
+    ]
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/github",
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ],
+      [
+        "@semantic-release/exec",
+        {
+          "prepareCmd": "yarn build"
+        }
+      ],
+      [
+        "semantic-release-s3-upload",
+        {
+          "uploads": [
+            {
+              "src": {
+                "dir": "./dist"
+              },
+              "dest": {
+                "bucket": "super-metronome-hero"
+              }
+            }
+          ]
+        }
+      ]
     ]
   }
 }
