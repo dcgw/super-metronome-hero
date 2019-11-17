@@ -36,6 +36,9 @@ domready(() => {
             case "ArrowLeft":
             case "ArrowRight":
             case "KeyX":
+            case "Space":
+            case "Enter":
+            case "NumpadEnter":
                 event.preventDefault();
         }
     }
