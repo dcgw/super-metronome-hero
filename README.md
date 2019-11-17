@@ -19,11 +19,13 @@ I used Flashpunk to write the game. The source is available online here... https
 
 I got all my music and sound effects from Freesound.org.
 
- * Music - bebto
- * 'Ready?', '1,2,3,4' - shawshank73
- * Cheering - freesound
- * Booing - acclivity
- * Metronome tick/tock - digifishmusic
- * 'Perfect' chime - BristolStories
- * 'Star' chime - cfork
- * Menu blips - looppool
+ * [Music](https://freesound.org/people/bebeto/sounds/18973/) - bebeto
+ * [Ready?](https://freesound.org/people/shawshank73/sounds/78916/),
+   [1, 2, 3, 4](https://freesound.org/people/shawshank73/sounds/72260/) - shawshank73
+ * [Cheering](https://freesound.org/people/acclivity/sounds/22952/) - acclivity
+ * [Booing](https://freesound.org/people/unchaz/sounds/150952/) - unchaz
+ * [Metronome tick/tock](https://freesound.org/people/digifishmusic/sounds/49112/) - digifishmusic
+ * [Perfect chime](https://freesound.org/people/BristolStories/sounds/51713/) - BristolStories
+ * [Star chime](https://freesound.org/people/cfork/sounds/26875/) - cfork
+ * [Menu blips](https://freesound.org/people/looppool/sounds/13113/)
+   and [bloops](https://freesound.org/people/looppool/sounds/13119/) - looppool
