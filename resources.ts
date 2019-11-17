@@ -1,5 +1,11 @@
 import {forEach} from "@softwareventures/dictionary";
 import {Resource, Sound, Texture} from "excalibur";
+import menuBlipMp3 from "./menu/blip.mp3";
+import menuBlipOgg from "./menu/blip.ogg";
+import menuItemRatings from "./menu/item-ratings.png";
+import menuItem from "./menu/menu-item.png";
+import menuSelectMp3 from "./menu/select.mp3";
+import menuSelectOgg from "./menu/select.ogg";
 import titleBackground from "./title/background.png";
 import titleBigArm from "./title/big-arm.png";
 import titleBody from "./title/body.png";
@@ -9,6 +15,10 @@ import titleMusicOgg from "./title/music.ogg";
 import titleSmallArm from "./title/small-arm.png";
 
 const resources = {
+    menuBlip: new Sound(menuBlipOgg, menuBlipMp3),
+    menuItemRatings: new Texture(menuItemRatings),
+    menuItem: new Texture(menuItem),
+    menuSelect: new Sound(menuSelectOgg, menuSelectMp3),
     titleBackground: new Texture(titleBackground),
     titleBigArm: new Texture(titleBigArm),
     titleBody: new Texture(titleBody),

@@ -1,5 +1,6 @@
 import {values} from "@softwareventures/dictionary";
 import {DisplayMode, Engine, Loader} from "excalibur";
+import Menu from "./menu/menu";
 import resources from "./resources";
 import Title from "./title/title";
 
@@ -26,6 +27,7 @@ export default class Game {
         this.engine.start(loader)
             .then(() => {
                 this.engine.addScene("title", new Title(this));
+                this.engine.addScene("menu", new Menu(this));
                 this.engine.goToScene("title");
             }, reason => console.error("", reason));
     }
