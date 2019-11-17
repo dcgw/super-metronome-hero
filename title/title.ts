@@ -9,7 +9,7 @@ export default class Title extends Scene {
     private readonly smallArm: Actor;
     private readonly bigArm: Actor;
 
-    constructor(game: Game) {
+    constructor(private readonly game: Game) {
         super(game.engine);
 
         const background = new Actor({
@@ -48,8 +48,18 @@ export default class Title extends Scene {
         this.add(logo);
     }
 
+    public onActivate(): void {
+        resources.titleMusic.loop = true;
+    }
+
     public update(engine: Engine, delta: number): void {
         super.update(engine, delta);
+
+        if (this.game.active && !resources.titleMusic.isPlaying()) {
+            resources.titleMusic.play()
+                .then(() => void 0,
+                    reason => console.error("", reason));
+        }
 
         this.smallTimer.update(delta);
         this.bigTimer.update(delta);

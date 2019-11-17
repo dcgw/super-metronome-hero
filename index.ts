@@ -40,6 +40,10 @@ domready(() => {
         }
     }
 
+    function onMouseButton(): void {
+        engine.canvas.focus();
+    }
+
     let pointerTimeout = 0;
 
     function onMouseMove(): void {
@@ -80,6 +84,9 @@ domready(() => {
     window.addEventListener("keydown", onKey);
     window.addEventListener("keypress", onKey);
     window.addEventListener("keyup", onKey);
+    engine.canvas.addEventListener("mousedown", onMouseButton);
+    engine.canvas.addEventListener("click", onMouseButton);
+    engine.canvas.addEventListener("mouseup", onMouseButton);
     window.addEventListener("mousemove", onMouseMove, true);
     window.addEventListener("focus", onFocus, true);
     window.addEventListener("blur", onBlur, true);
