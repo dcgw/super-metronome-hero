@@ -19,8 +19,8 @@ I used Flashpunk to write the game. The source is available online here... https
 
 I got all my music and sound effects from Freesound.org.
 
- * Music: bebto 'Ready?'
- * '1,2,3,4' - shawshank73
+ * Music - bebto
+ * 'Ready?', '1,2,3,4' - shawshank73
  * Cheering - freesound
  * Booing - acclivity
  * Metronome tick/tock - digifishmusic
