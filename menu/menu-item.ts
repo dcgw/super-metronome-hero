@@ -1,4 +1,4 @@
-import {Actor, Engine, SpriteSheet, Vector} from "excalibur";
+import {Actor, BaseAlign, Color, Engine, FontUnit, Label, SpriteSheet, Vector} from "excalibur";
 import resources from "../resources";
 
 export interface Options {
@@ -49,6 +49,38 @@ export default class MenuItem extends Actor {
         anchor: Vector.Zero
     });
 
+    private readonly lockedText = new Label({
+        text: "Locked",
+        pos: new Vector(100, 15),
+        fontFamily: "Arial",
+        fontSize: 60,
+        fontUnit: FontUnit.Px,
+        baseAlign: BaseAlign.Top,
+        anchor: Vector.Zero,
+        color: Color.fromHex("999999")
+    });
+
+    private readonly labelText = new Label({
+        pos: new Vector(100, 5),
+        fontFamily: "Arial",
+        fontUnit: FontUnit.Px,
+        baseAlign: BaseAlign.Top,
+        anchor: Vector.Zero,
+        color: Color.White,
+        visible: false
+    });
+
+    private readonly subText = new Label({
+        pos: new Vector(100, 60),
+        fontFamily: "Arial",
+        fontSize: 22,
+        fontUnit: FontUnit.Px,
+        baseAlign: BaseAlign.Top,
+        anchor: Vector.Zero,
+        color: Color.White,
+        visible: false
+    });
+
     constructor(options: Options) {
         super({
             pos: options.pos,
@@ -69,6 +101,15 @@ export default class MenuItem extends Actor {
         this.rating.addDrawing("2", ratingSpriteSheet.getSprite(3));
         this.rating.addDrawing("3", ratingSpriteSheet.getSprite(4));
         this.add(this.rating);
+
+        this.add(this.lockedText);
+
+        this.labelText.fontSize = options.textSize || 60;
+        this.labelText.text = options.tempo;
+        this.add(this.labelText);
+
+        this.subText.text = options.bpm + " bpm";
+        this.add(this.subText);
     }
 
 
@@ -82,5 +123,8 @@ export default class MenuItem extends Actor {
         this.rating.setDrawing(this.locked
             ? "locked"
             : this.stars.toString(10));
+
+        this.lockedText.visible = this.locked;
+        this.labelText.visible = this.subText.visible = !this.locked;
     }
 }
