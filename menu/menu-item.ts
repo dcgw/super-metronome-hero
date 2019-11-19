@@ -31,6 +31,9 @@ const ratingSpriteSheet = new SpriteSheet({
 });
 
 export default class MenuItem extends Actor {
+    public readonly tempo: string;
+    public readonly bpm: number;
+
     public selected = false;
     public locked = true;
     public stars = 0;
@@ -88,6 +91,9 @@ export default class MenuItem extends Actor {
             height: boxHeight,
             anchor: Vector.Zero
         });
+
+        this.tempo = options.tempo;
+        this.bpm = options.bpm;
 
         this.box.addDrawing("locked", boxSpriteSheet.getSprite(0));
         this.box.addDrawing("unlocked", boxSpriteSheet.getSprite(1));

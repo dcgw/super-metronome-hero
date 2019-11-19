@@ -1,6 +1,7 @@
 import {values} from "@softwareventures/dictionary";
 import {DisplayMode, Engine, Loader} from "excalibur";
 import Menu from "./menu/menu";
+import {Performance} from "./performance/performance";
 import resources from "./resources";
 import Title from "./title/title";
 
@@ -9,6 +10,9 @@ export default class Game {
     public readonly height = 480;
 
     public active = false;
+    public tempo = "";
+    public bpm = 0;
+    public stars = 0;
 
     public readonly engine = new Engine({
         width: this.width,
@@ -28,6 +32,7 @@ export default class Game {
             .then(() => {
                 this.engine.addScene("title", new Title(this));
                 this.engine.addScene("menu", new Menu(this));
+                this.engine.addScene("performance", new Performance(this));
                 this.engine.goToScene("title");
             }, reason => console.error("", reason));
     }

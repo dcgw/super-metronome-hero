@@ -51,6 +51,9 @@ export default class Title extends Scene {
     public onActivate(): void {
         resources.titleMusic.loop = true;
 
+        this.smallTimer.start();
+        this.bigTimer.start();
+
         this.game.engine.input.keyboard.on("press", this.onKeyPress);
     }
 

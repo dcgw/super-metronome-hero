@@ -6,6 +6,15 @@ import menuItemRatings from "./menu/item-ratings.png";
 import menuItem from "./menu/menu-item.png";
 import menuSelectMp3 from "./menu/select.mp3";
 import menuSelectOgg from "./menu/select.ogg";
+import performanceBackground from "./performance/background.png";
+import performanceBooMp3 from "./performance/boo.mp3";
+import performanceBooOgg from "./performance/boo.ogg";
+import performanceCheerMp3 from "./performance/cheer.mp3";
+import performanceCheerOgg from "./performance/cheer.ogg";
+import performanceOverlay from "./performance/overlay.png";
+import performanceReadyMp3 from "./performance/ready.mp3";
+import performanceReadyOgg from "./performance/ready.ogg";
+import performanceVignette from "./performance/vignette.png";
 import titleBackground from "./title/background.png";
 import titleBigArm from "./title/big-arm.png";
 import titleBody from "./title/body.png";
@@ -19,6 +28,12 @@ const resources = {
     menuItemRatings: new Texture(menuItemRatings),
     menuItem: new Texture(menuItem),
     menuSelect: new Sound(menuSelectOgg, menuSelectMp3),
+    performanceBackground: new Texture(performanceBackground),
+    performanceBoo: new Sound(performanceBooOgg, performanceBooMp3),
+    performanceCheer: new Sound(performanceCheerOgg, performanceCheerMp3),
+    performanceOverlay: new Texture(performanceOverlay),
+    performanceReady: new Sound(performanceReadyOgg, performanceReadyMp3),
+    performanceVignette: new Texture(performanceVignette),
     titleBackground: new Texture(titleBackground),
     titleBigArm: new Texture(titleBigArm),
     titleBody: new Texture(titleBody),
