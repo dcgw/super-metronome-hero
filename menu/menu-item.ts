@@ -1,4 +1,5 @@
 import {Actor, BaseAlign, Color, Engine, FontUnit, Label, SpriteSheet, Vector} from "excalibur";
+import Game from "../game";
 import resources from "../resources";
 
 export interface Options {
@@ -54,32 +55,29 @@ export default class MenuItem extends Actor {
 
     private readonly lockedText = new Label({
         text: "Locked",
-        pos: new Vector(100, 15),
-        fontFamily: "Arial",
+        pos: new Vector(100, 20),
+        fontFamily: Game.fontFamily,
         fontSize: 60,
         fontUnit: FontUnit.Px,
         baseAlign: BaseAlign.Top,
-        anchor: Vector.Zero,
         color: Color.fromHex("999999")
     });
 
     private readonly labelText = new Label({
-        pos: new Vector(100, 5),
-        fontFamily: "Arial",
+        pos: new Vector(100, 10),
+        fontFamily: Game.fontFamily,
         fontUnit: FontUnit.Px,
         baseAlign: BaseAlign.Top,
-        anchor: Vector.Zero,
         color: Color.White,
         visible: false
     });
 
     private readonly subText = new Label({
-        pos: new Vector(100, 60),
-        fontFamily: "Arial",
+        pos: new Vector(100, 65),
+        fontFamily: Game.fontFamily,
         fontSize: 22,
         fontUnit: FontUnit.Px,
         baseAlign: BaseAlign.Top,
-        anchor: Vector.Zero,
         color: Color.White,
         visible: false
     });
