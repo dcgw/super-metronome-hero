@@ -1,4 +1,4 @@
-import {Actor, Engine, Scene, Vector} from "excalibur";
+import {Actor, BaseAlign, Color, Engine, FontUnit, Label, Scene, TextAlign, Vector} from "excalibur";
 import Game from "../game";
 import resources from "../resources";
 import Timer from "../timer";
@@ -8,6 +8,17 @@ export default class Title extends Scene {
     private readonly bigTimer = new Timer(30);
     private readonly smallArm: Actor;
     private readonly bigArm: Actor;
+
+    private readonly startText = new Label({
+        text: "Press ANY key to start",
+        pos: new Vector(320, 385),
+        fontFamily: Game.fontFamily,
+        fontSize: 48,
+        fontUnit: FontUnit.Px,
+        textAlign: TextAlign.Center,
+        baseAlign: BaseAlign.Top,
+        color: Color.fromHex("eeeeee")
+    });
 
     constructor(private readonly game: Game) {
         super(game.engine);
@@ -46,6 +57,8 @@ export default class Title extends Scene {
         });
         logo.addDrawing(resources.titleLogo);
         this.add(logo);
+
+        this.add(this.startText);
     }
 
     public onActivate(): void {
