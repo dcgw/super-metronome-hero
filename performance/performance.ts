@@ -2,6 +2,7 @@ import {Actor, Engine, Scene, Vector} from "excalibur";
 import Game from "../game";
 import resources from "../resources";
 import Timer from "../timer";
+import Arm from "./arm";
 
 const introDuration = 30 / 60 * 1000;
 const outroDuration = 50 / 60 * 1000;
@@ -27,6 +28,8 @@ export class Performance extends Scene {
     private state = State.intro;
     private time = 0;
 
+    private readonly arm = new Arm();
+
     constructor(private readonly game: Game) {
         super(game.engine);
         this.timer = new Timer(0);
@@ -40,7 +43,7 @@ export class Performance extends Scene {
         background.addDrawing(resources.performanceBackground);
         this.add(background);
 
-        // TODO: arm
+        this.add(this.arm);
 
         const overlay = new Actor({
             pos: Vector.Zero,
@@ -74,7 +77,7 @@ export class Performance extends Scene {
         this.missedBeats = 0;
         // this.introBeat = 0;
         this.timer.reset(this.game.bpm);
-        // TODO: set arm time
+        this.arm.reset();
         // TODO: set tempo text
         // TODO: set bpm text
         // this.beats = 16;
@@ -112,6 +115,8 @@ export class Performance extends Scene {
                 // TODO
                 break;
             case State.play:
+                this.arm.beat(this.timer.beat);
+
                 // TODO
                 break;
             case State.outro:

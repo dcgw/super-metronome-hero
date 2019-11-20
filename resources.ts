@@ -6,14 +6,21 @@ import menuItemRatings from "./menu/item-ratings.png";
 import menuItem from "./menu/menu-item.png";
 import menuSelectMp3 from "./menu/select.mp3";
 import menuSelectOgg from "./menu/select.ogg";
+import performanceArm from "./performance/arm.png";
 import performanceBackground from "./performance/background.png";
 import performanceBooMp3 from "./performance/boo.mp3";
 import performanceBooOgg from "./performance/boo.ogg";
 import performanceCheerMp3 from "./performance/cheer.mp3";
 import performanceCheerOgg from "./performance/cheer.ogg";
+import performanceMissMp3 from "./performance/miss.mp3";
+import performanceMissOgg from "./performance/miss.ogg";
 import performanceOverlay from "./performance/overlay.png";
 import performanceReadyMp3 from "./performance/ready.mp3";
 import performanceReadyOgg from "./performance/ready.ogg";
+import performanceTickMp3 from "./performance/tick.mp3";
+import performanceTickOgg from "./performance/tick.ogg";
+import performanceTockMp3 from "./performance/tock.mp3";
+import performanceTockOgg from "./performance/tock.ogg";
 import performanceVignette from "./performance/vignette.png";
 import titleBackground from "./title/background.png";
 import titleBigArm from "./title/big-arm.png";
@@ -28,11 +35,15 @@ const resources = {
     menuItemRatings: new Texture(menuItemRatings),
     menuItem: new Texture(menuItem),
     menuSelect: new Sound(menuSelectOgg, menuSelectMp3),
+    performanceArm: new Texture(performanceArm),
     performanceBackground: new Texture(performanceBackground),
     performanceBoo: new Sound(performanceBooOgg, performanceBooMp3),
     performanceCheer: new Sound(performanceCheerOgg, performanceCheerMp3),
+    performanceMiss: new Sound(performanceMissOgg, performanceMissMp3),
     performanceOverlay: new Texture(performanceOverlay),
     performanceReady: new Sound(performanceReadyOgg, performanceReadyMp3),
+    performanceTick: new Sound(performanceTickOgg, performanceTickMp3),
+    performanceTock: new Sound(performanceTockOgg, performanceTockMp3),
     performanceVignette: new Texture(performanceVignette),
     titleBackground: new Texture(titleBackground),
     titleBigArm: new Texture(titleBigArm),
