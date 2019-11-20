@@ -1,4 +1,4 @@
-import {Actor, Engine, Scene, Vector} from "excalibur";
+import {Actor, Engine, Scene, Sound, Vector} from "excalibur";
 import Game from "../game";
 import resources from "../resources";
 import Timer from "../timer";
@@ -23,12 +23,17 @@ export class Performance extends Scene {
     // private score = 0;
     // private multiplier = 0;
     private missedBeats = 0;
-    // private introBeat = 0;
+    private introBeat = 0;
     // private beats = 0;
     private state = State.intro;
     private time = 0;
 
     private readonly arm = new Arm();
+
+    private readonly countdown: ReadonlyArray<Sound> = [
+        resources.performanceOne, resources.performanceTwo,
+        resources.performanceThree, resources.performanceFour
+    ];
 
     constructor(private readonly game: Game) {
         super(game.engine);
@@ -75,7 +80,7 @@ export class Performance extends Scene {
         // this.multiplier = 0;
         this.game.stars = 0;
         this.missedBeats = 0;
-        // this.introBeat = 0;
+        this.introBeat = 0;
         this.timer.reset(this.game.bpm);
         this.arm.reset();
         // TODO: set tempo text
@@ -112,7 +117,16 @@ export class Performance extends Scene {
                 }
                 break;
             case State.countIn:
-                // TODO
+                if (this.timer.isBeat) {
+                    this.countdown[this.introBeat].play()
+                        .then(() => void 0,
+                            reason => console.error("", reason));
+                    ++this.introBeat;
+
+                    if (this.introBeat >= 4) {
+                        this.transition(State.play);
+                    }
+                }
                 break;
             case State.play:
                 this.arm.beat(this.timer.beat);

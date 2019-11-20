@@ -14,6 +14,14 @@ import performanceCheerMp3 from "./performance/cheer.mp3";
 import performanceCheerOgg from "./performance/cheer.ogg";
 import performanceMissMp3 from "./performance/miss.mp3";
 import performanceMissOgg from "./performance/miss.ogg";
+import performanceOneMp3 from "./performance/one.mp3";
+import performanceOneOgg from "./performance/one.ogg";
+import performanceTwoMp3 from "./performance/two.mp3";
+import performanceTwoOgg from "./performance/two.ogg";
+import performanceThreeMp3 from "./performance/three.mp3";
+import performanceThreeOgg from "./performance/three.ogg";
+import performanceFourMp3 from "./performance/four.mp3";
+import performanceFourOgg from "./performance/four.ogg";
 import performanceOverlay from "./performance/overlay.png";
 import performanceReadyMp3 from "./performance/ready.mp3";
 import performanceReadyOgg from "./performance/ready.ogg";
@@ -39,11 +47,15 @@ const resources = {
     performanceBackground: new Texture(performanceBackground),
     performanceBoo: new Sound(performanceBooOgg, performanceBooMp3),
     performanceCheer: new Sound(performanceCheerOgg, performanceCheerMp3),
+    performanceFour: new Sound(performanceFourOgg, performanceFourMp3),
     performanceMiss: new Sound(performanceMissOgg, performanceMissMp3),
+    performanceOne: new Sound(performanceOneOgg, performanceOneMp3),
     performanceOverlay: new Texture(performanceOverlay),
     performanceReady: new Sound(performanceReadyOgg, performanceReadyMp3),
+    performanceThree: new Sound(performanceThreeOgg, performanceThreeMp3),
     performanceTick: new Sound(performanceTickOgg, performanceTickMp3),
     performanceTock: new Sound(performanceTockOgg, performanceTockMp3),
+    performanceTwo: new Sound(performanceTwoOgg, performanceTwoMp3),
     performanceVignette: new Texture(performanceVignette),
     titleBackground: new Texture(titleBackground),
     titleBigArm: new Texture(titleBigArm),
