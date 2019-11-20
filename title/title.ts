@@ -1,4 +1,4 @@
-import {Actor, BaseAlign, Color, Engine, FontUnit, Label, Scene, TextAlign, Vector} from "excalibur";
+import {Actor, BaseAlign, Color, Engine, FontUnit, Label, Scene, TextAlign, Traits, Vector} from "excalibur";
 import Game from "../game";
 import resources from "../resources";
 import Timer from "../timer";
@@ -35,6 +35,12 @@ export default class Title extends Scene {
             anchor: new Vector(129 / 257, 1300 / 1356)
         });
         this.bigArm.addDrawing(resources.titleBigArm);
+
+        this.bigArm.traits.forEach((trait, index) => {
+            if (trait instanceof Traits.OffscreenCulling) {
+                this.bigArm.traits.splice(index, 1);
+            }
+        });
         this.add(this.bigArm);
 
         const body = new Actor({
