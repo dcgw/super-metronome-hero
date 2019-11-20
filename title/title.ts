@@ -57,6 +57,10 @@ export default class Title extends Scene {
         this.game.engine.input.keyboard.on("press", this.onKeyPress);
     }
 
+    public onDeactivate(): void {
+        this.game.engine.input.keyboard.off("press", this.onKeyPress);
+    }
+
     public update(engine: Engine, delta: number): void {
         super.update(engine, delta);
 
