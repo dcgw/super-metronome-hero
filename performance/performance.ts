@@ -1,4 +1,4 @@
-import {Actor, Engine, Scene, Sound, Vector} from "excalibur";
+import {Actor, Engine, Input, Scene, Sound, Vector} from "excalibur";
 import Game from "../game";
 import resources from "../resources";
 import Timer from "../timer";
@@ -6,6 +6,7 @@ import Arm from "./arm";
 
 const introDuration = 30 / 60 * 1000;
 const outroDuration = 50 / 60 * 1000;
+// const baseScore = 7;
 const maxMissedBeats = 4;
 
 enum State {
@@ -134,6 +135,55 @@ export class Performance extends Scene {
                 break;
             case State.play:
                 this.arm.beat(this.timer.beat);
+
+                if (this.timer.isOffBeat) {
+                    ++this.missedBeats;
+                    // --this.beats;
+                }
+
+                // TODO: should accept any key
+                if (this.game.engine.input.keyboard.wasPressed(Input.Keys.Space)) {
+                    // TODO: Fade instructions
+
+                    const missed = this.timer.offBeatMs >= 4 / 60 * 1000;
+                    if (missed) {
+                        this.arm.miss();
+                        // this.multiplier = 0;
+                        // TODO: Update and fade multiplier text
+                    } else {
+                        this.arm.tickTock();
+                        // ++this.multiplier;
+                        // TODO: Update multiplier text
+                        this.missedBeats = 0;
+                    }
+
+                    // What kind of hit did we register?
+                    if (this.timer.offBeatMs < 1 / 60 * 1000) {
+                        // TODO: Float "Perfect!"
+                        // this.multiplier += 4;
+                        // TODO: Update and fade multiplier text
+                        // TODO: Play chime
+                    } else if (this.timer.offBeatMs < 3 / 60 * 1000) {
+                        // TODO: Float "Good"
+                    } else if (this.timer.offBeatMs < 4 / 60 * 1000) {
+                        // Do nothing
+                    } else if (this.timer.offBeatMs < 7 / 60 * 1000) {
+                        // TODO: Float "Miss"
+                    } else if (this.timer.offBeatMs < 8 / 60 * 1000) {
+                        // Do nothing
+                        // TODO: Is this really intended?
+                    } else if (this.timer.offBeatMs < 10 / 60 * 1000) {
+                        // TODO: Float "Poor"
+                    } else {
+                        // TODO: Float "Awful!"
+                    }
+
+                    // Score some points if we hit.
+                    if (!missed) {
+                        // const factor = Math.max(0, 4 - Math.floor(this.timer.offBeatMs / 1000 * 60));
+                        // this.score += factor * this.multiplier * baseScore;
+                    }
+                }
 
                 // TODO
                 break;

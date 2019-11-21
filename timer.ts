@@ -2,6 +2,8 @@ export default class Timer {
     public time = 0;
     public beat = 0;
     public isBeat = false;
+    public isOffBeat = false;
+    public offBeatMs = 0;
 
     private running = false;
 
@@ -15,6 +17,9 @@ export default class Timer {
             const previousBeat = this.beat;
             this.beat = this.time / period;
             this.isBeat = Math.floor(this.beat) > Math.floor(previousBeat);
+            this.isOffBeat = this.beat > 1
+                && Math.floor(this.beat + 0.5) > Math.floor(previousBeat + 0.5);
+            this.offBeatMs = Math.abs(this.time - Math.round(this.beat) * period);
         }
     }
 

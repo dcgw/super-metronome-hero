@@ -37,6 +37,8 @@ export default class Arm extends Actor {
         if (this.shake > 0) {
             this.scale.setTo(0.9, 1.02);
             this.shake -= delta;
+        } else {
+            this.scale.setTo(1, 1);
         }
     }
 
