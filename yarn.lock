@@ -539,10 +539,10 @@
     tslib "^1.9.3"
     tslint-eslint-rules "^5.4.0"
 
-"@softwareventures/webpack-config@0.20.0":
-  version "0.20.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/webpack-config/-/webpack-config-0.20.0.tgz#54bcbf7555295f0a101907f3e0835927374a2b52"
-  integrity sha512-tGoUJhgq5tG0ZMwuAaKQcM2Kx+uOn7N7sVhL6IB8K4Y9AxipQp5RZ0Zkgv+r19b9eSe2RHIUQ1LdXBy1ckzD/Q==
+"@softwareventures/webpack-config@0.20.1":
+  version "0.20.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/webpack-config/-/webpack-config-0.20.1.tgz#626ded108c81b83c5298d43883f7317de3fd2368"
+  integrity sha512-OvmFpXDK877TiX7tiUuDHy+1ASM0Z0gi34yYixcC6WP8oDL51FutfWGrc6CP8GImDTagha/6vnLoyiSMdQDedQ==
   dependencies:
     "@softwareventures/array" "0.16.1"
     "@softwareventures/tsconfig" "^1.0.0"
