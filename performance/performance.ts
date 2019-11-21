@@ -76,6 +76,10 @@ export class Performance extends Scene {
     }
 
     public onActivate(): void {
+        this.game.music.kill();
+        this.add(this.game.music);
+        this.game.music.stop();
+
         // this.score = 0;
         // this.multiplier = 0;
         this.game.stars = 0;

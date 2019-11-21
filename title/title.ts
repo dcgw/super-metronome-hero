@@ -68,7 +68,8 @@ export default class Title extends Scene {
     }
 
     public onActivate(): void {
-        resources.titleMusic.loop = true;
+        this.game.music.kill();
+        this.add(this.game.music);
 
         this.smallTimer.start();
         this.bigTimer.start();
@@ -84,7 +85,7 @@ export default class Title extends Scene {
         super.update(engine, delta);
 
         if (this.game.active) {
-            ensureMusicPlaying();
+            this.game.music.play();
         }
 
         this.smallTimer.update(delta);
@@ -94,16 +95,5 @@ export default class Title extends Scene {
         this.bigArm.rotation = Math.sin(this.bigTimer.beat * Math.PI) * 50 / 180 * Math.PI;
     }
 
-    private readonly onKeyPress = () => {
-        ensureMusicPlaying();
-        this.game.engine.goToScene("menu");
-    }
-}
-
-function ensureMusicPlaying(): void {
-    if (!resources.titleMusic.isPlaying()) {
-        resources.titleMusic.play()
-            .then(() => void 0,
-                reason => console.error("", reason));
-    }
+    private readonly onKeyPress = () => this.game.engine.goToScene("menu");
 }

@@ -6,6 +6,8 @@ import menuItemRatings from "./menu/item-ratings.png";
 import menuItem from "./menu/menu-item.png";
 import menuSelectMp3 from "./menu/select.mp3";
 import menuSelectOgg from "./menu/select.ogg";
+import musicMp3 from "./music/music.mp3";
+import musicOgg from "./music/music.ogg";
 import performanceArm from "./performance/arm.png";
 import performanceBackground from "./performance/background.png";
 import performanceBooMp3 from "./performance/boo.mp3";
@@ -34,8 +36,6 @@ import titleBackground from "./title/background.png";
 import titleBigArm from "./title/big-arm.png";
 import titleBody from "./title/body.png";
 import titleLogo from "./title/logo.png";
-import titleMusicMp3 from "./title/music.mp3";
-import titleMusicOgg from "./title/music.ogg";
 import titleSmallArm from "./title/small-arm.png";
 
 const resources = {
@@ -43,6 +43,7 @@ const resources = {
     menuItemRatings: new Texture(menuItemRatings),
     menuItem: new Texture(menuItem),
     menuSelect: new Sound(menuSelectOgg, menuSelectMp3),
+    music: new Sound(musicOgg, musicMp3),
     performanceArm: new Texture(performanceArm),
     performanceBackground: new Texture(performanceBackground),
     performanceBoo: new Sound(performanceBooOgg, performanceBooMp3),
@@ -61,7 +62,6 @@ const resources = {
     titleBigArm: new Texture(titleBigArm),
     titleBody: new Texture(titleBody),
     titleLogo: new Texture(titleLogo),
-    titleMusic: new Sound(titleMusicOgg, titleMusicMp3),
     titleSmallArm: new Texture(titleSmallArm)
 };
 

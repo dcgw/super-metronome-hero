@@ -37,6 +37,12 @@ export default class Menu extends Scene {
         this.items[0].selected = true;
     }
 
+    public onActivate(): void {
+        this.game.music.kill();
+        this.add(this.game.music);
+        this.game.music.play();
+    }
+
     public update(engine: Engine, delta: number): void {
         super.update(engine, delta);
 
