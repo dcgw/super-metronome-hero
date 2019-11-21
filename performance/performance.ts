@@ -25,7 +25,7 @@ export class Performance extends Scene {
     // private multiplier = 0;
     private missedBeats = 0;
     private introBeat = 0;
-    // private beats = 0;
+    private beats = 0;
     private state = State.intro;
     private time = 0;
 
@@ -90,7 +90,7 @@ export class Performance extends Scene {
         this.arm.reset();
         // TODO: set tempo text
         // TODO: set bpm text
-        // this.beats = 16;
+        this.beats = 16;
         this.state = State.intro;
         this.time = introDuration;
 
@@ -138,7 +138,7 @@ export class Performance extends Scene {
 
                 if (this.timer.isOffBeat) {
                     ++this.missedBeats;
-                    // --this.beats;
+                    --this.beats;
                 }
 
                 // TODO: should accept any key
@@ -185,7 +185,10 @@ export class Performance extends Scene {
                     }
                 }
 
-                // TODO
+                // Check to see if we should transition out of the play state.
+                if (this.beats < 0 || this.missedBeats > maxMissedBeats) {
+                    this.transition(State.outro);
+                }
                 break;
             case State.outro:
                 // TODO
