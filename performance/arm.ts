@@ -46,6 +46,6 @@ export default class Arm extends Actor {
     }
 
     public beat(beat: number): void {
-        this.rotation = Math.sin(beat * Math.PI) * 30 / (2 * Math.PI);
+        this.rotation = Math.sin(beat * Math.PI) * 30 / 180 * Math.PI;
     }
 }
