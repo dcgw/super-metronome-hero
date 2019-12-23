@@ -539,10 +539,10 @@
     tslib "^1.9.3"
     tslint-eslint-rules "^5.4.0"
 
-"@softwareventures/webpack-config@0.20.2":
-  version "0.20.2"
-  resolved "https://registry.yarnpkg.com/@softwareventures/webpack-config/-/webpack-config-0.20.2.tgz#7823a0761117a3a8c307ec63c0587d0230663bd8"
-  integrity sha512-xXPowaKicwYLvbkf1c8OUPxkDeTmntg+jmTi5r1n5mMpU6/Hx7eFUAYagqCcxOj7ylo18pBPnSis+xDtomPY7A==
+"@softwareventures/webpack-config@0.20.3":
+  version "0.20.3"
+  resolved "https://registry.yarnpkg.com/@softwareventures/webpack-config/-/webpack-config-0.20.3.tgz#9be4fc4d376132e01ccd0a083ed0d868aadfa2a4"
+  integrity sha512-l8sSE3Qy/TzCxlgls+TCufQ4DKSPqL9BFPk6KWJPfs+gNYbkWOtUfmMJqfZZkjCHrr6obTuuCxAH8PgeaB9ukg==
   dependencies:
     "@softwareventures/array" "0.16.1"
     "@softwareventures/tsconfig" "^1.0.0"
@@ -555,7 +555,7 @@
     json-typescript "1.1.2"
     less "^3.9.0"
     less-loader "^5.0.0"
-    mini-css-extract-plugin "^0.8.0"
+    mini-css-extract-plugin "^0.9.0"
     postcss-loader "^3.0.0"
     style-loader "^0.23.1"
     terser-webpack-plugin "^2.2.1"
@@ -6136,10 +6136,10 @@ mimic-response@^1.0.0, mimic-response@^1.0.1:
   resolved "https://registry.yarnpkg.com/mimic-response/-/mimic-response-1.0.1.tgz#4923538878eef42063cb8a3e3b0798781487ab1b"
   integrity sha512-j5EctnkH7amfV/q5Hgmoal1g2QHFJRraOtmx0JpIqkxhBhI/lJSl1nMpQ45hVarwNETOoWEimndZ4QK0RHxuxQ==
 
-mini-css-extract-plugin@^0.8.0:
-  version "0.8.2"
-  resolved "https://registry.yarnpkg.com/mini-css-extract-plugin/-/mini-css-extract-plugin-0.8.2.tgz#a875e169beb27c88af77dd962771c9eedc3da161"
-  integrity sha512-a3Y4of27Wz+mqK3qrcd3VhYz6cU0iW5x3Sgvqzbj+XmlrSizmvu8QQMl5oMYJjgHOC4iyt+w7l4umP+dQeW3bw==
+mini-css-extract-plugin@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/mini-css-extract-plugin/-/mini-css-extract-plugin-0.9.0.tgz#47f2cf07aa165ab35733b1fc97d4c46c0564339e"
+  integrity sha512-lp3GeY7ygcgAmVIcRPBVhIkf8Us7FZjA+ILpal44qLdSu11wmjKQ3d9k15lfD7pO4esu9eUIAW7qiYIBppv40A==
   dependencies:
     loader-utils "^1.1.0"
     normalize-url "1.9.1"
