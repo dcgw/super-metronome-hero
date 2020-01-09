@@ -492,19 +492,10 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
-"@softwareventures/array@0.18.0":
+"@softwareventures/array@0.18.0", "@softwareventures/array@^0.18.0":
   version "0.18.0"
   resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-0.18.0.tgz#69588371b88a8e995736c79ae534667e60e88eb5"
   integrity sha512-JRHT1dVwPqFheXk8USYQXFpQgWA6IiCDMIy4ZIoMaeBbEusWI1QhhQ6Ddkz9FZamDW+Cqad7B2TS0BeUNYc9zw==
-  dependencies:
-    "@softwareventures/ordered" "^0.2.0"
-    dictionary-types "^1.0.0"
-    tslib "^1.9.3"
-
-"@softwareventures/array@^0.16.1":
-  version "0.16.1"
-  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-0.16.1.tgz#f042925e29bcb9b8425ad578c0686b0b4c73dca1"
-  integrity sha512-NZV6AqYhTfDL0+zCIInwNZT2jFsCP/QVjGXpn15RGRcfLivkst9fnZ0t99+0XNl4JUXqrMwz5mto5OfCaAeURw==
   dependencies:
     "@softwareventures/ordered" "^0.2.0"
     dictionary-types "^1.0.0"
@@ -8586,12 +8577,12 @@ selfsigned@^1.10.7:
   dependencies:
     node-forge "0.9.0"
 
-semantic-release-s3-upload@0.2.50:
-  version "0.2.50"
-  resolved "https://registry.yarnpkg.com/semantic-release-s3-upload/-/semantic-release-s3-upload-0.2.50.tgz#621c7fce8cdb45f6fe7810eeb438c3e1172ef29f"
-  integrity sha512-O2NWArgvsgGaIaHuM3HLNANkXqHcrYNeEBio4JmccerUyYhmNvl5vHHtlpQfLrzrYdjL8yY/vcO7bRYqEEZ/KQ==
+semantic-release-s3-upload@0.2.51:
+  version "0.2.51"
+  resolved "https://registry.yarnpkg.com/semantic-release-s3-upload/-/semantic-release-s3-upload-0.2.51.tgz#ff70fb9b6fc40e6951f1b2c3a1056f098e2e9237"
+  integrity sha512-gCzjZU/MUB4Bi3htV7Q8QG85y1vK2SsXGRv5Xr7PjLIg34+TX+gRXWckSywqK4HZjZ8JB/j+Zaegd3YBX8MryQ==
   dependencies:
-    "@softwareventures/array" "^0.16.1"
+    "@softwareventures/array" "^0.18.0"
     "@softwareventures/chain" "^0.1.2"
     "@types/mime" "^2.0.1"
     aws-sdk "^2.553.0"
