@@ -194,7 +194,10 @@ export class Performance extends Scene {
                 // TODO
                 break;
             case State.done:
-                // TODO
+                // TODO: should accept any key
+                if (this.game.engine.input.keyboard.wasPressed(Input.Keys.Space)) {
+                    this.transition(State.return);
+                }
                 break;
         }
     }
