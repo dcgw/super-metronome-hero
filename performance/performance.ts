@@ -30,6 +30,12 @@ export class Performance extends Scene {
     private time = 0;
 
     private readonly arm = new Arm();
+    private readonly star1Blank = new Actor({pos: new Vector(180, 300), width: 120, height: 115});
+    private readonly star2Blank = new Actor({pos: new Vector(320, 300), width: 120, height: 115});
+    private readonly star3Blank = new Actor({pos: new Vector(460, 300), width: 120, height: 115});
+    private readonly star1 = new Actor({pos: new Vector(180, 300), width: 120, height: 115});
+    private readonly star2 = new Actor({pos: new Vector(320, 300), width: 120, height: 115});
+    private readonly star3 = new Actor({pos: new Vector(460, 300), width: 120, height: 115});
 
     private readonly countdown: ReadonlyArray<Sound> = [
         resources.performanceOne, resources.performanceTwo,
@@ -71,7 +77,24 @@ export class Performance extends Scene {
 
         // TODO: tempoText, bpmText, scoreText, multiplierText, messageText
 
-        // TODO: stars
+        this.star1Blank.addDrawing(resources.performanceBigStarBlank);
+        this.star1Blank.opacity = 0;
+        this.add(this.star1Blank);
+        this.star2Blank.addDrawing(resources.performanceBigStarBlank);
+        this.star2Blank.opacity = 0;
+        this.add(this.star2Blank);
+        this.star3Blank.addDrawing(resources.performanceBigStarBlank);
+        this.star3Blank.opacity = 0;
+        this.add(this.star3Blank);
+        this.star1.addDrawing(resources.performanceBigStar);
+        this.star1.opacity = 0;
+        this.add(this.star1);
+        this.star2.addDrawing(resources.performanceBigStar);
+        this.star2.opacity = 0;
+        this.add(this.star2);
+        this.star3.addDrawing(resources.performanceBigStar);
+        this.star3.opacity = 0;
+        this.add(this.star3);
 
         // TODO: instructionText
     }
@@ -215,7 +238,11 @@ export class Performance extends Scene {
                 break;
             case State.outro:
                 // TODO: set message text
-                // TODO: display stars
+
+                // TODO: Fade in stars
+                this.star1Blank.opacity = 1;
+                this.star2Blank.opacity = 1;
+                this.star3Blank.opacity = 1;
 
                 this.time = outroDuration;
 

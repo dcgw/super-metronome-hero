@@ -10,6 +10,8 @@ import musicMp3 from "./music/music.mp3";
 import musicOgg from "./music/music.ogg";
 import performanceArm from "./performance/arm.png";
 import performanceBackground from "./performance/background.png";
+import performanceBigStarBlank from "./performance/big-star-blank.png";
+import performanceBigStar from "./performance/big-star.png";
 import performanceBooMp3 from "./performance/boo.mp3";
 import performanceBooOgg from "./performance/boo.ogg";
 import performanceCheerMp3 from "./performance/cheer.mp3";
@@ -23,6 +25,12 @@ import performanceOneOgg from "./performance/one.ogg";
 import performanceOverlay from "./performance/overlay.png";
 import performanceReadyMp3 from "./performance/ready.mp3";
 import performanceReadyOgg from "./performance/ready.ogg";
+import performanceStar1Mp3 from "./performance/star1.mp3";
+import performanceStar1Ogg from "./performance/star1.ogg";
+import performanceStar2Mp3 from "./performance/star2.mp3";
+import performanceStar2Ogg from "./performance/star2.ogg";
+import performanceStar3Mp3 from "./performance/star3.mp3";
+import performanceStar3Ogg from "./performance/star3.ogg";
 import performanceThreeMp3 from "./performance/three.mp3";
 import performanceThreeOgg from "./performance/three.ogg";
 import performanceTickMp3 from "./performance/tick.mp3";
@@ -47,12 +55,17 @@ const resources = {
     performanceArm: new Texture(performanceArm),
     performanceBackground: new Texture(performanceBackground),
     performanceBoo: new Sound(performanceBooOgg, performanceBooMp3),
+    performanceBigStarBlank: new Texture(performanceBigStarBlank),
+    performanceBigStar: new Texture(performanceBigStar),
     performanceCheer: new Sound(performanceCheerOgg, performanceCheerMp3),
     performanceFour: new Sound(performanceFourOgg, performanceFourMp3),
     performanceMiss: new Sound(performanceMissOgg, performanceMissMp3),
     performanceOne: new Sound(performanceOneOgg, performanceOneMp3),
     performanceOverlay: new Texture(performanceOverlay),
     performanceReady: new Sound(performanceReadyOgg, performanceReadyMp3),
+    performanceStar1: new Sound(performanceStar1Ogg, performanceStar1Mp3),
+    performanceStar2: new Sound(performanceStar2Ogg, performanceStar2Mp3),
+    performanceStar3: new Sound(performanceStar3Ogg, performanceStar3Mp3),
     performanceThree: new Sound(performanceThreeOgg, performanceThreeMp3),
     performanceTick: new Sound(performanceTickOgg, performanceTickMp3),
     performanceTock: new Sound(performanceTockOgg, performanceTockMp3),
