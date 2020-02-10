@@ -239,7 +239,7 @@ export class Performance extends Scene {
                         // TODO: Float "Perfect!"
                         this.multiplier += 4;
                         // TODO: Update and fade multiplier text
-                        // TODO: Play chime
+                        resources.performanceChime.play().then(() => void 0, reason => console.error("", reason));
                     } else if (this.timer.offBeatMs < 3 / 60 * 1000) {
                         // TODO: Float "Good"
                     } else if (this.timer.offBeatMs < 4 / 60 * 1000) {

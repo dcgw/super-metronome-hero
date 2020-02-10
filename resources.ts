@@ -16,6 +16,8 @@ import performanceBooMp3 from "./performance/boo.mp3";
 import performanceBooOgg from "./performance/boo.ogg";
 import performanceCheerMp3 from "./performance/cheer.mp3";
 import performanceCheerOgg from "./performance/cheer.ogg";
+import performanceChimeMp3 from "./performance/chime.mp3";
+import performanceChimeOgg from "./performance/chime.ogg";
 import performanceFourMp3 from "./performance/four.mp3";
 import performanceFourOgg from "./performance/four.ogg";
 import performanceMissMp3 from "./performance/miss.mp3";
@@ -58,6 +60,7 @@ const resources = {
     performanceBigStarBlank: new Texture(performanceBigStarBlank),
     performanceBigStar: new Texture(performanceBigStar),
     performanceCheer: new Sound(performanceCheerOgg, performanceCheerMp3),
+    performanceChime: new Sound(performanceChimeOgg, performanceChimeMp3),
     performanceFour: new Sound(performanceFourOgg, performanceFourMp3),
     performanceMiss: new Sound(performanceMissOgg, performanceMissMp3),
     performanceOne: new Sound(performanceOneOgg, performanceOneMp3),
