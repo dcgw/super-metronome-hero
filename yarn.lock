@@ -8305,10 +8305,10 @@ selfsigned@^1.10.7:
   dependencies:
     node-forge "0.9.0"
 
-semantic-release-s3-upload@0.2.67:
-  version "0.2.67"
-  resolved "https://registry.yarnpkg.com/semantic-release-s3-upload/-/semantic-release-s3-upload-0.2.67.tgz#2887b05a53e5b9eb6df172a7449cdd46a09a0192"
-  integrity sha512-xh1nOuwmQgv36JiyIlz+BSr5Lalr1eunADssVhskPz/0Romi1Kjt2uU92q5xaV634qDs3dmKPur+X9nw4CDrgQ==
+semantic-release-s3-upload@0.2.68:
+  version "0.2.68"
+  resolved "https://registry.yarnpkg.com/semantic-release-s3-upload/-/semantic-release-s3-upload-0.2.68.tgz#cb7426cd4f97e8152aaede48066a003bbaf9b02b"
+  integrity sha512-mEdoh2kzBBk11lYqojvw23VFijf4WBXc2LYUtjG7PQRs+Sq60aJRYdxBZMf77w1hd3bwQN83g+xzQO/lflzV6g==
   dependencies:
     "@softwareventures/array" "^0.19.0"
     "@softwareventures/chain" "^0.1.2"
