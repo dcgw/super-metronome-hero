@@ -279,16 +279,7 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
-"@softwareventures/array@0.20.0":
-  version "0.20.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-0.20.0.tgz#0a18829805c49701eafbf391069557de74ab96c1"
-  integrity sha512-yxfSI49S6sCysk2bI+T+rl1BOrWRao65OHP11rsCjM5H5csFGAOehqjg2Y+PCepAcYoki032Gwe/XatpaGKkwQ==
-  dependencies:
-    "@softwareventures/ordered" "^0.2.0"
-    dictionary-types "1.1.0"
-    tslib "^1.9.3"
-
-"@softwareventures/array@^0.21.0":
+"@softwareventures/array@0.21.0", "@softwareventures/array@^0.21.0":
   version "0.21.0"
   resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-0.21.0.tgz#5bce31585442ca18656eb1b6c8b1ebf88943729b"
   integrity sha512-4Fk3A0/owghqDe5xv6gd7YZ4vTGFTJEorsCAX6cqDP0PObYAH7hBaH/onePmFjFdQV3LjaS2g+w+zqtURBY86w==
@@ -335,12 +326,12 @@
     tslib "^1.9.3"
     tslint-eslint-rules "^5.4.0"
 
-"@softwareventures/webpack-config@0.20.8":
-  version "0.20.8"
-  resolved "https://registry.yarnpkg.com/@softwareventures/webpack-config/-/webpack-config-0.20.8.tgz#ae3477be56bcbe5ed7a74b951d7b8d904656a0fd"
-  integrity sha512-O0wXaEOLrZmNatojXuV+dhvzgck55S0uv22y/98uYgsVe1FVYwq/Y8nK5UfklfP0zhe8EGPqeemqUZGt9u6pDA==
+"@softwareventures/webpack-config@0.20.9":
+  version "0.20.9"
+  resolved "https://registry.yarnpkg.com/@softwareventures/webpack-config/-/webpack-config-0.20.9.tgz#fb7b3d28f296eb743e09b54163d565e7d8c3b2dc"
+  integrity sha512-z2Jcii/VYOY/YAFHLkd92K2Vi+h+QA4a3pBEKgH1cwk8VjCoac+vIdpLUnGqEPtPdcwkxnafJaWQ9r++JO5Nog==
   dependencies:
-    "@softwareventures/array" "0.20.0"
+    "@softwareventures/array" "0.21.0"
     "@softwareventures/tsconfig" "^1.0.0"
     clean-webpack-plugin "^3.0.0"
     css-loader "^2.1.0"
