@@ -279,10 +279,19 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
-"@softwareventures/array@0.20.0", "@softwareventures/array@^0.20.0":
+"@softwareventures/array@0.20.0":
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-0.20.0.tgz#0a18829805c49701eafbf391069557de74ab96c1"
   integrity sha512-yxfSI49S6sCysk2bI+T+rl1BOrWRao65OHP11rsCjM5H5csFGAOehqjg2Y+PCepAcYoki032Gwe/XatpaGKkwQ==
+  dependencies:
+    "@softwareventures/ordered" "^0.2.0"
+    dictionary-types "1.1.0"
+    tslib "^1.9.3"
+
+"@softwareventures/array@^0.21.0":
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-0.21.0.tgz#5bce31585442ca18656eb1b6c8b1ebf88943729b"
+  integrity sha512-4Fk3A0/owghqDe5xv6gd7YZ4vTGFTJEorsCAX6cqDP0PObYAH7hBaH/onePmFjFdQV3LjaS2g+w+zqtURBY86w==
   dependencies:
     "@softwareventures/ordered" "^0.2.0"
     dictionary-types "1.1.0"
@@ -8297,18 +8306,18 @@ selfsigned@^1.10.7:
   dependencies:
     node-forge "0.9.0"
 
-semantic-release-s3-upload@0.2.71:
-  version "0.2.71"
-  resolved "https://registry.yarnpkg.com/semantic-release-s3-upload/-/semantic-release-s3-upload-0.2.71.tgz#7eb236e366cc12ee5989f416a286f5eca09af94f"
-  integrity sha512-rP/t11qrlSJQMqTZNm195O681qtCanErdBnYH8OeshijXvgBFrxuOIZiqr/ih826Pt5GcykLPgmBqv47jcpJ7w==
+semantic-release-s3-upload@0.2.72:
+  version "0.2.72"
+  resolved "https://registry.yarnpkg.com/semantic-release-s3-upload/-/semantic-release-s3-upload-0.2.72.tgz#feee401022b76066e4429f37396b57b8d3e0a13f"
+  integrity sha512-WTN7uiYBtgCcWy8Hx4ArlsJOwNnq7Vn8ebsO+eD8AM8CPtPtpp0+DFLdpFqj6WlEbJ2/6rJRs+7h3zNcrxVW1Q==
   dependencies:
-    "@softwareventures/array" "^0.20.0"
+    "@softwareventures/array" "^0.21.0"
     "@softwareventures/chain" "^0.1.2"
     "@types/mime" "^2.0.1"
     aws-sdk "^2.553.0"
     globby "^11.0.0"
     mime "^2.4.4"
-    tslib "1.10.0"
+    tslib "1.11.1"
 
 semantic-release@17.0.4:
   version "17.0.4"
