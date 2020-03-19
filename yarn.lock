@@ -302,10 +302,10 @@
   resolved "https://registry.yarnpkg.com/@softwareventures/chain/-/chain-0.1.2.tgz#2cba555b5c916643c4956ba55b5c538041f20c27"
   integrity sha512-4eMBnTKQBLHQi7fbKtqf/i8LH5fsGb4JDTXDWo4o7TnUq+3TSdC2gqSopVxb7zQD/jgQTzyGSVDUcIFtlbjMeQ==
 
-"@softwareventures/dictionary@0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-0.4.0.tgz#a0bfab081533b4f5af6c4e89af4eec6920b21415"
-  integrity sha512-/wxNDLIcOitngOK1VuUdJxz51ZHJ3SAfht7lnT2UnPA/VolaoMxQz29b14OssBU+YKmu5UK+rQ4DG96ttwBtPA==
+"@softwareventures/dictionary@0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-0.6.0.tgz#ad3b29cb62c0d7f08aeff7aa68a04906da8f5f7f"
+  integrity sha512-miqRKpPLpAkHxrP0ImN1m9ee8/dO0ORWYSh6wEmZBCuUZqwOXvTDRU6HLZ3wFGezEi+JOj7hqGFyCU3Z0zyOvw==
   dependencies:
     dictionary-types "^1.2.0"
     tslib "1.11.1"
