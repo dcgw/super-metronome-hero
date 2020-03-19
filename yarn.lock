@@ -279,20 +279,10 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
-"@softwareventures/array@0.29.0":
+"@softwareventures/array@0.29.0", "@softwareventures/array@^0.29.0":
   version "0.29.0"
   resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-0.29.0.tgz#3ea13e91c1fca70305b11ae86f9447fc5be36e6e"
   integrity sha512-4Pe8TVpjnCjTYll1V4UY4id6DKy/1qlMFvidy/OZ/6JUbi7FaHbggRdGyNjV3UfkWfAVzUYBv5zByiATbVWb0w==
-  dependencies:
-    "@softwareventures/dictionary" "^0.6.0"
-    "@softwareventures/ordered" "^0.2.0"
-    dictionary-types "^1.2.0"
-    tslib "^1.9.3"
-
-"@softwareventures/array@^0.22.0":
-  version "0.22.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-0.22.0.tgz#ee0bf8ec35e76c1d9e6162ac52d9a198a7750e64"
-  integrity sha512-MoM1Cwg8a6CGET2F9AkT4A/Yb56po6xtq5HUVwgUv6CVyCMawJQ7s3aF+258DcbRrpoZLGjiJEQMD970SJFVSQ==
   dependencies:
     "@softwareventures/dictionary" "^0.6.0"
     "@softwareventures/ordered" "^0.2.0"
@@ -8313,12 +8303,12 @@ selfsigned@^1.10.7:
   dependencies:
     node-forge "0.9.0"
 
-semantic-release-s3-upload@0.2.73:
-  version "0.2.73"
-  resolved "https://registry.yarnpkg.com/semantic-release-s3-upload/-/semantic-release-s3-upload-0.2.73.tgz#d7e609b15bd64d17194e3ec9a0ef0491b310ca6f"
-  integrity sha512-rpOCanvl6E3jUq+MAeCkC4ALi7e+5cUSlWILf35NNaLQPjQBNjFtk2Q5h/y0XKB4tF27R8NMpXxlHb5jXMgwQQ==
+semantic-release-s3-upload@0.2.74:
+  version "0.2.74"
+  resolved "https://registry.yarnpkg.com/semantic-release-s3-upload/-/semantic-release-s3-upload-0.2.74.tgz#54b8dbf6b27008702712d4bc05ebe02d524c2d75"
+  integrity sha512-fP0qcg2Y5oja3EI5ogV/J4EazQUYiO7gb6HdOcRd4mLAqAHnXDAF1rUqbGSvdiHifbFJrgQKc1Lx5zbaX6F0dg==
   dependencies:
-    "@softwareventures/array" "^0.22.0"
+    "@softwareventures/array" "^0.29.0"
     "@softwareventures/chain" "^0.1.2"
     "@types/mime" "^2.0.1"
     aws-sdk "^2.553.0"
