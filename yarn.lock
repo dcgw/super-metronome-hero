@@ -288,13 +288,14 @@
     dictionary-types "1.1.0"
     tslib "^1.9.3"
 
-"@softwareventures/array@^0.21.0":
-  version "0.21.1"
-  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-0.21.1.tgz#747a7c5d9f45b960b71b6897115ce5b483627ea2"
-  integrity sha512-HbEqvEGtUPS8vBgmEvNe/e+/P51XJj768NHBb5uJLoy1DDXAXo1AV96w/Sj2JB8Wvlkc7uiRoYk86STBL1+PDw==
+"@softwareventures/array@^0.22.0":
+  version "0.22.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-0.22.0.tgz#ee0bf8ec35e76c1d9e6162ac52d9a198a7750e64"
+  integrity sha512-MoM1Cwg8a6CGET2F9AkT4A/Yb56po6xtq5HUVwgUv6CVyCMawJQ7s3aF+258DcbRrpoZLGjiJEQMD970SJFVSQ==
   dependencies:
+    "@softwareventures/dictionary" "^0.6.0"
     "@softwareventures/ordered" "^0.2.0"
-    dictionary-types "1.1.0"
+    dictionary-types "^1.2.0"
     tslib "^1.9.3"
 
 "@softwareventures/chain@^0.1.2":
@@ -302,7 +303,7 @@
   resolved "https://registry.yarnpkg.com/@softwareventures/chain/-/chain-0.1.2.tgz#2cba555b5c916643c4956ba55b5c538041f20c27"
   integrity sha512-4eMBnTKQBLHQi7fbKtqf/i8LH5fsGb4JDTXDWo4o7TnUq+3TSdC2gqSopVxb7zQD/jgQTzyGSVDUcIFtlbjMeQ==
 
-"@softwareventures/dictionary@0.6.0":
+"@softwareventures/dictionary@0.6.0", "@softwareventures/dictionary@^0.6.0":
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-0.6.0.tgz#ad3b29cb62c0d7f08aeff7aa68a04906da8f5f7f"
   integrity sha512-miqRKpPLpAkHxrP0ImN1m9ee8/dO0ORWYSh6wEmZBCuUZqwOXvTDRU6HLZ3wFGezEi+JOj7hqGFyCU3Z0zyOvw==
@@ -8316,12 +8317,12 @@ selfsigned@^1.10.7:
   dependencies:
     node-forge "0.9.0"
 
-semantic-release-s3-upload@0.2.72:
-  version "0.2.72"
-  resolved "https://registry.yarnpkg.com/semantic-release-s3-upload/-/semantic-release-s3-upload-0.2.72.tgz#feee401022b76066e4429f37396b57b8d3e0a13f"
-  integrity sha512-WTN7uiYBtgCcWy8Hx4ArlsJOwNnq7Vn8ebsO+eD8AM8CPtPtpp0+DFLdpFqj6WlEbJ2/6rJRs+7h3zNcrxVW1Q==
+semantic-release-s3-upload@0.2.73:
+  version "0.2.73"
+  resolved "https://registry.yarnpkg.com/semantic-release-s3-upload/-/semantic-release-s3-upload-0.2.73.tgz#d7e609b15bd64d17194e3ec9a0ef0491b310ca6f"
+  integrity sha512-rpOCanvl6E3jUq+MAeCkC4ALi7e+5cUSlWILf35NNaLQPjQBNjFtk2Q5h/y0XKB4tF27R8NMpXxlHb5jXMgwQQ==
   dependencies:
-    "@softwareventures/array" "^0.21.0"
+    "@softwareventures/array" "^0.22.0"
     "@softwareventures/chain" "^0.1.2"
     "@types/mime" "^2.0.1"
     aws-sdk "^2.553.0"
