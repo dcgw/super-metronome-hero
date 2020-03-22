@@ -16,7 +16,7 @@ export default class Tween extends Actor {
         this.time = 0;
     }
 
-    public play(): Promise<void> {
+    public async play(): Promise<void> {
         this.playing = true;
         this.time = 0;
 

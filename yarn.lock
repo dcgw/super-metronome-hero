@@ -319,10 +319,10 @@
   resolved "https://registry.yarnpkg.com/@softwareventures/tsconfig/-/tsconfig-1.0.0.tgz#987228780994db57e92332b4f595a81956fe7920"
   integrity sha512-uHOzxmiCwmml0Wk4GMhvafLgBjQCGUxKpiYYSqAo5EqTXew2EHqu8jEMlIvRarqon7pPugReixZaQdvAevqoZQ==
 
-"@softwareventures/tslint-rules@0.7.1":
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/@softwareventures/tslint-rules/-/tslint-rules-0.7.1.tgz#65aaa835d02ab9e4f7c4a1bd9b1285d895dc69e0"
-  integrity sha512-ZApnPK3vRKx5UY45FCa+gQTh9i3S5aEa91kBty49m+aIWZ38VKsfWJ56SkvFV2gACCXT7xxy3zjJ2Q2RJVq1aw==
+"@softwareventures/tslint-rules@0.8.1":
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/tslint-rules/-/tslint-rules-0.8.1.tgz#6e24457972a6f1b2455bc8129c075d9b59c78e62"
+  integrity sha512-ANXgdFVqKuwy9bVAxJAwynGKnLDqRcDtMUD5sIRChER0OMT0mvVa20SOmBi2aUdxOrqBkHt6zKOpfRgOOobq9A==
   dependencies:
     tslib "^1.9.3"
     tslint-eslint-rules "^5.4.0"
@@ -3662,7 +3662,6 @@ fsevents@^1.2.7:
   dependencies:
     bindings "^1.5.0"
     nan "^2.12.1"
-    node-pre-gyp "*"
 
 fsevents@~2.1.2:
   version "2.1.2"
@@ -6419,7 +6418,6 @@ npm@^6.10.3:
     cmd-shim "^3.0.3"
     columnify "~1.5.4"
     config-chain "^1.1.12"
-    debuglog "*"
     detect-indent "~5.0.0"
     detect-newline "^2.1.0"
     dezalgo "~1.0.3"
@@ -6434,7 +6432,6 @@ npm@^6.10.3:
     has-unicode "~2.0.1"
     hosted-git-info "^2.8.8"
     iferr "^1.0.2"
-    imurmurhash "*"
     infer-owner "^1.0.4"
     inflight "~1.0.6"
     inherits "^2.0.4"
@@ -6453,14 +6450,8 @@ npm@^6.10.3:
     libnpx "^10.2.2"
     lock-verify "^2.1.0"
     lockfile "^1.0.4"
-    lodash._baseindexof "*"
     lodash._baseuniq "~4.6.0"
-    lodash._bindcallback "*"
-    lodash._cacheindexof "*"
-    lodash._createcache "*"
-    lodash._getnative "*"
     lodash.clonedeep "~4.5.0"
-    lodash.restparam "*"
     lodash.union "~4.6.0"
     lodash.uniq "~4.5.0"
     lodash.without "~4.4.0"
