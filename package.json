@@ -33,7 +33,7 @@
     "@softwareventures/dictionary": "0.6.0",
     "@types/domready": "1.0.0",
     "domready": "1.0.8",
-    "excalibur": "0.23.0",
+    "excalibur": "0.24.1",
     "tslib": "1.11.1"
   },
   "devDependencies": {
