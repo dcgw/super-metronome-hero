@@ -47,7 +47,7 @@
     "semantic-release-s3-upload": "0.2.76",
     "ts-loader": "7.0.1",
     "ts-node": "8.9.1",
-    "tslint": "6.1.1",
+    "tslint": "6.1.2",
     "typescript": "3.8.3",
     "webpack": "4.43.0",
     "webpack-cli": "3.3.11",
