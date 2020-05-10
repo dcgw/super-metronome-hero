@@ -39,7 +39,7 @@
   "devDependencies": {
     "@semantic-release/exec": "5.0.0",
     "@softwareventures/tsconfig": "2.2.0",
-    "@softwareventures/tslint-rules": "0.8.1",
+    "@softwareventures/tslint-rules": "0.9.0",
     "@softwareventures/webpack-config": "0.20.13",
     "ava": "3.8.2",
     "cz-conventional-changelog": "3.2.0",
