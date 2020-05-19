@@ -8299,10 +8299,10 @@ selfsigned@^1.10.7:
   dependencies:
     node-forge "0.9.0"
 
-semantic-release-s3-upload@0.2.76:
-  version "0.2.76"
-  resolved "https://registry.yarnpkg.com/semantic-release-s3-upload/-/semantic-release-s3-upload-0.2.76.tgz#0e7d85604f1575cf982d09f08ea829b1e61e66ba"
-  integrity sha512-3ZoCWGnWeUtUJcL4KPVa+UZVH4v+tc+GdzIKeFqblkCI2a3WDfDPD6TSLJBzskJBRjkJmEVDHvfmoPiM2g2WWw==
+semantic-release-s3-upload@0.2.77:
+  version "0.2.77"
+  resolved "https://registry.yarnpkg.com/semantic-release-s3-upload/-/semantic-release-s3-upload-0.2.77.tgz#a9171b56b8816916ed91539884cdf6195fd4000a"
+  integrity sha512-dXpKOXt27ua/MuKG7463dr1BH2f0nEepYlbRwPL+Lc+Xx2BxUCJgNM5FrLuefR9Ll40NlhFiqGfoWhbaRnBmkA==
   dependencies:
     "@softwareventures/array" "^0.31.0"
     "@softwareventures/chain" "^0.1.2"
@@ -8310,7 +8310,7 @@ semantic-release-s3-upload@0.2.76:
     aws-sdk "^2.553.0"
     globby "^11.0.0"
     mime "^2.4.4"
-    tslib "1.11.1"
+    tslib "2.0.0"
 
 semantic-release@17.0.7:
   version "17.0.7"
