@@ -299,13 +299,13 @@
   resolved "https://registry.yarnpkg.com/@softwareventures/chain/-/chain-0.1.2.tgz#2cba555b5c916643c4956ba55b5c538041f20c27"
   integrity sha512-4eMBnTKQBLHQi7fbKtqf/i8LH5fsGb4JDTXDWo4o7TnUq+3TSdC2gqSopVxb7zQD/jgQTzyGSVDUcIFtlbjMeQ==
 
-"@softwareventures/dictionary@0.6.0", "@softwareventures/dictionary@^0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-0.6.0.tgz#ad3b29cb62c0d7f08aeff7aa68a04906da8f5f7f"
-  integrity sha512-miqRKpPLpAkHxrP0ImN1m9ee8/dO0ORWYSh6wEmZBCuUZqwOXvTDRU6HLZ3wFGezEi+JOj7hqGFyCU3Z0zyOvw==
+"@softwareventures/dictionary@0.6.1", "@softwareventures/dictionary@^0.6.0":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-0.6.1.tgz#f6d8c4abf0efc47ff52c3127261ca976029ff008"
+  integrity sha512-7AsQJBfZmAIzbNf/9JY6aiETxCwKus5uLIfVMYHi1C4xzxPxjK+w7ppxd+mInyqIfNqGZr3JHwiXVfIwNH3uBA==
   dependencies:
     dictionary-types "^1.2.0"
-    tslib "1.11.1"
+    tslib "2.0.0"
 
 "@softwareventures/ordered@^0.2.0":
   version "0.2.1"
@@ -9365,11 +9365,6 @@ ts-node@8.10.1:
     make-error "^1.1.1"
     source-map-support "^0.5.17"
     yn "3.1.1"
-
-tslib@1.11.1:
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.11.1.tgz#eb15d128827fbee2841549e171f45ed338ac7e35"
-  integrity sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
 
 tslib@1.9.0:
   version "1.9.0"
