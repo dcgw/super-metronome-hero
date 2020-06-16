@@ -40,7 +40,7 @@
     "@semantic-release/exec": "5.0.0",
     "@softwareventures/tsconfig": "2.2.0",
     "@softwareventures/tslint-rules": "0.9.1",
-    "@softwareventures/webpack-config": "0.20.14",
+    "@softwareventures/webpack-config": "0.20.15",
     "ava": "3.9.0",
     "cz-conventional-changelog": "3.2.0",
     "semantic-release": "17.0.8",
