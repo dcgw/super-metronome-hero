@@ -548,7 +548,7 @@
   resolved "https://registry.yarnpkg.com/@softwareventures/chain/-/chain-0.1.2.tgz#2cba555b5c916643c4956ba55b5c538041f20c27"
   integrity sha512-4eMBnTKQBLHQi7fbKtqf/i8LH5fsGb4JDTXDWo4o7TnUq+3TSdC2gqSopVxb7zQD/jgQTzyGSVDUcIFtlbjMeQ==
 
-"@softwareventures/dictionary@0.7.1":
+"@softwareventures/dictionary@0.7.1", "@softwareventures/dictionary@^0.7.1":
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-0.7.1.tgz#e42e6de9a3e73781de13130d0c0668e945f79e48"
   integrity sha512-RaAhQLzV6s2ZGod81BLDV9wxhXOpLrnhC8MaYJ4yZCA8YOzE1ty+sKr5m+wkcAFwZyLJaNyUF84SK/6ltlSKQQ==
@@ -589,17 +589,17 @@
     tslib "^1.9.3 || ^2.0.0"
     tslint-eslint-rules "^5.4.0"
 
-"@softwareventures/webpack-config@0.20.15":
-  version "0.20.15"
-  resolved "https://registry.yarnpkg.com/@softwareventures/webpack-config/-/webpack-config-0.20.15.tgz#f9eecba063a40a8ba8e8c4fb363ff4ca7c11b7eb"
-  integrity sha512-OQwtpIj1RFR/2sWwYHl5SSYiYHrVt5heeZdmjlI48WW/ZufA4QL/ZcjavINs4yIU8xDyQenO/JYKnZ3MXi8Q8w==
+"@softwareventures/webpack-config@0.20.16":
+  version "0.20.16"
+  resolved "https://registry.yarnpkg.com/@softwareventures/webpack-config/-/webpack-config-0.20.16.tgz#1a6d02eae2f78350bd4ae5e92278ceac2bb7c50e"
+  integrity sha512-o9URgjHGgLGZlr1ojjvbz6r2BZuLqU1T5eLJEcdMthq+MD5lJGocoe7qF4LmI5seFeqI+MlvTj2HK1OTnJhW/Q==
   dependencies:
     "@softwareventures/array" "0.33.0"
+    "@softwareventures/dictionary" "^0.7.1"
     "@softwareventures/tsconfig" "^1.0.0"
     clean-webpack-plugin "^3.0.0"
     css-loader "^2.1.0"
     cssnano "^4.1.10"
-    dictionary-types "1.2.0"
     file-loader "^4.0.0"
     html-webpack-plugin "^3.2.0"
     json-typescript "1.1.2"
@@ -3317,7 +3317,7 @@ dezalgo@^1.0.0, dezalgo@~1.0.3:
     asap "^2.0.0"
     wrappy "1"
 
-dictionary-types@1.2.0, dictionary-types@^1.2.0:
+dictionary-types@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/dictionary-types/-/dictionary-types-1.2.0.tgz#187d89b63b044a65a5e4aed0f2345271f086200d"
   integrity sha512-zeP98fC8l+xwHMCw+q9spJCnDrm4ou3Vyk9yNihjJeJD9Mi+zuFxtyO6kAmX5b5d49mavZ6VYvVFF3Ap6hCzBw==
