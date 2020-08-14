@@ -540,12 +540,12 @@
     tar-stream "^2.1.2"
     tmp "^0.1.0"
 
-"@softwareventures/array@0.33.0":
-  version "0.33.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-0.33.0.tgz#447034897724d30307b631d63af73d29917f5265"
-  integrity sha512-gmUV+iBoA1e8pDMJ2awN9g/rNT76OOqA4hjceobrbBTJ4ZTDUpGJ5FnqE3SOc3jORmzPFr7ggnizUVlmL4L+cQ==
+"@softwareventures/array@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-2.0.0.tgz#37e6399ba00f137ccbbf3777ff1cfde740296750"
+  integrity sha512-FsIyQgbvHJEamdA/maibJ9p50u5ehRe+bFzVb/OSkjMemlzQ98EqRwTUHIf/YOsb5gPmQJxp9yTg0PMMSabYSg==
   dependencies:
-    "@softwareventures/dictionary" "^0.6.0"
+    "@softwareventures/dictionary" "^0.6.0 || ^0.7.0"
     "@softwareventures/ordered" "^0.2.0"
     dictionary-types "^1.2.0"
     tslib "^1.9.3 || ^2.0.0"
@@ -569,14 +569,6 @@
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-0.7.1.tgz#e42e6de9a3e73781de13130d0c0668e945f79e48"
   integrity sha512-RaAhQLzV6s2ZGod81BLDV9wxhXOpLrnhC8MaYJ4yZCA8YOzE1ty+sKr5m+wkcAFwZyLJaNyUF84SK/6ltlSKQQ==
-  dependencies:
-    dictionary-types "^1.2.0"
-    tslib "2.0.0"
-
-"@softwareventures/dictionary@^0.6.0":
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-0.6.1.tgz#f6d8c4abf0efc47ff52c3127261ca976029ff008"
-  integrity sha512-7AsQJBfZmAIzbNf/9JY6aiETxCwKus5uLIfVMYHi1C4xzxPxjK+w7ppxd+mInyqIfNqGZr3JHwiXVfIwNH3uBA==
   dependencies:
     dictionary-types "^1.2.0"
     tslib "2.0.0"
@@ -606,12 +598,12 @@
     tslib "^1.9.3 || ^2.0.0"
     tslint-eslint-rules "^5.4.0"
 
-"@softwareventures/webpack-config@0.20.16":
-  version "0.20.16"
-  resolved "https://registry.yarnpkg.com/@softwareventures/webpack-config/-/webpack-config-0.20.16.tgz#1a6d02eae2f78350bd4ae5e92278ceac2bb7c50e"
-  integrity sha512-o9URgjHGgLGZlr1ojjvbz6r2BZuLqU1T5eLJEcdMthq+MD5lJGocoe7qF4LmI5seFeqI+MlvTj2HK1OTnJhW/Q==
+"@softwareventures/webpack-config@0.20.17":
+  version "0.20.17"
+  resolved "https://registry.yarnpkg.com/@softwareventures/webpack-config/-/webpack-config-0.20.17.tgz#0ff415e3d9efd5b02c768f524a20949c3f37682c"
+  integrity sha512-lTRAH1RHTxLJfisk8aakHAWApuHgsQncEDqGLjYepVd+X1rb4xYaneyE2eLi/jmux+UZshtit2j/ir/PtboPfg==
   dependencies:
-    "@softwareventures/array" "0.33.0"
+    "@softwareventures/array" "2.0.0"
     "@softwareventures/dictionary" "^0.7.1"
     "@softwareventures/tsconfig" "^1.0.0"
     clean-webpack-plugin "^3.0.0"
