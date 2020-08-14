@@ -540,10 +540,20 @@
     tar-stream "^2.1.2"
     tmp "^0.1.0"
 
-"@softwareventures/array@2.0.0", "@softwareventures/array@^0.31.0 || ^0.33.0 || ^2.0.0":
+"@softwareventures/array@2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-2.0.0.tgz#37e6399ba00f137ccbbf3777ff1cfde740296750"
   integrity sha512-FsIyQgbvHJEamdA/maibJ9p50u5ehRe+bFzVb/OSkjMemlzQ98EqRwTUHIf/YOsb5gPmQJxp9yTg0PMMSabYSg==
+  dependencies:
+    "@softwareventures/dictionary" "^0.6.0 || ^0.7.0"
+    "@softwareventures/ordered" "^0.2.0"
+    dictionary-types "^1.2.0"
+    tslib "^1.9.3 || ^2.0.0"
+
+"@softwareventures/array@^0.31.0 || ^0.33.0 || ^2.0.0 || ^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-3.0.0.tgz#7f60f33ce5203127ec9197693563e542fc20347f"
+  integrity sha512-ChQiNHil9L9vXEtV7YtwRUNUtV1LCsUhc81ipzubofcalGwON3+Q+uW81dmZoGQdl0bFgH6ETU0vjtrTF9jaig==
   dependencies:
     "@softwareventures/dictionary" "^0.6.0 || ^0.7.0"
     "@softwareventures/ordered" "^0.2.0"
@@ -9335,12 +9345,12 @@ selfsigned@^1.10.7:
   dependencies:
     node-forge "0.9.0"
 
-semantic-release-s3-upload@0.2.79:
-  version "0.2.79"
-  resolved "https://registry.yarnpkg.com/semantic-release-s3-upload/-/semantic-release-s3-upload-0.2.79.tgz#8d3714e0ced62f971c62fbdaf141c16b7b940b01"
-  integrity sha512-VDK93L4xONjknQ1whrf4kcd7EFnSU4IvL/gwIFnedyeTwqbN7Xp9ALe+9QAe5eFNMUypZNDsV+kF++tRP7t/fw==
+semantic-release-s3-upload@0.2.80:
+  version "0.2.80"
+  resolved "https://registry.yarnpkg.com/semantic-release-s3-upload/-/semantic-release-s3-upload-0.2.80.tgz#d3dd0a5b8ab74d4feb71bdd2b8a80b1c0df25788"
+  integrity sha512-EavaTVdwF5bsF3Xy37ngbWHc70NWIEh3lyGTDH3S7cb/0b/EXKsb9yDV7bigHdvHgJLrjIhJ5cQHbzGH/Nd/Xg==
   dependencies:
-    "@softwareventures/array" "^0.31.0 || ^0.33.0 || ^2.0.0"
+    "@softwareventures/array" "^0.31.0 || ^0.33.0 || ^2.0.0 || ^3.0.0"
     "@softwareventures/chain" "^0.1.2"
     "@types/mime" "^2.0.1"
     aws-sdk "^2.553.0"
