@@ -42,7 +42,7 @@
     "@softwareventures/tslint-rules": "0.9.1",
     "@softwareventures/webpack-config": "0.20.17",
     "ava": "3.12.1",
-    "cz-conventional-changelog": "3.2.1",
+    "cz-conventional-changelog": "3.3.0",
     "semantic-release": "17.1.1",
     "semantic-release-s3-upload": "0.2.80",
     "ts-loader": "8.0.3",
