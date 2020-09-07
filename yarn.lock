@@ -296,17 +296,7 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
-"@softwareventures/array@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-2.0.0.tgz#37e6399ba00f137ccbbf3777ff1cfde740296750"
-  integrity sha512-FsIyQgbvHJEamdA/maibJ9p50u5ehRe+bFzVb/OSkjMemlzQ98EqRwTUHIf/YOsb5gPmQJxp9yTg0PMMSabYSg==
-  dependencies:
-    "@softwareventures/dictionary" "^0.6.0 || ^0.7.0"
-    "@softwareventures/ordered" "^0.2.0"
-    dictionary-types "^1.2.0"
-    tslib "^1.9.3 || ^2.0.0"
-
-"@softwareventures/array@^0.31.0 || ^0.33.0 || ^2.0.0 || ^3.0.0":
+"@softwareventures/array@3.1.0", "@softwareventures/array@^0.31.0 || ^0.33.0 || ^2.0.0 || ^3.0.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-3.1.0.tgz#27d05b4d5634fd8df540a11a9ca33502e00b5d21"
   integrity sha512-XT8sJcS7tryBoN1WJChUu4dmpaAhHOqIBTISGnjNXvVfXEz9xxtTcHmseXF7SvMd7ozk2VlftyB/J/K1CC6CEw==
@@ -354,12 +344,12 @@
     tslib "^1.9.3 || ^2.0.0"
     tslint-eslint-rules "^5.4.0"
 
-"@softwareventures/webpack-config@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/webpack-config/-/webpack-config-1.0.0.tgz#c6331bd3cd0bee4d5ca2d20ca8cfb40a8d3bcf84"
-  integrity sha512-1ofTDS/FuBe6a1p5AOXGF3HcLIfbgYnhs89bWW92qf0g5uYnS7onr2+Fxudk/c+WR7H7PZEFwC2ohLjndA95iQ==
+"@softwareventures/webpack-config@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/webpack-config/-/webpack-config-1.0.1.tgz#ea8b17a9236a3c6554a989a1614e09dcb6ece0b4"
+  integrity sha512-FvrmqiEQYSR4A9seRcSzEN/UVIGEh2kH8qP5Yr3Pjcw7+JTApZG/mGsCDG73Y0aC8lmyt0SbEHxyGJslCkrXWw==
   dependencies:
-    "@softwareventures/array" "2.0.0"
+    "@softwareventures/array" "3.1.0"
     "@softwareventures/dictionary" "^0.7.1"
     "@softwareventures/tsconfig" "^1.0.0"
     clean-webpack-plugin "^3.0.0"
