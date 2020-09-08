@@ -326,10 +326,10 @@
   dependencies:
     tslib "^1.9.3 || ^2.0.0"
 
-"@softwareventures/tsconfig@3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/tsconfig/-/tsconfig-3.0.0.tgz#0e5e4c5a3f795e9e460d7493c99f0a3cffaec524"
-  integrity sha512-RNdSmDjb7AIXHQ3b5EHnMXTBb94phLuxcnx0DKT1u9taaSLaM2Tc5V55xCKOyXcYL50FV5EEQ6rROsjB0LEmXQ==
+"@softwareventures/tsconfig@4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/tsconfig/-/tsconfig-4.0.0.tgz#3cd80d890dc25b733a3af6f9927cb800829761eb"
+  integrity sha512-LcdBuayEjv6H7TgaknFuV5BNdxUVbntTlSQ8TJ0zVL/8GFOUC4qDtRIqEFKbJFXt6hDGlUr6tYaEeDEAACHEIw==
 
 "@softwareventures/tsconfig@^1.0.0":
   version "1.0.0"
