@@ -12,7 +12,7 @@ import {
 } from "excalibur";
 import Game from "../game";
 import resources from "../resources";
-import Timer from "../timer";
+import Timer from "../metronome/timer";
 
 export default class Title extends Scene {
     private readonly smallTimer = new Timer(60);

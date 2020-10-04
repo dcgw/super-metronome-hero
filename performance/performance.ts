@@ -1,7 +1,7 @@
 import {Actor, EasingFunctions, Engine, Input, Scene, Sound, Sprite, Vector} from "excalibur";
 import Game from "../game";
 import resources from "../resources";
-import Timer from "../timer";
+import Timer from "../metronome/timer";
 import Tween from "../tween";
 import Arm from "./arm";
 
