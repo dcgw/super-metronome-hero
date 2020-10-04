@@ -1,7 +1,8 @@
-import {Actor, EasingFunctions, Engine, Input, Scene, Sound, Sprite, Vector} from "excalibur";
+import {Actor, Color, EasingFunctions, Engine, Input, Scene, Sound, Sprite, Vector} from "excalibur";
 import Game from "../game";
 import resources from "../resources";
 import Timer from "../metronome/timer";
+import Floater from "./floater";
 import Tween from "./tween";
 import Arm from "./arm";
 
@@ -258,7 +259,7 @@ export class Performance extends Scene {
 
                     // What kind of hit did we register?
                     if (this.timer.offBeatMs < (1 / 60) * 1000) {
-                        // TODO: Float "Perfect!"
+                        this.add(new Floater("Perfect!", Color.fromHex("d3cd08")));
                         this.multiplier += 4;
                         // TODO: Update and fade multiplier text
                         resources.performanceChime.play().then(
@@ -266,18 +267,18 @@ export class Performance extends Scene {
                             reason => console.error("", reason)
                         );
                     } else if (this.timer.offBeatMs < (3 / 60) * 1000) {
-                        // TODO: Float "Good"
+                        this.add(new Floater("Good", Color.fromHex("0bd308")));
                     } else if (this.timer.offBeatMs < (4 / 60) * 1000) {
                         // Do nothing
                     } else if (this.timer.offBeatMs < (7 / 60) * 1000) {
-                        // TODO: Float "Miss"
+                        this.add(new Floater("Miss", Color.fromHex("5368b2")));
                     } else if (this.timer.offBeatMs < (8 / 60) * 1000) {
                         // Do nothing
                         // TODO: Is this really intended?
                     } else if (this.timer.offBeatMs < (10 / 60) * 1000) {
-                        // TODO: Float "Poor"
+                        this.add(new Floater("Poor", Color.fromHex("c41b18")));
                     } else {
-                        // TODO: Float "Awful!"
+                        this.add(new Floater("Awful!", Color.fromHex("c41b18")));
                     }
 
                     // Score some points if we hit.
