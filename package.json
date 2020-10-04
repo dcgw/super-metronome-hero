@@ -25,9 +25,11 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "webpack --env.production",
+    "fix": "tsc && eslint . --fix && prettier --write .",
+    "lint": "tsc && eslint . && prettier --check .",
     "semantic-release": "semantic-release",
     "start": "webpack-dev-server --open",
-    "test": "tslint --project . && ava"
+    "test": "ava"
   },
   "dependencies": {
     "@softwareventures/dictionary": "0.7.1",
@@ -37,21 +39,28 @@
     "tslib": "2.0.1"
   },
   "devDependencies": {
+    "@softwareventures/eslint-config": "3.3.0",
+    "@softwareventures/prettier-config": "1.0.2",
     "@semantic-release/exec": "5.0.0",
-    "@softwareventures/tslint-rules": "0.9.1",
     "@softwareventures/webpack-config": "2.0.0",
     "ava": "3.13.0",
     "cz-conventional-changelog": "3.3.0",
+    "eslint": "7.10.0",
+    "prettier": "2.1.2",
     "semantic-release": "17.1.2",
     "semantic-release-s3-upload": "0.2.80",
     "ts-loader": "8.0.4",
     "ts-node": "9.0.0",
-    "tslint": "6.1.3",
     "typescript": "4.0.3",
     "webpack": "4.44.2",
     "webpack-cli": "3.3.12",
     "webpack-dev-server": "3.11.0"
   },
+  "eslintConfig": {
+    "root": true,
+    "extends": "@softwareventures"
+  },
+  "prettier": "@softwareventures/prettier-config",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
