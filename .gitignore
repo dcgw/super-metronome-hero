@@ -1,5 +1,6 @@
 /.idea/workspace.xml
 /.idea/tasks.xml
 /node_modules
+/dist
 yarn-error.log
 npm-debug.log
