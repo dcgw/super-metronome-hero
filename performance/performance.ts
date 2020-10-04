@@ -2,7 +2,7 @@ import {Actor, EasingFunctions, Engine, Input, Scene, Sound, Sprite, Vector} fro
 import Game from "../game";
 import resources from "../resources";
 import Timer from "../metronome/timer";
-import Tween from "../tween";
+import Tween from "./tween";
 import Arm from "./arm";
 
 const introDuration = (30 / 60) * 1000;
