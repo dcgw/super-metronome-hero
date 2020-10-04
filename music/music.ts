@@ -1,7 +1,7 @@
 import {Actor, Engine} from "excalibur";
 import resources from "../resources";
 
-const fadeTime = 30 / 60 * 1000;
+const fadeTime = (30 / 60) * 1000;
 
 resources.music.loop = true;
 
@@ -24,9 +24,10 @@ export default class Music extends Actor {
     public play(): void {
         if (!resources.music.isPlaying()) {
             this.playing = true;
-            resources.music.play()
-                .then(() => void 0,
-                    reason => console.error("", reason));
+            resources.music.play().then(
+                () => void 0,
+                reason => console.error("", reason)
+            );
         } else if (!this.playing) {
             this.time = 0;
             this.playing = true;

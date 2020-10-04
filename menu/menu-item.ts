@@ -116,17 +116,12 @@ export default class MenuItem extends Actor {
         this.add(this.subText);
     }
 
-
     public update(engine: Engine, delta: number): void {
         super.update(engine, delta);
 
-        this.box.setDrawing(
-            (this.locked ? "locked" : "unlocked")
-            + (this.selected ? "-glow" : ""));
+        this.box.setDrawing((this.locked ? "locked" : "unlocked") + (this.selected ? "-glow" : ""));
 
-        this.rating.setDrawing(this.locked
-            ? "locked"
-            : this.stars.toString(10));
+        this.rating.setDrawing(this.locked ? "locked" : this.stars.toString(10));
 
         this.lockedText.visible = this.locked;
         this.labelText.visible = this.subText.visible = !this.locked;

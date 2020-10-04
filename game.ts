@@ -33,12 +33,14 @@ export default class Game {
     public start(): void {
         const loader = new Loader(values(resources));
 
-        this.engine.start(loader)
-            .then(() => {
+        this.engine.start(loader).then(
+            () => {
                 this.engine.addScene("title", new Title(this));
                 this.engine.addScene("menu", new Menu(this));
                 this.engine.addScene("performance", new Performance(this));
                 this.engine.goToScene("title");
-            }, reason => console.error("", reason));
+            },
+            reason => console.error("", reason)
+        );
     }
 }

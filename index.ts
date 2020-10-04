@@ -12,10 +12,9 @@ domready(() => {
     engine.canvas.style.imageRendering = "pixelated";
 
     const scale = (): void => {
-        const scaleFactor = Math.floor(Math.min(
-            window.innerWidth / game.width,
-            window.innerHeight / game.height
-        ));
+        const scaleFactor = Math.floor(
+            Math.min(window.innerWidth / game.width, window.innerHeight / game.height)
+        );
 
         const scaledWidth = game.width * scaleFactor;
         const scaledHeight = game.height * scaleFactor;

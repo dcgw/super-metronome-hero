@@ -81,7 +81,7 @@ const resources = {
     titleSmallArm: new Texture(titleSmallArm)
 };
 
-forEach(resources as Record<string, Resource<unknown>>, (resource) => {
+forEach(resources as Record<string, Resource<unknown>>, resource => {
     resource.bustCache = false;
 });
 

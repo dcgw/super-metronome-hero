@@ -47,9 +47,10 @@ export default class Menu extends Scene {
         super.update(engine, delta);
 
         if (this.game.engine.input.keyboard.wasPressed(13 /*Enter*/)) {
-            resources.menuSelect.play()
-                .then(() => void 0,
-                    reason => console.error("", reason));
+            resources.menuSelect.play().then(
+                () => void 0,
+                reason => console.error("", reason)
+            );
 
             const selectedItem = this.items[this.selectedIndex];
             this.game.tempo = selectedItem.tempo;
@@ -57,16 +58,18 @@ export default class Menu extends Scene {
 
             this.game.engine.goToScene("performance");
         } else {
-            const itemChange =
-                this.game.engine.input.keyboard.wasPressed(Input.Keys.Up) ? -1 :
-                    this.game.engine.input.keyboard.wasPressed(Input.Keys.Down) ? 1 :
-                        0;
+            const itemChange = this.game.engine.input.keyboard.wasPressed(Input.Keys.Up)
+                ? -1
+                : this.game.engine.input.keyboard.wasPressed(Input.Keys.Down)
+                ? 1
+                : 0;
 
             if (itemChange !== 0) {
                 this.items[this.selectedIndex].selected = false;
-                resources.menuBlip.play()
-                    .then(() => void 0,
-                        reason => console.error("", reason));
+                resources.menuBlip.play().then(
+                    () => void 0,
+                    reason => console.error("", reason)
+                );
                 this.selectedIndex += itemChange;
 
                 if (this.selectedIndex < 0) {
@@ -82,19 +85,33 @@ export default class Menu extends Scene {
                 selectedItem.selected = true;
 
                 if (selectedItem.body.collider.bounds.bottom > this.camera.viewport.bottom) {
-                    this.camera.move(
-                        new Vector(this.game.width * 0.5, selectedItem.pos.y + 150 - this.game.height * 0.5),
-                        20 / 60 * 1000,
-                        EasingFunctions.EaseOutCubic)
-                        .then(() => void 0,
-                            reason => console.error("", reason));
+                    this.camera
+                        .move(
+                            new Vector(
+                                this.game.width * 0.5,
+                                selectedItem.pos.y + 150 - this.game.height * 0.5
+                            ),
+                            (20 / 60) * 1000,
+                            EasingFunctions.EaseOutCubic
+                        )
+                        .then(
+                            () => void 0,
+                            reason => console.error("", reason)
+                        );
                 } else if (selectedItem.body.collider.bounds.top < this.camera.viewport.top) {
-                    this.camera.move(
-                        new Vector(this.game.width * 0.5, selectedItem.pos.y - 50 + this.game.height * 0.5),
-                        20 / 60 * 1000,
-                        EasingFunctions.EaseOutCubic)
-                        .then(() => void 0,
-                            reason => console.error("", reason));
+                    this.camera
+                        .move(
+                            new Vector(
+                                this.game.width * 0.5,
+                                selectedItem.pos.y - 50 + this.game.height * 0.5
+                            ),
+                            (20 / 60) * 1000,
+                            EasingFunctions.EaseOutCubic
+                        )
+                        .then(
+                            () => void 0,
+                            reason => console.error("", reason)
+                        );
                 }
             }
         }

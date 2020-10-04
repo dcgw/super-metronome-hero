@@ -7,8 +7,7 @@ export default class Timer {
 
     private running = false;
 
-    public constructor(private bpm: number) {
-    }
+    public constructor(private bpm: number) {}
 
     public update(delta: number): void {
         if (this.running) {
@@ -17,8 +16,8 @@ export default class Timer {
             const previousBeat = this.beat;
             this.beat = this.time / period;
             this.isBeat = Math.floor(this.beat) > Math.floor(previousBeat);
-            this.isOffBeat = this.beat > 1
-                && Math.floor(this.beat + 0.5) > Math.floor(previousBeat + 0.5);
+            this.isOffBeat =
+                this.beat > 1 && Math.floor(this.beat + 0.5) > Math.floor(previousBeat + 0.5);
             this.offBeatMs = Math.abs(this.time - Math.round(this.beat) * period);
         }
     }

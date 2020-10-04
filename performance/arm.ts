@@ -17,18 +17,19 @@ export default class Arm extends Actor {
     }
 
     public miss(): void {
-        this.shake = 1 / 60 * 1000;
-        resources.performanceMiss.play()
-            .then(() => void 0,
-                reason => console.error("", reason));
+        this.shake = (1 / 60) * 1000;
+        resources.performanceMiss.play().then(
+            () => void 0,
+            reason => console.error("", reason)
+        );
     }
 
     public tickTock(): void {
         this.tick = !this.tick;
-        (this.tick ? resources.performanceTick : resources.performanceTock)
-            .play()
-            .then(() => void 0,
-                reason => console.error("", reason));
+        (this.tick ? resources.performanceTick : resources.performanceTock).play().then(
+            () => void 0,
+            reason => console.error("", reason)
+        );
     }
 
     public update(engine: Engine, delta: number): void {
@@ -48,6 +49,6 @@ export default class Arm extends Actor {
     }
 
     public beat(beat: number): void {
-        this.rotation = Math.sin(beat * Math.PI) * 30 / 180 * Math.PI;
+        this.rotation = ((Math.sin(beat * Math.PI) * 30) / 180) * Math.PI;
     }
 }

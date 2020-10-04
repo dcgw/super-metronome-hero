@@ -1,4 +1,15 @@
-import {Actor, BaseAlign, Color, Engine, FontUnit, Label, Scene, TextAlign, Traits, Vector} from "excalibur";
+import {
+    Actor,
+    BaseAlign,
+    Color,
+    Engine,
+    FontUnit,
+    Label,
+    Scene,
+    TextAlign,
+    Traits,
+    Vector
+} from "excalibur";
 import Game from "../game";
 import resources from "../resources";
 import Timer from "../timer";
@@ -91,8 +102,8 @@ export default class Title extends Scene {
         this.smallTimer.update(delta);
         this.bigTimer.update(delta);
 
-        this.smallArm.rotation = Math.sin(this.smallTimer.beat * Math.PI) * 40 / 180 * Math.PI;
-        this.bigArm.rotation = Math.sin(this.bigTimer.beat * Math.PI) * 50 / 180 * Math.PI;
+        this.smallArm.rotation = ((Math.sin(this.smallTimer.beat * Math.PI) * 40) / 180) * Math.PI;
+        this.bigArm.rotation = ((Math.sin(this.bigTimer.beat * Math.PI) * 50) / 180) * Math.PI;
     }
 
     private readonly onKeyPress = (): void => this.game.engine.goToScene("menu");
