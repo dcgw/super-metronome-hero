@@ -1,3 +1,17 @@
+/* eslint-disable no-duplicate-imports */
+
+declare module "*.css" {
+    import {Dictionary} from "dictionary-types";
+    const mappings: Dictionary<string>;
+    export = mappings;
+}
+
+declare module "*.less" {
+    import {Dictionary} from "dictionary-types";
+    const mappings: Dictionary<string>;
+    export = mappings;
+}
+
 declare module "*.jpeg" {
     const url: string;
     export default url;
@@ -39,6 +53,11 @@ declare module "*.ogv" {
 }
 
 declare module "*.png" {
+    const url: string;
+    export default url;
+}
+
+declare module "*.svg" {
     const url: string;
     export default url;
 }
