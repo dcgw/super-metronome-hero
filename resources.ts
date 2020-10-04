@@ -1,5 +1,5 @@
 import {forEach} from "@softwareventures/dictionary";
-import {Resource, Sound, Texture} from "excalibur";
+import {Sound, Texture} from "excalibur";
 import menuBlipMp3 from "./menu/blip.mp3";
 import menuBlipOgg from "./menu/blip.ogg";
 import menuItemRatings from "./menu/item-ratings.png";
@@ -81,7 +81,7 @@ const resources = {
     titleSmallArm: new Texture(titleSmallArm)
 };
 
-forEach(resources as Record<string, Resource<unknown>>, resource => {
+forEach(resources, resource => {
     resource.bustCache = false;
 });
 
