@@ -20,15 +20,13 @@ export default class Game {
     public stars = 0;
 
     public readonly engine = new Engine({
-        width: this.width,
-        height: this.height,
+        viewport: {width: this.width, height: this.height},
+        resolution: {width: this.width, height: this.height},
         displayMode: DisplayMode.Fixed,
+        antialiasing: false,
+        suppressHiDPIScaling: true,
         suppressPlayButton: true
     });
-
-    public constructor() {
-        this.engine.canvas.style.position = "absolute";
-    }
 
     public start(): void {
         const loader = new Loader(values(resources));
