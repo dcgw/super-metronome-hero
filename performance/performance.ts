@@ -84,12 +84,12 @@ export class Performance extends Scene {
         this.transition(State.done);
     });
 
-    private readonly countdown: ReadonlyArray<Sound> = [
+    private readonly countdown: readonly Sound[] = [
         resources.performanceOne, resources.performanceTwo,
         resources.performanceThree, resources.performanceFour
     ];
 
-    constructor(private readonly game: Game) {
+    public constructor(private readonly game: Game) {
         super(game.engine);
         this.timer = new Timer(0);
 

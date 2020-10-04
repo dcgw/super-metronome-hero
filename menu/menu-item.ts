@@ -82,7 +82,7 @@ export default class MenuItem extends Actor {
         visible: false
     });
 
-    constructor(options: Options) {
+    public constructor(options: Options) {
         super({
             pos: options.pos,
             width: boxWidth,
@@ -112,7 +112,7 @@ export default class MenuItem extends Actor {
         this.labelText.text = options.tempo;
         this.add(this.labelText);
 
-        this.subText.text = options.bpm + " bpm";
+        this.subText.text = `${options.bpm} bpm`;
         this.add(this.subText);
     }
 

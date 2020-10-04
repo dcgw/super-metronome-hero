@@ -1,4 +1,4 @@
-import domready from "domready";
+import domready = require("domready");
 import Game from "./game";
 import {version} from "./package.json";
 
@@ -11,7 +11,7 @@ domready(() => {
     engine.canvas.style.position = "absolute";
     engine.canvas.style.imageRendering = "pixelated";
 
-    function scale(): void {
+    const scale = (): void => {
         const scaleFactor = Math.floor(Math.min(
             window.innerWidth / game.width,
             window.innerHeight / game.height
@@ -21,13 +21,13 @@ domready(() => {
         const scaledHeight = game.height * scaleFactor;
 
         engine.canvas.tabIndex = 0;
-        engine.canvas.style.left = Math.floor((window.innerWidth - scaledWidth) * 0.5) + "px";
-        engine.canvas.style.top = Math.floor((window.innerHeight - scaledHeight) * 0.5) + "px";
-        engine.canvas.style.width = scaledWidth + "px";
-        engine.canvas.style.height = scaledHeight + "px";
-    }
+        engine.canvas.style.left = `${Math.floor((window.innerWidth - scaledWidth) * 0.5)}px`;
+        engine.canvas.style.top = `${Math.floor((window.innerHeight - scaledHeight) * 0.5)}px`;
+        engine.canvas.style.width = `${scaledWidth}px`;
+        engine.canvas.style.height = `${scaledHeight}px`;
+    };
 
-    function onKey(event: KeyboardEvent): void {
+    const onKey = (event: KeyboardEvent): void => {
         engine.canvas.focus();
 
         switch (event.code) {
@@ -41,15 +41,15 @@ domready(() => {
             case "NumpadEnter":
                 event.preventDefault();
         }
-    }
+    };
 
-    function onMouseButton(): void {
+    const onMouseButton = (): void => {
         engine.canvas.focus();
-    }
+    };
 
     let pointerTimeout = 0;
 
-    function onMouseMove(): void {
+    const onMouseMove = (): void => {
         showPointer();
 
         if (pointerTimeout) {
@@ -61,25 +61,25 @@ domready(() => {
                 hidePointer();
             }
         }, 500);
-    }
+    };
 
-    function onFocus(): void {
+    const onFocus = (): void => {
         hidePointer();
         game.active = true;
-    }
+    };
 
-    function onBlur(): void {
+    const onBlur = (): void => {
         showPointer();
         game.active = false;
-    }
+    };
 
-    function hidePointer(): void {
+    const hidePointer = (): void => {
         engine.canvas.style.cursor = "none";
-    }
+    };
 
-    function showPointer(): void {
+    const showPointer = (): void => {
         engine.canvas.style.cursor = "auto";
-    }
+    };
 
     scale();
 

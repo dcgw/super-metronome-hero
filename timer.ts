@@ -7,7 +7,7 @@ export default class Timer {
 
     private running = false;
 
-    constructor(private bpm: number) {
+    public constructor(private bpm: number) {
     }
 
     public update(delta: number): void {

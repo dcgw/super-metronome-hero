@@ -4,7 +4,7 @@ export default class Tween extends Actor {
     private playing = false;
     private time = 0;
 
-    constructor(private readonly duration: number,
+    public constructor(private readonly duration: number,
                 private readonly action: (factor: number) => void,
                 private readonly easing = EasingFunctions.Linear,
                 private readonly onEnd = () => {}) {
@@ -39,5 +39,5 @@ export default class Tween extends Actor {
         }
     }
 
-    private resolvePromise = () => {};
+    private resolvePromise = (): void => {};
 }

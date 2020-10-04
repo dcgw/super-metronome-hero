@@ -26,7 +26,7 @@ export default class Game {
         suppressPlayButton: true
     });
 
-    constructor() {
+    public constructor() {
         this.engine.canvas.style.position = "absolute";
     }
 

@@ -20,7 +20,7 @@ export default class Title extends Scene {
         color: Color.fromHex("eeeeee")
     });
 
-    constructor(private readonly game: Game) {
+    public constructor(private readonly game: Game) {
         super(game.engine);
 
         const background = new Actor({
@@ -95,5 +95,5 @@ export default class Title extends Scene {
         this.bigArm.rotation = Math.sin(this.bigTimer.beat * Math.PI) * 50 / 180 * Math.PI;
     }
 
-    private readonly onKeyPress = () => this.game.engine.goToScene("menu");
+    private readonly onKeyPress = (): void => this.game.engine.goToScene("menu");
 }

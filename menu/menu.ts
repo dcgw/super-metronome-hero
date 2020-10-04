@@ -6,7 +6,7 @@ import MenuItem from "./menu-item";
 export default class Menu extends Scene {
     private selectedIndex = 0;
 
-    private readonly items: ReadonlyArray<MenuItem> = [
+    private readonly items: readonly MenuItem[] = [
         new MenuItem({pos: new Vector(70, 50), tempo: "Grave", bpm: 40}),
         new MenuItem({pos: new Vector(70, 170), tempo: "Adagio", bpm: 60}),
         new MenuItem({pos: new Vector(70, 290), tempo: "Moderato", bpm: 88}),
@@ -21,7 +21,7 @@ export default class Menu extends Scene {
         })
     ];
 
-    constructor(private readonly game: Game) {
+    public constructor(private readonly game: Game) {
         super(game.engine);
 
         const background = new Actor({

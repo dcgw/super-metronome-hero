@@ -5,7 +5,7 @@ export default class Arm extends Actor {
     private shake = 0;
     private tick = false;
 
-    constructor() {
+    public constructor() {
         super({
             pos: new Vector(320, 420),
             anchor: new Vector(33 / 69, 340 / 355),
