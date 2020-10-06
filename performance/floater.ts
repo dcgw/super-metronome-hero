@@ -18,7 +18,7 @@ export default class Floater extends Label {
     public update(engine: Engine, delta: number): void {
         super.update(engine, delta);
 
-        const alpha = Math.max(0, this.color.a - ((0.2 * delta * 60) / 1000));
+        const alpha = Math.max(0, this.color.a - (0.2 * delta * 60) / 1000);
         this.color.a = alpha;
 
         if (alpha <= 0) {

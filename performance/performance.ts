@@ -1,4 +1,14 @@
-import {Actor, Color, EasingFunctions, Engine, Input, Scene, Sound, Sprite, Vector} from "excalibur";
+import {
+    Actor,
+    Color,
+    EasingFunctions,
+    Engine,
+    Input,
+    Scene,
+    Sound,
+    Sprite,
+    Vector
+} from "excalibur";
 import Game from "../game";
 import resources from "../resources";
 import Timer from "../metronome/timer";
