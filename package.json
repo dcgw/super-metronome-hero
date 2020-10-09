@@ -36,7 +36,7 @@
     "@types/domready": "1.0.0",
     "domready": "1.0.8",
     "excalibur": "0.24.4",
-    "tslib": "2.0.2"
+    "tslib": "2.0.3"
   },
   "devDependencies": {
     "@softwareventures/eslint-config": "3.3.0",
