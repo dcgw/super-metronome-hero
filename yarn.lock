@@ -1250,10 +1250,10 @@
   resolved "https://registry.yarnpkg.com/@softwareventures/tsconfig/-/tsconfig-2.3.2.tgz#88300b5592292b6b56b95b0041e376b79735e133"
   integrity sha512-QWgf3ggZZxacHpsQGkdO2oAqZbqExXqKu527akwLSnXUFRhmqzYyvcLXZ9UriMNRdcJEtIdXaiyZUf2+kzMBsw==
 
-"@softwareventures/webpack-config@2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@softwareventures/webpack-config/-/webpack-config-2.0.2.tgz#a96f1c2da05d4a23175824bd14ef340e299894ed"
-  integrity sha512-oxkQyl6NHfWdZrZLbI1I1N7UqlI5R8ABl/NwhX/Awy4yNN03mG5DXvX9d+Nvobxm0nnewhnusWkssRHvWnGqwQ==
+"@softwareventures/webpack-config@2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@softwareventures/webpack-config/-/webpack-config-2.0.4.tgz#35ed50b91c81b6b6e15ae2f67f84fa335218a9ca"
+  integrity sha512-0QAPa7zGZi6lNt0Zs9Q65qh80EAasofIaF4FWstpdq8TlXzrgFzb7BkcTbBTMs3Jzffzjy+0eBJUeOXnPEjVJQ==
   dependencies:
     "@softwareventures/array" "3.2.0"
     "@softwareventures/dictionary" "^0.7.1"
@@ -1261,6 +1261,7 @@
     clean-webpack-plugin "^3.0.0"
     css-loader "^4.0.0"
     cssnano "^4.1.10"
+    ejs-loader "^0.5.0"
     file-loader "^6.0.0"
     html-webpack-plugin "^4.0.0"
     json-typescript "1.1.2"
@@ -4137,6 +4138,14 @@ ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
+
+ejs-loader@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/ejs-loader/-/ejs-loader-0.5.0.tgz#ebed0afaedd0a58c07fcc810cf001df3c24d6399"
+  integrity sha512-iirFqlP3tiFoedNZ7dQcjvechunl054VbW6Ki38T/pabgXMAncduSE0ZXLeVGn1NbmcUJF9Z5TC0EvQ4RIpP9Q==
+  dependencies:
+    loader-utils "^2.0.0"
+    lodash "^4.17.15"
 
 ejs@^2.6.1:
   version "2.7.4"
