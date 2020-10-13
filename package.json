@@ -34,15 +34,16 @@
   "dependencies": {
     "@softwareventures/dictionary": "0.7.1",
     "@types/domready": "1.0.0",
+    "@types/webpack-env": "1.15.3",
     "domready": "1.0.8",
     "excalibur": "0.24.4",
     "tslib": "2.0.3"
   },
   "devDependencies": {
+    "@semantic-release/exec": "5.0.0",
     "@softwareventures/eslint-config": "3.3.0",
     "@softwareventures/prettier-config": "1.0.2",
-    "@semantic-release/exec": "5.0.0",
-    "@softwareventures/webpack-config": "2.0.4",
+    "@softwareventures/webpack-config": "3.0.1",
     "ava": "3.13.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "7.11.0",
