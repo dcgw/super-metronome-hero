@@ -46,7 +46,7 @@
     "@softwareventures/webpack-config": "3.0.1",
     "ava": "3.15.0",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "7.18.0",
+    "eslint": "7.19.0",
     "prettier": "2.2.1",
     "semantic-release": "17.3.7",
     "semantic-release-s3-upload": "0.2.80",
