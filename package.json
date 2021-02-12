@@ -48,7 +48,7 @@
     "cz-conventional-changelog": "3.3.0",
     "eslint": "7.19.0",
     "prettier": "2.2.1",
-    "semantic-release": "17.3.8",
+    "semantic-release": "17.3.9",
     "semantic-release-s3-upload": "0.2.80",
     "ts-loader": "8.0.17",
     "ts-node": "9.1.1",
