@@ -32,7 +32,7 @@
     "test": "ava"
   },
   "dependencies": {
-    "@softwareventures/dictionary": "0.7.1",
+    "@softwareventures/dictionary": "0.8.0",
     "@types/domready": "1.0.0",
     "@types/webpack-env": "1.16.0",
     "domready": "1.0.8",

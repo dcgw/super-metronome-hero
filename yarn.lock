@@ -343,7 +343,15 @@
   resolved "https://registry.yarnpkg.com/@softwareventures/chain/-/chain-0.1.2.tgz#2cba555b5c916643c4956ba55b5c538041f20c27"
   integrity sha512-4eMBnTKQBLHQi7fbKtqf/i8LH5fsGb4JDTXDWo4o7TnUq+3TSdC2gqSopVxb7zQD/jgQTzyGSVDUcIFtlbjMeQ==
 
-"@softwareventures/dictionary@0.7.1", "@softwareventures/dictionary@^0.6.0 || ^0.7.0", "@softwareventures/dictionary@^0.7.1":
+"@softwareventures/dictionary@0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-0.8.0.tgz#026963b3888fbf052ae9a610b35671eb0647caef"
+  integrity sha512-VuO1OySIxP2vWEL3a4jbUnd9mbQ//nvwaGDQo3S2ZrXrxJ2hzodiqAFhc7XwW/ngGsoV/VToM4JdlpsMoirD9A==
+  dependencies:
+    dictionary-types "^1.2.0"
+    tslib "2.1.0"
+
+"@softwareventures/dictionary@^0.6.0 || ^0.7.0", "@softwareventures/dictionary@^0.7.1":
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-0.7.1.tgz#e42e6de9a3e73781de13130d0c0668e945f79e48"
   integrity sha512-RaAhQLzV6s2ZGod81BLDV9wxhXOpLrnhC8MaYJ4yZCA8YOzE1ty+sKr5m+wkcAFwZyLJaNyUF84SK/6ltlSKQQ==
