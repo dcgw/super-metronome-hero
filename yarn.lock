@@ -359,10 +359,10 @@
     dictionary-types "^1.2.0"
     tslib "2.0.0"
 
-"@softwareventures/eslint-config@3.5.0":
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/eslint-config/-/eslint-config-3.5.0.tgz#96506c6e8e2a24127d406a3dcaf3d32613a56f6f"
-  integrity sha512-3sqQHAjsG7Nacq6yp+2jlnf/pdISZPVf3U5Cxc9DoxqYT3W58a0y5rPMSGPsf6JDbhvArVvVjy9jUhMB87T0wQ==
+"@softwareventures/eslint-config@3.6.0":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/eslint-config/-/eslint-config-3.6.0.tgz#d0c27b8f1cc130442bf47d6854faf65c0023cc7a"
+  integrity sha512-ijPdfwHj9NNuq4cYuezFiIoSFFpyZED07mr24bhHQwDW23PiLBcKAek5QkOn8SEPcV5OgCNlPYfuGU98caDpRQ==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^2.31.0 || ^3.0.0 || ^4.0.0"
     "@typescript-eslint/eslint-plugin-tslint" "^2.31.0 || ^3.0.0 || ^4.0.0"
