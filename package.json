@@ -36,7 +36,7 @@
     "@types/domready": "1.0.0",
     "@types/webpack-env": "1.16.0",
     "domready": "1.0.8",
-    "excalibur": "0.24.4",
+    "excalibur": "0.24.5",
     "tslib": "2.1.0"
   },
   "devDependencies": {
