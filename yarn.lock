@@ -3981,10 +3981,10 @@ eventsource@^1.0.7:
   dependencies:
     original "^1.0.0"
 
-excalibur@0.24.4:
-  version "0.24.4"
-  resolved "https://registry.yarnpkg.com/excalibur/-/excalibur-0.24.4.tgz#c05cdf7f4cae103d70685e32dff45546463f296d"
-  integrity sha512-frP4NF1TaSzEPh7algTycMdGbHoATCbzJF5iMlvE8wzGoWO6yz3x3M6NYJDeRZ/sjo/BBACYktSMEVrgRl6Whg==
+excalibur@0.24.5:
+  version "0.24.5"
+  resolved "https://registry.yarnpkg.com/excalibur/-/excalibur-0.24.5.tgz#55b996c2e162c1b4464c2654832dd85de29324ac"
+  integrity sha512-fFgwDqv59eIbP2L+aRop30azu9v8liUQBABkisvI3ZqKRi/DJrhV1ScIEMEqLLsDvUlj3GOGhGrZmN5IghlNyQ==
 
 execa@^0.7.0:
   version "0.7.0"
