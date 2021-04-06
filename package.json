@@ -28,7 +28,7 @@
     "fix": "tsc && eslint . --fix && prettier --write .",
     "lint": "tsc && eslint . && prettier --check .",
     "semantic-release": "semantic-release",
-    "start": "webpack-dev-server --open",
+    "start": "webpack serve --open",
     "test": "ava"
   },
   "dependencies": {
