@@ -72,14 +72,14 @@
   dependencies:
     arrify "^1.0.1"
 
-"@dcgw/excalibur-extended-label@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@dcgw/excalibur-extended-label/-/excalibur-extended-label-1.0.0.tgz#08778c8686a846c4d29c10e6093b20ce1147d8c5"
-  integrity sha512-Q01lKynQOOEs5W50AXZdkb1uYe6PzT3kVf6TJlMtzMqzwEiDeKA+MJKCpEkq7XuS1XIoUq3u7OgMBrKuf1703Q==
+"@dcgw/excalibur-extended-label@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@dcgw/excalibur-extended-label/-/excalibur-extended-label-1.0.1.tgz#2d2e0ebf900196b1fecf3e27ff8bd3d09203c0a4"
+  integrity sha512-P9sLTD0b4w7T8Ge8VE1QA/rxT42Usm12lRQb//GcH2TRWpKux4Ag4hasYTrkUkFNo5mfAoCZZneIJHs1qV913g==
   dependencies:
     "@softwareventures/chain" "^0.1.2"
     "@softwareventures/iterable" "^1.1.1"
-    tslib "2.2.0"
+    tslib "^2.0.0"
 
 "@discoveryjs/json-ext@^0.5.0":
   version "0.5.2"
@@ -9481,7 +9481,7 @@ tslib@2.1.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.1.0.tgz#da60860f1c2ecaa5703ab7d39bc05b6bf988b97a"
   integrity sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A==
 
-tslib@2.2.0, "tslib@^1.11.2 || ^2.0.0", "tslib@^1.9.3 || ^2.0.0", tslib@^2.0.3, tslib@^2.1.0:
+tslib@2.2.0, "tslib@^1.11.2 || ^2.0.0", "tslib@^1.9.3 || ^2.0.0", tslib@^2.0.0, tslib@^2.0.3, tslib@^2.1.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.2.0.tgz#fb2c475977e35e241311ede2693cee1ec6698f5c"
   integrity sha512-gS9GVHRU+RGn5KQM2rllAlR3dU6m7AcpJKdtH8gFvQiC4Otgk98XnmMU+nZenHt/+VhnBPWwgrJsyrdcw6i23w==
