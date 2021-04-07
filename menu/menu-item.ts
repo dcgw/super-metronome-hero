@@ -1,5 +1,6 @@
-import {Actor, BaseAlign, Color, Engine, FontUnit, Label, SpriteSheet, Vector} from "excalibur";
-import Game from "../game";
+import Label from "@dcgw/excalibur-extended-label";
+import {Actor, Color, Engine, SpriteSheet, Vector} from "excalibur";
+import {defaultLabelOptions} from "../defaults";
 import resources from "../resources";
 
 export interface Options {
@@ -54,31 +55,27 @@ export default class MenuItem extends Actor {
     });
 
     private readonly lockedText = new Label({
+        ...defaultLabelOptions,
         text: "Locked",
         pos: new Vector(100, 20),
-        fontFamily: Game.fontFamily,
         fontSize: 60,
-        fontUnit: FontUnit.Px,
-        baseAlign: BaseAlign.Top,
         color: Color.fromHex("999999")
     });
 
     private readonly labelText = new Label({
+        ...defaultLabelOptions,
         pos: new Vector(100, 10),
-        fontFamily: Game.fontFamily,
-        fontUnit: FontUnit.Px,
-        baseAlign: BaseAlign.Top,
-        color: Color.White,
+        fontFamily: "Strait",
         visible: false
     });
 
     private readonly subText = new Label({
+        ...defaultLabelOptions,
         pos: new Vector(100, 65),
-        fontFamily: Game.fontFamily,
+        fontFamily: "Strait",
         fontSize: 22,
-        fontUnit: FontUnit.Px,
-        baseAlign: BaseAlign.Top,
-        color: Color.White,
+        outlineColor: Color.fromRGB(0, 0, 0, 0.45),
+        shadowBlurRadius: 1.5,
         visible: false
     });
 

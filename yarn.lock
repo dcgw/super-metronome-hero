@@ -72,6 +72,15 @@
   dependencies:
     arrify "^1.0.1"
 
+"@dcgw/excalibur-extended-label@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@dcgw/excalibur-extended-label/-/excalibur-extended-label-1.0.0.tgz#08778c8686a846c4d29c10e6093b20ce1147d8c5"
+  integrity sha512-Q01lKynQOOEs5W50AXZdkb1uYe6PzT3kVf6TJlMtzMqzwEiDeKA+MJKCpEkq7XuS1XIoUq3u7OgMBrKuf1703Q==
+  dependencies:
+    "@softwareventures/chain" "^0.1.2"
+    "@softwareventures/iterable" "^1.1.1"
+    tslib "2.2.0"
+
 "@discoveryjs/json-ext@^0.5.0":
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.2.tgz#8f03a22a04de437254e8ce8cc84ba39689288752"
@@ -481,6 +490,15 @@
     tslib "^1.11.2 || ^2.0.0"
     tslint "^6.1.2"
 
+"@softwareventures/iterable@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/iterable/-/iterable-1.1.1.tgz#f2131b73d81e758e68de254bae08093d05a8e5ec"
+  integrity sha512-FiYOgD8avyZJ8f9PDDfsSAazs5xTkngTiHiHv/ACGX8Oi5akcu36bKiUwyh+JazKLGWNAFzF6DEb79/9PNeRkw==
+  dependencies:
+    "@softwareventures/nullable" "^1.0.0"
+    "@softwareventures/ordered" "^0.2.2"
+    tslib "2.1.0"
+
 "@softwareventures/nullable@^1.0.0":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@softwareventures/nullable/-/nullable-1.2.1.tgz#b0fb43f344595d77fc141154737b94ad7561c26b"
@@ -488,7 +506,7 @@
   dependencies:
     tslib "2.1.0"
 
-"@softwareventures/ordered@^0.2.0":
+"@softwareventures/ordered@^0.2.0", "@softwareventures/ordered@^0.2.2":
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/@softwareventures/ordered/-/ordered-0.2.2.tgz#e8b55c57a7219a90e0cc6a27a793c4598e5ae9aa"
   integrity sha512-n3Kkk9jZ+i2Az7YqnJR3TimhsVSiTfwN9ybDfPcJvvCge0cINszO754n4/pdlCyLYVOn2VzTVFDVTrj+xFvNFQ==
@@ -4742,7 +4760,7 @@ html-minifier-terser@^5.0.1, html-minifier-terser@^5.1.1:
     relateurl "^0.2.7"
     terser "^4.6.3"
 
-html-webpack-plugin@^5.0.0:
+html-webpack-plugin@5.3.1, html-webpack-plugin@^5.0.0:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/html-webpack-plugin/-/html-webpack-plugin-5.3.1.tgz#8797327548e3de438e3494e0c6d06f181a7f20d1"
   integrity sha512-rZsVvPXUYFyME0cuGkyOHfx9hmkFa4pWfxY/mdY38PsBEaVNsRoA+Id+8z6DBDgyv3zaw6XQszdF8HLwfQvcdQ==

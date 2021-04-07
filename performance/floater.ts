@@ -1,17 +1,20 @@
-import {Color, Engine, FontUnit, Label, Vector} from "excalibur";
+import Label from "@dcgw/excalibur-extended-label";
+import {Color, Engine, Vector} from "excalibur";
+import {defaultLabelOptions} from "../defaults";
 
 const speed = 3 * 60;
 
 export default class Floater extends Label {
     public constructor(text: string, color: Color) {
         super({
-            x: 320,
-            y: 240,
+            ...defaultLabelOptions,
+            pos: new Vector(320, 240),
+            vel: Vector.fromAngle(Math.random() * Math.PI * 2).scale(speed),
             text,
             color,
             fontSize: 72,
-            fontUnit: FontUnit.Px,
-            vel: Vector.fromAngle(Math.random() * Math.PI * 2).scale(speed)
+            outlineColor: Color.fromRGB(0, 0, 0, 0.6),
+            shadowBlurRadius: 3
         });
     }
 

@@ -1,18 +1,9 @@
-import {
-    Actor,
-    BaseAlign,
-    Color,
-    Engine,
-    FontUnit,
-    Label,
-    Scene,
-    TextAlign,
-    Traits,
-    Vector
-} from "excalibur";
+import Label from "@dcgw/excalibur-extended-label";
+import {Actor, Color, Engine, Scene, TextAlign, Traits, Vector} from "excalibur";
+import {defaultLabelOptions} from "../defaults";
 import Game from "../game";
-import resources from "../resources";
 import Timer from "../metronome/timer";
+import resources from "../resources";
 
 export default class Title extends Scene {
     private readonly smallTimer = new Timer(60);
@@ -21,14 +12,11 @@ export default class Title extends Scene {
     private readonly bigArm: Actor;
 
     private readonly startText = new Label({
+        ...defaultLabelOptions,
         text: "Press ANY key to start",
         pos: new Vector(320, 385),
-        fontFamily: Game.fontFamily,
-        fontSize: 48,
-        fontUnit: FontUnit.Px,
-        textAlign: TextAlign.Center,
-        baseAlign: BaseAlign.Top,
-        color: Color.fromHex("eeeeee")
+        color: Color.fromHex("eeeeee"),
+        textAlign: TextAlign.Center
     });
 
     public constructor(private readonly game: Game) {
