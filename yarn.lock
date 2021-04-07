@@ -507,10 +507,10 @@
   resolved "https://registry.yarnpkg.com/@softwareventures/tsconfig/-/tsconfig-5.0.1.tgz#9be2d6dcdc3de65233014c527754700f46882bbb"
   integrity sha512-B1LBY+S7dDiPmH29MTi3Z3hBdSEetHf87cmUueQCSlrbpFpROZvDZrnujM844wXKNue5XYIe5oO8jp/eWCfY9w==
 
-"@softwareventures/webpack-config@4.0.0-alpha.14":
-  version "4.0.0-alpha.14"
-  resolved "https://registry.yarnpkg.com/@softwareventures/webpack-config/-/webpack-config-4.0.0-alpha.14.tgz#f7ab6eedf2928ffe192941070bb4cfef28c81f9e"
-  integrity sha512-tJ5wBnI43YkFYW6SwQagwuOPZJOGIy7W/d+UOYihEOs62sQ9Rty9Nri8lyJond3zFF+1bW2zMhkzKx4mZymsLw==
+"@softwareventures/webpack-config@4.0.0-alpha.15":
+  version "4.0.0-alpha.15"
+  resolved "https://registry.yarnpkg.com/@softwareventures/webpack-config/-/webpack-config-4.0.0-alpha.15.tgz#dbdfd88da91ed970f680eecfc5390331367ba923"
+  integrity sha512-ckCcC0M1/8u5rYcGwtP/PBUvYkLIFV49c7/qa4j3X5HyjIUxCdAfsairLsThWWgei18cqLDf69Fe9U7Q2hha+w==
   dependencies:
     "@softwareventures/array" "3.9.0"
     "@softwareventures/dictionary" "^0.7.1 || ^0.8.0"
