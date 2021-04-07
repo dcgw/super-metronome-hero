@@ -72,10 +72,10 @@
   dependencies:
     arrify "^1.0.1"
 
-"@dcgw/excalibur-extended-label@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@dcgw/excalibur-extended-label/-/excalibur-extended-label-1.0.1.tgz#2d2e0ebf900196b1fecf3e27ff8bd3d09203c0a4"
-  integrity sha512-P9sLTD0b4w7T8Ge8VE1QA/rxT42Usm12lRQb//GcH2TRWpKux4Ag4hasYTrkUkFNo5mfAoCZZneIJHs1qV913g==
+"@dcgw/excalibur-extended-label@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@dcgw/excalibur-extended-label/-/excalibur-extended-label-1.1.0.tgz#06e9a1d6cfb6a4ee355866407d18f4fed9810189"
+  integrity sha512-1Gpo5CZBgOCMuq/TWip3RSZht/sWi2igMYKNPGvmk++5ETNm7ZinQbs7mhCDElaeWzWFcM+Rmq3OKAWLbXuipQ==
   dependencies:
     "@softwareventures/chain" "^0.1.2"
     "@softwareventures/iterable" "^1.1.1"
