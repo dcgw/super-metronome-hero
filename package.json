@@ -32,7 +32,7 @@
     "test": "ava"
   },
   "dependencies": {
-    "@dcgw/excalibur-extended-label": "1.1.1",
+    "@dcgw/excalibur-extended-label": "1.1.0",
     "@softwareventures/dictionary": "0.8.1",
     "@types/domready": "1.0.0",
     "@types/webpack-env": "1.16.0",
