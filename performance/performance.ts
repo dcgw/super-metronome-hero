@@ -232,7 +232,7 @@ export class Performance extends Scene {
                 break;
             case State.countIn:
                 if (this.timer.isBeat) {
-                    this.countdown[this.introBeat].play().then(
+                    this.countdown[this.introBeat]?.play().then(
                         () => void 0,
                         reason => console.error("", reason)
                     );

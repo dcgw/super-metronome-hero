@@ -1,3 +1,4 @@
+import {notNull} from "@softwareventures/nullable";
 import {Actor, EasingFunctions, Engine, Input, Scene, Vector} from "excalibur";
 import Game from "../game";
 import resources from "../resources";
@@ -33,8 +34,8 @@ export default class Menu extends Scene {
 
         this.items.forEach(item => this.add(item));
 
-        this.items[0].locked = false;
-        this.items[0].selected = true;
+        notNull(this.items[0]).locked = false;
+        notNull(this.items[0]).selected = true;
     }
 
     public onActivate(): void {
@@ -52,7 +53,7 @@ export default class Menu extends Scene {
                 reason => console.error("", reason)
             );
 
-            const selectedItem = this.items[this.selectedIndex];
+            const selectedItem = notNull(this.items[this.selectedIndex]);
             this.game.tempo = selectedItem.tempo;
             this.game.bpm = selectedItem.bpm;
 
@@ -65,7 +66,7 @@ export default class Menu extends Scene {
                 : 0;
 
             if (itemChange !== 0) {
-                this.items[this.selectedIndex].selected = false;
+                notNull(this.items[this.selectedIndex]).selected = false;
                 resources.menuBlip.play().then(
                     () => void 0,
                     reason => console.error("", reason)
@@ -80,7 +81,7 @@ export default class Menu extends Scene {
                     this.selectedIndex = this.items.length - 1;
                 }
 
-                const selectedItem = this.items[this.selectedIndex];
+                const selectedItem = notNull(this.items[this.selectedIndex]);
 
                 selectedItem.selected = true;
 

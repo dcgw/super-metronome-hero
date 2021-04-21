@@ -1,8 +1,8 @@
-import domready = require("domready");
+import domready from "domready";
 import Game from "./game";
-import {version} from "./package.json";
+import pkg from "./package.json";
 
-console.log("Super Metronome Hero v" + version);
+console.log("Super Metronome Hero v" + pkg.version);
 
 domready(() => {
     const game = new Game();
