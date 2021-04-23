@@ -13,10 +13,7 @@ module.exports = config({
         resolve: {
             ...configuration.resolve,
             fullySpecified: true,
-            plugins: [
-                ...(configuration.resolve.plugins ?? []),
-                new ResolveTypescriptPlugin()
-            ]
+            plugins: [...(configuration.resolve.plugins ?? []), new ResolveTypescriptPlugin()]
         }
     })
 });
