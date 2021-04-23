@@ -1,5 +1,5 @@
 import {Actor, Engine} from "excalibur";
-import resources from "../resources";
+import resources from "../resources.js";
 
 const fadeTime = (30 / 60) * 1000;
 

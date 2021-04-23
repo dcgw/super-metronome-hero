@@ -8328,6 +8328,13 @@ resolve-global@^1.0.0:
   dependencies:
     global-dirs "^0.1.1"
 
+resolve-typescript-plugin@1.0.0-alpha.4:
+  version "1.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/resolve-typescript-plugin/-/resolve-typescript-plugin-1.0.0-alpha.4.tgz#c249132acf28f5f29eb1a83d789e935414a9ca07"
+  integrity sha512-H3i+wCiGUH9COGIpK+qhlYB0wXxoC9k1OjNiH5ShxaAJSGjU/GyWtmNHX/WPcEcxfWe1lSCTpFBmoSN96VDi6g==
+  dependencies:
+    tslib "2.2.0"
+
 resolve-url@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/resolve-url/-/resolve-url-0.2.1.tgz#2c637fe77c893afd2a663fe21aa9080068e2052a"

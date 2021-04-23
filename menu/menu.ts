@@ -1,8 +1,8 @@
 import {notNull} from "@softwareventures/nullable";
 import {Actor, EasingFunctions, Engine, Input, Scene, Vector} from "excalibur";
-import Game from "../game";
-import resources from "../resources";
-import MenuItem from "./menu-item";
+import Game from "../game.js";
+import resources from "../resources.js";
+import MenuItem from "./menu-item.js";
 
 export default class Menu extends Scene {
     private selectedIndex = 0;

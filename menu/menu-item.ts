@@ -1,7 +1,7 @@
 import Label from "@dcgw/excalibur-extended-label";
 import {Actor, Color, Engine, SpriteSheet, Vector} from "excalibur";
-import {defaultLabelOptions} from "../defaults";
-import resources from "../resources";
+import {defaultLabelOptions} from "../defaults.js";
+import resources from "../resources.js";
 
 export interface Options {
     readonly pos: Vector;

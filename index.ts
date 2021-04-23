@@ -1,5 +1,5 @@
 import domready from "domready";
-import Game from "./game";
+import Game from "./game.js";
 import pkg from "./package.json";
 
 console.log("Super Metronome Hero v" + pkg.version);

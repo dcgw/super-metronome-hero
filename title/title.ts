@@ -1,9 +1,9 @@
 import Label from "@dcgw/excalibur-extended-label";
 import {Actor, Color, Engine, Scene, TextAlign, Traits, Vector} from "excalibur";
-import {defaultLabelOptions} from "../defaults";
-import Game from "../game";
-import Timer from "../metronome/timer";
-import resources from "../resources";
+import {defaultLabelOptions} from "../defaults.js";
+import Game from "../game.js";
+import Timer from "../metronome/timer.js";
+import resources from "../resources.js";
 
 export default class Title extends Scene {
     private readonly smallTimer = new Timer(60);

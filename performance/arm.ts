@@ -1,5 +1,5 @@
 import {Actor, Engine, Vector} from "excalibur";
-import resources from "../resources";
+import resources from "../resources.js";
 
 export default class Arm extends Actor {
     private shake = 0;

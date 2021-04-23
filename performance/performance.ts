@@ -9,12 +9,12 @@ import {
     Sprite,
     Vector
 } from "excalibur";
-import Game from "../game";
-import resources from "../resources";
-import Timer from "../metronome/timer";
-import Floater from "./floater";
-import Tween from "./tween";
-import Arm from "./arm";
+import Game from "../game.js";
+import resources from "../resources.js";
+import Timer from "../metronome/timer.js";
+import Floater from "./floater.js";
+import Tween from "./tween.js";
+import Arm from "./arm.js";
 
 const introDuration = (30 / 60) * 1000;
 const outroDuration = (50 / 60) * 1000;

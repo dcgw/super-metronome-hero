@@ -1,10 +1,10 @@
 import {values} from "@softwareventures/dictionary";
 import {DisplayMode, Engine, Loader} from "excalibur";
-import Menu from "./menu/menu";
-import Music from "./music/music";
-import {Performance} from "./performance/performance";
-import resources from "./resources";
-import Title from "./title/title";
+import Menu from "./menu/menu.js";
+import Music from "./music/music.js";
+import {Performance} from "./performance/performance.js";
+import resources from "./resources.js";
+import Title from "./title/title.js";
 
 export default class Game {
     public readonly width = 640;
