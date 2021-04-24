@@ -58,7 +58,7 @@
     "resolve-typescript-plugin": "1.0.0-alpha.4",
     "semantic-release": "17.4.2",
     "semantic-release-s3-upload": "0.2.80",
-    "ts-loader": "8.1.0",
+    "ts-loader": "8.2.0",
     "ts-node": "9.1.1",
     "typescript": "4.2.4",
     "webpack": "5.35.1",
