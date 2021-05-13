@@ -536,10 +536,10 @@
   resolved "https://registry.yarnpkg.com/@softwareventures/tsconfig/-/tsconfig-6.0.0-alpha.3.tgz#4c3c3a14e3f4db83ec30cd703ec351a9161d4928"
   integrity sha512-C8SK2SyeXDEgGhqXf0LHTLEb0o3Q4Kikg1C0mT1LS3d9RoJ7+ZiA2gJWs8w0Q/gdjlAV94DcT5o77PoS4g2WGw==
 
-"@softwareventures/webpack-config@4.0.0-alpha.21":
-  version "4.0.0-alpha.21"
-  resolved "https://registry.yarnpkg.com/@softwareventures/webpack-config/-/webpack-config-4.0.0-alpha.21.tgz#9e9990147b25d867c93b26524b40470248e9b42c"
-  integrity sha512-WzBGtvsa9nJ2e9p7idm/sl/76ne9atc47Ot8KYah0hqcJb/Fv+S9OXBwmJqaQe+aitBZx1J0tX1fJErGwp5i9g==
+"@softwareventures/webpack-config@4.0.0-alpha.22":
+  version "4.0.0-alpha.22"
+  resolved "https://registry.yarnpkg.com/@softwareventures/webpack-config/-/webpack-config-4.0.0-alpha.22.tgz#b8475c86018c18b0f18273c988cb27e87ddcacb8"
+  integrity sha512-QrKmpp9tvY8cnK2nFoRona5Q7FE1nfWHIs4T5zpTY8NrNZo0/roIE5a1TWswkCDowCHz+r2RlsSjHRp9U9bdWQ==
   dependencies:
     "@softwareventures/array" "4.1.0"
     "@softwareventures/dictionary" "^0.7.1 || ^0.8.0"
@@ -555,7 +555,7 @@
     html-webpack-plugin "^5.0.0"
     json-typescript "1.1.2"
     less "^4.1.1"
-    less-loader "^8.0.0"
+    less-loader "^8.0.0 || ^9.0.0"
     mini-css-extract-plugin "^1.3.6 || ^1.3.6"
     postcss "^8.2.5"
     postcss-loader "^5.0.0"
@@ -5772,10 +5772,10 @@ latest-version@^5.1.0:
   dependencies:
     package-json "^6.3.0"
 
-less-loader@^8.0.0:
-  version "8.1.1"
-  resolved "https://registry.yarnpkg.com/less-loader/-/less-loader-8.1.1.tgz#ababe912580457ad00a4318146aac5b53e023f42"
-  integrity sha512-K93jJU7fi3n6rxVvzp8Cb88Uy9tcQKfHlkoezHwKILXhlNYiRQl4yowLIkQqmBXOH/5I8yoKiYeIf781HGkW9g==
+"less-loader@^8.0.0 || ^9.0.0":
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/less-loader/-/less-loader-9.0.0.tgz#71a0b530174bddf89bb11a5019dd725f54df4791"
+  integrity sha512-bPen1xeGTZuYFFobcdz9kMUVgSSSDZQJtyhawtCtcz1QboQOwhkI7uCwp5UO+IZpO+LJS1W73YwxsufbBT6SBQ==
   dependencies:
     klona "^2.0.4"
 
