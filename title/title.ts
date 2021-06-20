@@ -67,7 +67,9 @@ export default class Title extends Scene {
     }
 
     public onActivate(): void {
-        this.game.music.kill();
+        if (this.game.music.scene != null) {
+            this.game.music.kill();
+        }
         this.add(this.game.music);
 
         this.smallTimer.start();
