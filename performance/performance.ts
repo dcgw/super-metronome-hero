@@ -258,7 +258,7 @@ export class Performance extends Scene {
                     const missed = this.timer.offBeatMs >= (4 / 60) * 1000;
                     if (missed) {
                         this.arm.miss();
-                        // this.multiplier = 0;
+                        this.multiplier = 0;
                         // TODO: Update and fade multiplier text
                     } else {
                         this.arm.tickTock();
