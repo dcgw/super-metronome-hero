@@ -1,3 +1,4 @@
+import Label from "@dcgw/excalibur-extended-label";
 import {
     Actor,
     Color,
@@ -7,8 +8,10 @@ import {
     Scene,
     Sound,
     Sprite,
+    TextAlign,
     Vector
 } from "excalibur";
+import {defaultLabelOptions} from "../defaults.js";
 import Game from "../game.js";
 import resources from "../resources.js";
 import Timer from "../metronome/timer.js";
@@ -45,6 +48,39 @@ export class Performance extends Scene {
     private time = 0;
     private finalStars = 0;
 
+    private readonly tempoText = new Label({
+        ...defaultLabelOptions,
+        pos: new Vector(22, 24),
+        color: Color.fromHex("eeeeee"),
+        fontSize: 36
+    });
+    private readonly bpmText = new Label({
+        ...defaultLabelOptions,
+        pos: new Vector(22, 58),
+        color: Color.fromHex("eeeeee"),
+        fontSize: 24
+    });
+    private readonly scoreText = new Label({
+        ...defaultLabelOptions,
+        pos: new Vector(618, 15),
+        color: Color.fromHex("eeeeee"),
+        fontSize: 48,
+        textAlign: TextAlign.Right
+    });
+    private readonly multiplierText = new Label({
+        ...defaultLabelOptions,
+        pos: new Vector(618, 58),
+        color: Color.fromHex("eeeeee"),
+        fontSize: 28,
+        textAlign: TextAlign.Right
+    });
+    private readonly messageText = new Label({
+        ...defaultLabelOptions,
+        pos: new Vector(320, 167),
+        color: Color.fromHex("eeeeee"),
+        fontSize: 72,
+        textAlign: TextAlign.Center
+    });
     private readonly arm = new Arm();
     private readonly star1Blank = new Actor({pos: new Vector(180, 300), width: 158, height: 152});
     private readonly star2Blank = new Actor({pos: new Vector(320, 300), width: 158, height: 152});
@@ -154,7 +190,11 @@ export class Performance extends Scene {
         vignette.addDrawing(resources.performanceVignette);
         this.add(vignette);
 
-        // TODO: tempoText, bpmText, scoreText, multiplierText, messageText
+        this.add(this.tempoText);
+        this.add(this.bpmText);
+        this.add(this.scoreText);
+        this.add(this.multiplierText);
+        this.add(this.messageText);
 
         this.star1Blank.addDrawing(new Sprite(resources.performanceBigStarBlank, 0, 0, 158, 152));
         this.add(this.star1Blank);
@@ -189,8 +229,8 @@ export class Performance extends Scene {
         this.introBeat = 0;
         this.timer.reset(this.game.bpm);
         this.arm.reset();
-        // TODO: set tempo text
-        // TODO: set bpm text
+        this.tempoText.text = this.game.tempo;
+        this.bpmText.text = `${this.game.bpm}bpm`;
         this.beats = 16;
         this.state = State.intro;
         this.time = introDuration;
@@ -205,7 +245,9 @@ export class Performance extends Scene {
         this.star2.scale = new Vector(0.6, 0.6);
         this.star3.scale = new Vector(0.6, 0.6);
 
-        // TODO: set message text
+        this.updateScoreAndMultiplierText();
+
+        this.messageText.text = "Ready?";
 
         // TODO: fade message
 
@@ -301,6 +343,8 @@ export class Performance extends Scene {
                     }
                 }
 
+                this.updateScoreAndMultiplierText();
+
                 // Check to see if we should transition out of the play state.
                 if (this.beats < 0 || this.missedBeats > maxMissedBeats) {
                     this.transition(State.outro);
@@ -323,6 +367,11 @@ export class Performance extends Scene {
         }
     }
 
+    private updateScoreAndMultiplierText(): void {
+        this.scoreText.text = String(this.score).padStart(6, "0");
+        this.multiplierText.text = String(this.multiplier).padStart(3, "0");
+    }
+
     private transition(state: State): void {
         this.state = state;
 
@@ -335,7 +384,9 @@ export class Performance extends Scene {
                 // TODO: fade message text
                 break;
             case State.outro:
-                // TODO: set message text
+                this.messageText.text = this.missedBeats <= maxMissedBeats ? "Great!" : "You Suck";
+
+                // TODO: fade message text
 
                 this.starBlankFadeIn.play().catch(reason => console.error("", reason));
 
