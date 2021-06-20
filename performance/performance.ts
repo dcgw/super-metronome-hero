@@ -38,6 +38,7 @@ enum State {
 }
 
 export class Performance extends Scene {
+    private showInstructions = true;
     private timer: Timer;
     private score = 0;
     private multiplier = 0;
@@ -76,6 +77,7 @@ export class Performance extends Scene {
     });
     private readonly messageText = new Label({
         ...defaultLabelOptions,
+        text: "Press ANY key in time with the pendulum",
         pos: new Vector(320, 167),
         color: Color.fromHex("eeeeee"),
         fontSize: 72,
@@ -88,7 +90,6 @@ export class Performance extends Scene {
     private readonly star1 = new Actor({pos: new Vector(180, 300), width: 120, height: 115});
     private readonly star2 = new Actor({pos: new Vector(320, 300), width: 120, height: 115});
     private readonly star3 = new Actor({pos: new Vector(460, 300), width: 120, height: 115});
-
     private readonly starBlankFadeIn = new Tween((30 / 60) * 1000, f => {
         // FIXME Annoying hack, see https://github.com/excaliburjs/Excalibur/issues/874#issuecomment-814557137
         this.star1Blank.visible = true;
@@ -98,7 +99,6 @@ export class Performance extends Scene {
         this.star2Blank.opacity = f;
         this.star3Blank.opacity = f;
     });
-
     private readonly star1FadeIn = new Tween(
         (10 / 60) * 1000,
         f => {
@@ -121,7 +121,6 @@ export class Performance extends Scene {
             }
         }
     );
-
     private readonly star2FadeIn = new Tween(
         (10 / 60) * 1000,
         f => {
@@ -144,7 +143,6 @@ export class Performance extends Scene {
             }
         }
     );
-
     private readonly star3FadeIn = new Tween(
         (10 / 60) * 1000,
         f => {
@@ -158,6 +156,23 @@ export class Performance extends Scene {
         () => {
             this.transition(State.done);
         }
+    );
+    private readonly instructionText = new Label({
+        ...defaultLabelOptions,
+        text: "Press ANY key in time with the pendulum",
+        pos: new Vector(320, 370),
+        color: Color.fromHex("eeeeee"),
+        fontSize: 32,
+        textAlign: TextAlign.Center,
+        alpha: 0
+    });
+    private readonly instructionFadeIn = new Tween(
+        (30 / 60) * 1000,
+        f => (this.instructionText.alpha = f)
+    );
+    private readonly instructionFadeOut = new Tween(
+        (30 / 60) * 1000,
+        f => (this.instructionText.alpha = 1 - f)
     );
 
     private readonly countdown: readonly Sound[] = [
@@ -224,7 +239,9 @@ export class Performance extends Scene {
         this.add(this.star2FadeIn);
         this.add(this.star3FadeIn);
 
-        // TODO: instructionText
+        this.add(this.instructionText);
+        this.add(this.instructionFadeIn);
+        this.add(this.instructionFadeOut);
     }
 
     public onActivate(): void {
@@ -305,7 +322,10 @@ export class Performance extends Scene {
 
                 // TODO: should accept any key
                 if (this.game.engine.input.keyboard.wasPressed(Input.Keys.Space)) {
-                    // TODO: Fade instructions
+                    if (this.showInstructions && this.instructionText.alpha === 1) {
+                        void this.instructionFadeOut.play();
+                        this.showInstructions = false;
+                    }
 
                     const missed = this.timer.offBeatMs >= (4 / 60) * 1000;
                     if (missed) {
@@ -388,7 +408,10 @@ export class Performance extends Scene {
         switch (state) {
             case State.countIn:
                 this.timer.start();
-                // TODO: show instructions
+
+                if (this.showInstructions) {
+                    void this.instructionFadeIn.play();
+                }
                 break;
             case State.play:
                 // TODO: fade message text
