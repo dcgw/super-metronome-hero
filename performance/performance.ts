@@ -90,6 +90,10 @@ export class Performance extends Scene {
     private readonly star3 = new Actor({pos: new Vector(460, 300), width: 120, height: 115});
 
     private readonly starBlankFadeIn = new Tween((30 / 60) * 1000, f => {
+        // FIXME Annoying hack, see https://github.com/excaliburjs/Excalibur/issues/874#issuecomment-814557137
+        this.star1Blank.visible = true;
+        this.star2Blank.visible = true;
+        this.star3Blank.visible = true;
         this.star1Blank.opacity = f;
         this.star2Blank.opacity = f;
         this.star3Blank.opacity = f;
@@ -98,6 +102,8 @@ export class Performance extends Scene {
     private readonly star1FadeIn = new Tween(
         (10 / 60) * 1000,
         f => {
+            // FIXME Annoying hack, see https://github.com/excaliburjs/Excalibur/issues/874#issuecomment-814557137
+            this.star1.visible = true;
             this.star1.opacity = f;
             const scale = 0.6 + 0.4 * f;
             this.star1.scale = new Vector(scale, scale);
@@ -119,6 +125,8 @@ export class Performance extends Scene {
     private readonly star2FadeIn = new Tween(
         (10 / 60) * 1000,
         f => {
+            // FIXME Annoying hack, see https://github.com/excaliburjs/Excalibur/issues/874#issuecomment-814557137
+            this.star2.visible = true;
             this.star2.opacity = f;
             const scale = 0.6 + 0.4 * f;
             this.star2.scale = new Vector(scale, scale);
@@ -140,6 +148,8 @@ export class Performance extends Scene {
     private readonly star3FadeIn = new Tween(
         (10 / 60) * 1000,
         f => {
+            // FIXME Annoying hack, see https://github.com/excaliburjs/Excalibur/issues/874#issuecomment-814557137
+            this.star3.visible = true;
             this.star3.opacity = f;
             const scale = 0.6 + 0.4 * f;
             this.star3.scale = new Vector(scale, scale);
