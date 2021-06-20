@@ -83,6 +83,11 @@ export class Performance extends Scene {
         fontSize: 72,
         textAlign: TextAlign.Center
     });
+    private readonly messageFadeIn = new Tween((20 / 60) * 1000, f => (this.messageText.alpha = f));
+    private readonly messageFadeOut = new Tween(
+        (20 / 60) * 1000,
+        f => (this.messageText.alpha = 1 - f)
+    );
     private readonly arm = new Arm();
     private readonly star1Blank = new Actor({pos: new Vector(180, 300), width: 158, height: 152});
     private readonly star2Blank = new Actor({pos: new Vector(320, 300), width: 158, height: 152});
@@ -220,6 +225,8 @@ export class Performance extends Scene {
         this.add(this.scoreText);
         this.add(this.multiplierText);
         this.add(this.messageText);
+        this.add(this.messageFadeIn);
+        this.add(this.messageFadeOut);
 
         this.star1Blank.addDrawing(new Sprite(resources.performanceBigStarBlank, 0, 0, 158, 152));
         this.add(this.star1Blank);
@@ -275,8 +282,8 @@ export class Performance extends Scene {
         this.updateScoreAndMultiplierText();
 
         this.messageText.text = "Ready?";
-
-        // TODO: fade message
+        this.messageText.alpha = 0;
+        void this.messageFadeIn.play();
 
         resources.performanceReady.play().then(
             () => void 0,
@@ -414,12 +421,11 @@ export class Performance extends Scene {
                 }
                 break;
             case State.play:
-                // TODO: fade message text
+                void this.messageFadeOut.play();
                 break;
             case State.outro:
                 this.messageText.text = this.missedBeats <= maxMissedBeats ? "Great!" : "You Suck";
-
-                // TODO: fade message text
+                void this.messageFadeIn.play();
 
                 this.starBlankFadeIn.play().catch(reason => console.error("", reason));
 
