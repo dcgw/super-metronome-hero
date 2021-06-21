@@ -15,6 +15,7 @@ import {defaultLabelOptions} from "../defaults.js";
 import Game from "../game.js";
 import resources from "../resources.js";
 import Timer from "../metronome/timer.js";
+import {ColorLerp} from "./color.js";
 import Floater from "./floater.js";
 import Tween from "./tween.js";
 import Arm from "./arm.js";
@@ -71,10 +72,22 @@ export class Performance extends Scene {
     private readonly multiplierText = new Label({
         ...defaultLabelOptions,
         pos: new Vector(618, 58),
-        color: Color.fromHex("eeeeee"),
         fontSize: 28,
         textAlign: TextAlign.Right
     });
+    private readonly multiplierMissColorLerp = new ColorLerp(Color.fromHex("c41b18"), Color.White);
+    private readonly multiplierMissTween = new Tween(
+        (10 / 60) * 1000,
+        f => (this.multiplierText.color = this.multiplierMissColorLerp.lerp(f))
+    );
+    private readonly multiplierPerfectColorLerp = new ColorLerp(
+        Color.fromHex("d3cd08"),
+        Color.White
+    );
+    private readonly multiplierPerfectTween = new Tween(
+        (10 / 60) * 1000,
+        f => (this.multiplierText.color = this.multiplierPerfectColorLerp.lerp(f))
+    );
     private readonly messageText = new Label({
         ...defaultLabelOptions,
         text: "Press ANY key in time with the pendulum",
@@ -224,6 +237,8 @@ export class Performance extends Scene {
         this.add(this.bpmText);
         this.add(this.scoreText);
         this.add(this.multiplierText);
+        this.add(this.multiplierMissTween);
+        this.add(this.multiplierPerfectTween);
         this.add(this.messageText);
         this.add(this.messageFadeIn);
         this.add(this.messageFadeOut);
@@ -280,6 +295,7 @@ export class Performance extends Scene {
         this.star3.scale = new Vector(0.6, 0.6);
 
         this.updateScoreAndMultiplierText();
+        this.multiplierText.color = Color.White;
 
         this.messageText.text = "Ready?";
         this.messageText.alpha = 0;
@@ -295,8 +311,6 @@ export class Performance extends Scene {
         super.update(engine, delta);
 
         this.timer.update(delta);
-
-        // TODO: Set multiplier text colour
 
         switch (this.state) {
             case State.intro:
@@ -338,11 +352,10 @@ export class Performance extends Scene {
                     if (missed) {
                         this.arm.miss();
                         this.multiplier = 0;
-                        // TODO: Update and fade multiplier text
+                        void this.multiplierMissTween.play();
                     } else {
                         this.arm.tickTock();
                         ++this.multiplier;
-                        // TODO: Update multiplier text
                         this.missedBeats = 0;
                     }
 
@@ -350,7 +363,7 @@ export class Performance extends Scene {
                     if (this.timer.offBeatMs < (1 / 60) * 1000) {
                         this.add(new Floater("Perfect!", Color.fromHex("d3cd08")));
                         this.multiplier += 4;
-                        // TODO: Update and fade multiplier text
+                        void this.multiplierPerfectTween.play();
                         resources.performanceChime.play().then(
                             () => void 0,
                             reason => console.error("", reason)
