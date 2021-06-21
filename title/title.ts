@@ -74,12 +74,6 @@ export default class Title extends Scene {
 
         this.smallTimer.start();
         this.bigTimer.start();
-
-        this.game.engine.input.keyboard.on("press", this.onKeyPress);
-    }
-
-    public onDeactivate(): void {
-        this.game.engine.input.keyboard.off("press", this.onKeyPress);
     }
 
     public update(engine: Engine, delta: number): void {
@@ -94,7 +88,9 @@ export default class Title extends Scene {
 
         this.smallArm.rotation = ((Math.sin(this.smallTimer.beat * Math.PI) * 40) / 180) * Math.PI;
         this.bigArm.rotation = ((Math.sin(this.bigTimer.beat * Math.PI) * 50) / 180) * Math.PI;
-    }
 
-    private readonly onKeyPress = (): void => this.game.engine.goToScene("menu");
+        if (this.game.wasAnyKeyPressed()) {
+            this.game.engine.goToScene("menu");
+        }
+    }
 }
