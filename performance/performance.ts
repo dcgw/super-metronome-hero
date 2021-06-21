@@ -464,6 +464,7 @@ export class Performance extends Scene {
                 }
                 break;
             case State.return:
+                this.game.stars = this.finalStars;
                 this.game.engine.goToScene("menu");
                 break;
         }

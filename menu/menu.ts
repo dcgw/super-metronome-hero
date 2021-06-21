@@ -42,6 +42,16 @@ export default class Menu extends Scene {
         this.game.music.kill();
         this.add(this.game.music);
         this.game.music.play();
+
+        const selectedItem = notNull(this.items[this.selectedIndex]);
+        if (this.game.stars > selectedItem.stars) {
+            selectedItem.stars = this.game.stars;
+
+            const nextItem = this.items[this.selectedIndex + 1];
+            if (this.game.stars > 0 && nextItem?.locked) {
+                nextItem.locked = false;
+            }
+        }
     }
 
     public update(engine: Engine, delta: number): void {
