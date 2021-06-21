@@ -401,7 +401,7 @@ export class Performance extends Scene {
                 }
                 break;
             case State.outro:
-                // TODO: arm should return to center.
+                // TODO: should arm return to center?
 
                 this.time -= delta;
                 if (this.time <= 0) {
