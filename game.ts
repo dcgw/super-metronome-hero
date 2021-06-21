@@ -26,11 +26,16 @@ export default class Game {
         suppressPlayButton: true
     });
 
+    private anyKeyPressed = false;
+
     public start(): void {
         const loader = new Loader(values(resources));
 
         this.engine.start(loader).then(
             () => {
+                this.engine.input.keyboard.on("press", () => (this.anyKeyPressed = true));
+                this.engine.on("postframe", () => (this.anyKeyPressed = false));
+
                 this.engine.addScene("title", new Title(this));
                 this.engine.addScene("menu", new Menu(this));
                 this.engine.addScene("performance", new Performance(this));
@@ -38,5 +43,9 @@ export default class Game {
             },
             reason => console.error("", reason)
         );
+    }
+
+    public wasAnyKeyPressed(): boolean {
+        return this.anyKeyPressed;
     }
 }

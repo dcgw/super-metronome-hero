@@ -4,7 +4,6 @@ import {
     Color,
     EasingFunctions,
     Engine,
-    Input,
     Scene,
     Sound,
     Sprite,
@@ -341,8 +340,7 @@ export class Performance extends Scene {
                     --this.beats;
                 }
 
-                // TODO: should accept any key
-                if (this.game.engine.input.keyboard.wasPressed(Input.Keys.Space)) {
+                if (this.game.wasAnyKeyPressed()) {
                     if (this.showInstructions && this.instructionText.alpha === 1) {
                         void this.instructionFadeOut.play();
                         this.showInstructions = false;
@@ -409,8 +407,7 @@ export class Performance extends Scene {
                 }
                 break;
             case State.done:
-                // TODO: should accept any key
-                if (this.game.engine.input.keyboard.wasPressed(Input.Keys.Space)) {
+                if (this.game.wasAnyKeyPressed()) {
                     this.transition(State.return);
                 }
                 break;
