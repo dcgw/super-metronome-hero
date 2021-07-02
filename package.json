@@ -40,7 +40,7 @@
     "@softwareventures/dictionary": "0.8.1",
     "@softwareventures/nullable": "1.4.0",
     "@types/domready": "1.0.0",
-    "@types/webpack-env": "1.16.1",
+    "@types/webpack-env": "1.16.2",
     "domready": "1.0.8",
     "excalibur": "0.24.4",
     "tslib": "2.3.0"
