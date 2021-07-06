@@ -480,10 +480,10 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
-"@softwareventures/array@4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-4.1.0.tgz#a5569895f9b888b41a321e6cd18164ae9c62e904"
-  integrity sha512-ZQ6iO/g9htgzsDBWGNgivPPamS7UJdFY/S8D8rZqlShSyqnH+YlkO3VwuIYO60Byfo20D95ZwT/9WUXpU521lw==
+"@softwareventures/array@4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-4.1.1.tgz#7a617dadd8ec5f14c46f882d09a1a5c62e63ca09"
+  integrity sha512-sd5vDRKr6HRm8+u2eqP6037IDEh7iiwEvP4/OOd7iT0UaZz3KlEw8NQCWwVCrjue8LpigF+CbahEozP3coXRzA==
   dependencies:
     "@softwareventures/nullable" "^1.0.0 || ^1.0.0 || ^1.2.1"
     "@softwareventures/ordered" "^0.2.0"
@@ -563,12 +563,12 @@
   resolved "https://registry.yarnpkg.com/@softwareventures/tsconfig/-/tsconfig-6.0.0-alpha.3.tgz#4c3c3a14e3f4db83ec30cd703ec351a9161d4928"
   integrity sha512-C8SK2SyeXDEgGhqXf0LHTLEb0o3Q4Kikg1C0mT1LS3d9RoJ7+ZiA2gJWs8w0Q/gdjlAV94DcT5o77PoS4g2WGw==
 
-"@softwareventures/webpack-config@4.0.0-alpha.22":
-  version "4.0.0-alpha.22"
-  resolved "https://registry.yarnpkg.com/@softwareventures/webpack-config/-/webpack-config-4.0.0-alpha.22.tgz#b8475c86018c18b0f18273c988cb27e87ddcacb8"
-  integrity sha512-QrKmpp9tvY8cnK2nFoRona5Q7FE1nfWHIs4T5zpTY8NrNZo0/roIE5a1TWswkCDowCHz+r2RlsSjHRp9U9bdWQ==
+"@softwareventures/webpack-config@4.0.0-alpha.23":
+  version "4.0.0-alpha.23"
+  resolved "https://registry.yarnpkg.com/@softwareventures/webpack-config/-/webpack-config-4.0.0-alpha.23.tgz#c006ea49980d08110dfffc70bf8eb6a709f6e0b9"
+  integrity sha512-goxTVzdusYTrdiu0XQPtjR+5qxOtDTgH5gCnMPfErxpq38HNn2xGj/mJd7elY95Fb3qq4dvtunhR43C283dRRQ==
   dependencies:
-    "@softwareventures/array" "4.1.0"
+    "@softwareventures/array" "4.1.1"
     "@softwareventures/dictionary" "^0.7.1 || ^0.8.0"
     "@softwareventures/tsconfig" "^6.0.0-alpha.2"
     clean-webpack-plugin "^3.0.0"
