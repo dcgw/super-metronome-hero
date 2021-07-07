@@ -489,16 +489,14 @@
     "@softwareventures/ordered" "^0.2.0"
     tslib "^2.0.0"
 
-"@softwareventures/array@^0.31.0 || ^0.33.0 || ^2.0.0 || ^3.0.0":
-  version "3.10.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-3.10.0.tgz#d02de7bbe8486c5bfc0203ca412723ef55c1a97d"
-  integrity sha512-xMVf8RLF97w95jzyioXlLJVyZiBISih2yKULP1mV1n2pSE8QyhOfLhgcbjVrRYKZNm0vXT8wusPcrF8rcDuieA==
+"@softwareventures/array@^0.31.0 || ^0.33.0 || ^2.0.0 || ^3.0.0 || ^4.0.0":
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-4.1.2.tgz#64837b0f2b9471e831ddd3545dc7a132ab5fbc1b"
+  integrity sha512-pJbMwIXY4Cod9DGYkcSlTnsSHMOWVT9Uu4+FvlPb4gFe3Qco+hekal4IR58KRwg1EqSHejvAIdP/bTSDnOvl0w==
   dependencies:
-    "@softwareventures/dictionary" "^0.6.0 || ^0.7.0 || ^0.8.0"
-    "@softwareventures/nullable" "^1.0.0 || ^1.2.1"
-    "@softwareventures/ordered" "^0.2.0"
-    dictionary-types "^1.2.0"
-    tslib "^1.9.3 || ^2.0.0"
+    "@softwareventures/nullable" "^1.0.0 || ^1.0.0 || ^1.2.1"
+    "@softwareventures/ordered" "^0.2.0 || ^1.0.0"
+    tslib "^2.0.0"
 
 "@softwareventures/chain@^0.1.2 || ^1.0.0":
   version "1.0.0"
@@ -513,7 +511,7 @@
     dictionary-types "^1.2.0"
     tslib "2.3.0"
 
-"@softwareventures/dictionary@^0.6.0 || ^0.7.0 || ^0.8.0", "@softwareventures/dictionary@^0.7.1 || ^0.8.0":
+"@softwareventures/dictionary@^0.7.1 || ^0.8.0":
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-0.8.1.tgz#6a0fdd39c8181471337561c6724272de72872ad7"
   integrity sha512-rlGBreUXqD/2ybJZHLUQs08J1C3mQXpvVmpTejmsmy/istVJ1YsOMK52ahirMr2/a7S3NUoF2BQImWQ3AYIhlQ==
@@ -565,6 +563,13 @@
   integrity sha512-n3Kkk9jZ+i2Az7YqnJR3TimhsVSiTfwN9ybDfPcJvvCge0cINszO754n4/pdlCyLYVOn2VzTVFDVTrj+xFvNFQ==
   dependencies:
     tslib "^1.9.3 || ^2.0.0"
+
+"@softwareventures/ordered@^0.2.0 || ^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/ordered/-/ordered-1.0.0.tgz#d803eef43bb0b4ccfcd78d2928fe38b5109ad99e"
+  integrity sha512-SUFUYDWEPAS54LpGH+mRHwkGuTINPDt4OOS3h/Zr9f12JPFz2cqh6Xxwg75BZqwaeONuUwmklJVMRmgvxSSkPA==
+  dependencies:
+    tslib "^1.9.3 || ^2.0.0 || ^2.1.0"
 
 "@softwareventures/prettier-config@1.0.2":
   version "1.0.2"
@@ -8568,12 +8573,12 @@ selfsigned@^1.10.8:
   dependencies:
     node-forge "^0.10.0"
 
-semantic-release-s3-upload@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/semantic-release-s3-upload/-/semantic-release-s3-upload-1.0.1.tgz#7191b0beda40d135515dcfea714728d9ee63f6e5"
-  integrity sha512-+U6nDo0rQrqiCcKQbutmbkry2C7odS8Uf+0UzxdjovKw71pDOKJEt59B3458aqWLu/zGx6H/r5G+0Azq9vb6zA==
+semantic-release-s3-upload@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/semantic-release-s3-upload/-/semantic-release-s3-upload-1.0.2.tgz#0c75d1ad7e9cf246b9f54019bc837c561a82e254"
+  integrity sha512-p5WLFVBHAxnuHIZVF7s+w+HVCbUezWqWHmVZOc1/It5oaesrK0w5y5SnMwxxJ21/igbeRBXBSdknBJlK/lDncg==
   dependencies:
-    "@softwareventures/array" "^0.31.0 || ^0.33.0 || ^2.0.0 || ^3.0.0"
+    "@softwareventures/array" "^0.31.0 || ^0.33.0 || ^2.0.0 || ^3.0.0 || ^4.0.0"
     "@softwareventures/chain" "^0.1.2 || ^1.0.0"
     "@types/mime" "^2.0.1"
     aws-sdk "^2.553.0 || ^2.884.0"
@@ -9567,7 +9572,7 @@ tslib@2.2.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.2.0.tgz#fb2c475977e35e241311ede2693cee1ec6698f5c"
   integrity sha512-gS9GVHRU+RGn5KQM2rllAlR3dU6m7AcpJKdtH8gFvQiC4Otgk98XnmMU+nZenHt/+VhnBPWwgrJsyrdcw6i23w==
 
-tslib@2.3.0, "tslib@^1.11.2 || ^2.0.0", "tslib@^1.9.3 || ^2.0.0", tslib@^2.0.0, tslib@^2.0.3, tslib@^2.1.0:
+tslib@2.3.0, "tslib@^1.11.2 || ^2.0.0", "tslib@^1.9.3 || ^2.0.0", "tslib@^1.9.3 || ^2.0.0 || ^2.1.0", tslib@^2.0.0, tslib@^2.0.3, tslib@^2.1.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.0.tgz#803b8cdab3e12ba581a4ca41c8839bbb0dacb09e"
   integrity sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==
