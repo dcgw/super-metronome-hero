@@ -2,23 +2,15 @@
   "private": true,
   "name": "@dcgw/super-metronome-hero",
   "version": "0.0.0-development",
-  "type": "module",
   "description": "A rhythm game made for FuckThisJam",
   "keywords": [
+    "fuck-this-jam",
     "game",
-    "typescript",
-    "fuck-this-jam"
+    "typescript"
   ],
-  "author": {
-    "name": "George Weller",
-    "email": "george.weller@gmail.com"
-  },
+  "author": "George Weller <george.weller@gmail.com>",
   "contributors": [
-    {
-      "name": "Daniel Cassidy",
-      "email": "mail@danielcassidy.me.uk",
-      "url": "https://www.danielcassidy.me.uk/"
-    }
+    "Daniel Cassidy <mail@danielcassidy.me.uk> (https://www.danielcassidy.me.uk/)"
   ],
   "homepage": "https://github.com/dcgw/super-metronome-hero",
   "bugs": "https://github.com/dcgw/super-metronome-hero",
@@ -31,9 +23,6 @@
     "semantic-release": "semantic-release",
     "start": "webpack serve --open",
     "test": "ava"
-  },
-  "engine": {
-    "node": ">= 12"
   },
   "dependencies": {
     "@dcgw/excalibur-extended-label": "1.1.0",
@@ -122,5 +111,9 @@
         }
       ]
     ]
-  }
+  },
+  "engine": {
+    "node": ">= 12"
+  },
+  "type": "module"
 }
