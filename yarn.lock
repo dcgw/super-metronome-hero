@@ -1432,10 +1432,10 @@ ava@3.15.0:
     write-file-atomic "^3.0.3"
     yargs "^16.2.0"
 
-aws-sdk@^2.553.0:
-  version "2.939.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.939.0.tgz#c07c9d726bcb2ffdb69016f880ae310ad72f36a5"
-  integrity sha512-2KEAtTlVMDcpHP6+P9JU+mXTNhX3KZ0StW0Qi87oh8EUoRITZj64FrUylNvrCg69thCliAcNzBdlA1g5Iq+qEA==
+"aws-sdk@^2.553.0 || ^2.884.0":
+  version "2.940.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.940.0.tgz#a5c9c2a9642df8a76811162bee529dafdbbefe33"
+  integrity sha512-3m3CglRKuSULo2bPBWUYeE6ugmNHVIw6pFru6bRy/s/em7+4GEZmB4TnlqACgds/X0NyQTKDhPUz0P237dGGmA==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -8570,18 +8570,18 @@ selfsigned@^1.10.8:
   dependencies:
     node-forge "^0.10.0"
 
-semantic-release-s3-upload@0.2.80:
-  version "0.2.80"
-  resolved "https://registry.yarnpkg.com/semantic-release-s3-upload/-/semantic-release-s3-upload-0.2.80.tgz#d3dd0a5b8ab74d4feb71bdd2b8a80b1c0df25788"
-  integrity sha512-EavaTVdwF5bsF3Xy37ngbWHc70NWIEh3lyGTDH3S7cb/0b/EXKsb9yDV7bigHdvHgJLrjIhJ5cQHbzGH/Nd/Xg==
+semantic-release-s3-upload@0.2.81:
+  version "0.2.81"
+  resolved "https://registry.yarnpkg.com/semantic-release-s3-upload/-/semantic-release-s3-upload-0.2.81.tgz#19615936e36f2fce33e56bcf8b9b3d2cd453df77"
+  integrity sha512-pmp1HMAUbc7hIKyAj+CNGBUKm4ePTrGsA+TtgY1zMWfcIYLQ17US+tp+eISc2NliPmxtC5UFQiCxh1JwNWr/nQ==
   dependencies:
     "@softwareventures/array" "^0.31.0 || ^0.33.0 || ^2.0.0 || ^3.0.0"
     "@softwareventures/chain" "^0.1.2"
     "@types/mime" "^2.0.1"
-    aws-sdk "^2.553.0"
+    aws-sdk "^2.553.0 || ^2.884.0"
     globby "^11.0.0"
     mime "^2.4.4"
-    tslib "2.0.1"
+    tslib "2.3.0"
 
 semantic-release@17.4.4:
   version "17.4.4"
@@ -9564,11 +9564,6 @@ tslib@1.11.2:
   version "1.11.2"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.11.2.tgz#9c79d83272c9a7aaf166f73915c9667ecdde3cc9"
   integrity sha512-tTSkux6IGPnUGUd1XAZHcpu85MOkIl5zX49pO+jfsie3eP0B6pyhOlLXm3cAC6T7s+euSDDUUV+Acop5WmtkVg==
-
-tslib@2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.1.tgz#410eb0d113e5b6356490eec749603725b021b43e"
-  integrity sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
 
 tslib@2.1.0:
   version "2.1.0"
