@@ -500,11 +500,6 @@
     dictionary-types "^1.2.0"
     tslib "^1.9.3 || ^2.0.0"
 
-"@softwareventures/chain@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@softwareventures/chain/-/chain-0.1.2.tgz#2cba555b5c916643c4956ba55b5c538041f20c27"
-  integrity sha512-4eMBnTKQBLHQi7fbKtqf/i8LH5fsGb4JDTXDWo4o7TnUq+3TSdC2gqSopVxb7zQD/jgQTzyGSVDUcIFtlbjMeQ==
-
 "@softwareventures/chain@^0.1.2 || ^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@softwareventures/chain/-/chain-1.0.0.tgz#07be3b7d0f8713fbdd2159b995bfd24390067860"
@@ -8566,13 +8561,13 @@ selfsigned@^1.10.8:
   dependencies:
     node-forge "^0.10.0"
 
-semantic-release-s3-upload@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/semantic-release-s3-upload/-/semantic-release-s3-upload-1.0.0.tgz#4e67176818be4efa1bc3d60abfd007b0313672fa"
-  integrity sha512-zT//VjJP7hMtcmAz50WsePAGj1y2FkYwtQLWuoH+B/AsDJXq2bWJCKNyf+oJz7B1rPOllaoe8lKeWpmFuUDAJw==
+semantic-release-s3-upload@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/semantic-release-s3-upload/-/semantic-release-s3-upload-1.0.1.tgz#7191b0beda40d135515dcfea714728d9ee63f6e5"
+  integrity sha512-+U6nDo0rQrqiCcKQbutmbkry2C7odS8Uf+0UzxdjovKw71pDOKJEt59B3458aqWLu/zGx6H/r5G+0Azq9vb6zA==
   dependencies:
     "@softwareventures/array" "^0.31.0 || ^0.33.0 || ^2.0.0 || ^3.0.0"
-    "@softwareventures/chain" "^0.1.2"
+    "@softwareventures/chain" "^0.1.2 || ^1.0.0"
     "@types/mime" "^2.0.1"
     aws-sdk "^2.553.0 || ^2.884.0"
     globby "^11.0.0"
