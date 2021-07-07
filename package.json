@@ -28,7 +28,7 @@
     "node": "^12 || ^14 || >=16"
   },
   "dependencies": {
-    "@dcgw/excalibur-extended-label": "2.0.1",
+    "@dcgw/excalibur-extended-label": "2.0.2",
     "@softwareventures/dictionary": "1.0.0",
     "@softwareventures/nullable": "2.0.0",
     "@types/domready": "1.0.0",
