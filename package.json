@@ -24,6 +24,9 @@
     "start": "webpack serve --open",
     "test": "ava"
   },
+  "engines": {
+    "node": "^12 || ^14 || >=16"
+  },
   "dependencies": {
     "@dcgw/excalibur-extended-label": "1.1.0",
     "@softwareventures/dictionary": "0.8.1",
