@@ -545,7 +545,14 @@
     "@softwareventures/ordered" "^0.2.2"
     tslib "2.2.0"
 
-"@softwareventures/nullable@1.4.0", "@softwareventures/nullable@^1.0.0 || ^1.0.0 || ^1.2.1", "@softwareventures/nullable@^1.0.0 || ^1.2.1":
+"@softwareventures/nullable@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/nullable/-/nullable-2.0.0.tgz#d11498c5fe71bb0b94ba85a40e774c19c721c5d3"
+  integrity sha512-zx+FMgB4MqmqIiCglgP8GZIYPw57yFBuz/jh0kXNAoEtSRl3LkwhaGG0b/y5yae2RsYSaVkNotQaSmJRt5GahA==
+  dependencies:
+    tslib "2.3.0"
+
+"@softwareventures/nullable@^1.0.0 || ^1.0.0 || ^1.2.1", "@softwareventures/nullable@^1.0.0 || ^1.2.1":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@softwareventures/nullable/-/nullable-1.4.0.tgz#00d51ae9082ce3f338e394e8263a72a12ae3acfa"
   integrity sha512-hds7X6hRqgUQz9L850FCaRFxW/whMc4eOCbJtekeZIiAoczhaw2xQrq5sT+8KZV5MkX8ZddtfMkARwYxFmYwDA==
