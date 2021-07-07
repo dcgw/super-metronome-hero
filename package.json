@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@dcgw/excalibur-extended-label": "2.0.1",
-    "@softwareventures/dictionary": "0.8.1",
+    "@softwareventures/dictionary": "1.0.0",
     "@softwareventures/nullable": "1.4.0",
     "@types/domready": "1.0.0",
     "@types/webpack-env": "1.16.2",
