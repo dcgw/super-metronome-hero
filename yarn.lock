@@ -8140,10 +8140,10 @@ resolve-global@^1.0.0:
   dependencies:
     global-dirs "^0.1.1"
 
-resolve-typescript-plugin@1.0.1, resolve-typescript-plugin@^1.0.0-alpha.4:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/resolve-typescript-plugin/-/resolve-typescript-plugin-1.0.1.tgz#da8f80e97d628ce1bc71fadc8da471188f286223"
-  integrity sha512-SMllbVe1attlO51ZvASIevzK63g6lHkw5ZXs/bcWlCpYlA+QSBvWGtPa5cVrgdSQQPaoaxmNNaiSrbqvAKE3KA==
+resolve-typescript-plugin@1.0.2, resolve-typescript-plugin@^1.0.0-alpha.4:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/resolve-typescript-plugin/-/resolve-typescript-plugin-1.0.2.tgz#f490d90f74fa5b867b788e8f48be6c04e598aa80"
+  integrity sha512-afTD1QbzuZamH+yYOdb9RYUxEFUdzFd81KowNT76tNTkdK+sGaflXE6jnYdEX9WEYwg80m0py+juAD1hUPGOFA==
   dependencies:
     tslib "2.3.0"
 
