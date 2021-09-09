@@ -51,9 +51,9 @@ export function linearColorToGamma(linear: LinearColor): Color {
 }
 
 export function gammaColorComponentToLinear(gamma: number): number {
-    return Math.pow(gamma / 255, 2.2);
+    return (gamma / 255) ** 2.2;
 }
 
 export function linearColorComponentToGamma(linear: number): number {
-    return Math.pow(linear, 1 / 2.2) * 255;
+    return linear ** (1 / 2.2) * 255;
 }

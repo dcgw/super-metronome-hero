@@ -1,17 +1,8 @@
 import Label from "@dcgw/excalibur-extended-label";
-import {
-    Actor,
-    Color,
-    EasingFunctions,
-    Engine,
-    Scene,
-    Sound,
-    Sprite,
-    TextAlign,
-    Vector
-} from "excalibur";
+import type {Engine, Sound} from "excalibur";
+import {Actor, Color, EasingFunctions, Scene, Sprite, TextAlign, Vector} from "excalibur";
 import {defaultLabelOptions} from "../defaults.js";
-import Game from "../game.js";
+import type Game from "../game.js";
 import resources from "../resources.js";
 import Timer from "../metronome/timer.js";
 import {ColorLerp} from "./color.js";
@@ -39,7 +30,7 @@ enum State {
 
 export class Performance extends Scene {
     private showInstructions = true;
-    private timer: Timer;
+    private readonly timer: Timer;
     private score = 0;
     private multiplier = 0;
     private missedBeats = 0;
@@ -130,9 +121,9 @@ export class Performance extends Scene {
             if (this.finalStars > 1) {
                 resources.performanceStar2.play().then(
                     () => {},
-                    reason => console.error("", reason)
+                    reason => void console.error("", reason)
                 );
-                this.star2FadeIn.play().catch(reason => console.error("", reason));
+                this.star2FadeIn.play().catch(reason => void console.error("", reason));
             } else {
                 this.transition(State.done);
             }
@@ -152,9 +143,9 @@ export class Performance extends Scene {
             if (this.finalStars > 2) {
                 resources.performanceStar3.play().then(
                     () => {},
-                    reason => console.error("", reason)
+                    reason => void console.error("", reason)
                 );
-                this.star3FadeIn.play().catch(reason => console.error("", reason));
+                this.star3FadeIn.play().catch(reason => void console.error("", reason));
             } else {
                 this.transition(State.done);
             }
@@ -302,7 +293,7 @@ export class Performance extends Scene {
 
         resources.performanceReady.play().then(
             () => void 0,
-            reason => console.error("", reason)
+            reason => void console.error("", reason)
         );
     }
 
@@ -323,7 +314,7 @@ export class Performance extends Scene {
                 if (this.timer.isBeat) {
                     this.countdown[this.introBeat]?.play().then(
                         () => void 0,
-                        reason => console.error("", reason)
+                        reason => void console.error("", reason)
                     );
                     ++this.introBeat;
 
@@ -364,7 +355,7 @@ export class Performance extends Scene {
                         void this.multiplierPerfectTween.play();
                         resources.performanceChime.play().then(
                             () => void 0,
-                            reason => console.error("", reason)
+                            reason => void console.error("", reason)
                         );
                     } else if (this.timer.offBeatMs < (3 / 60) * 1000) {
                         this.add(new Floater("Good", Color.fromHex("0bd308")));
@@ -437,7 +428,7 @@ export class Performance extends Scene {
                 this.messageText.text = this.missedBeats <= maxMissedBeats ? "Great!" : "You Suck";
                 void this.messageFadeIn.play();
 
-                this.starBlankFadeIn.play().catch(reason => console.error("", reason));
+                this.starBlankFadeIn.play().catch(reason => void console.error("", reason));
 
                 this.time = outroDuration;
 
@@ -448,7 +439,7 @@ export class Performance extends Scene {
                     .play()
                     .then(
                         () => void 0,
-                        reason => console.error("", reason)
+                        reason => void console.error("", reason)
                     );
                 break;
             case State.result:
@@ -456,9 +447,9 @@ export class Performance extends Scene {
                 if (this.finalStars > 0) {
                     resources.performanceStar1.play().then(
                         () => {},
-                        reason => console.error("", reason)
+                        reason => void console.error("", reason)
                     );
-                    this.star1FadeIn.play().catch(reason => console.error("", reason));
+                    this.star1FadeIn.play().catch(reason => void console.error("", reason));
                 } else {
                     this.transition(State.done);
                 }

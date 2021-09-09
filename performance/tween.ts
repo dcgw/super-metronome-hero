@@ -1,4 +1,5 @@
-import {Actor, EasingFunctions, Engine} from "excalibur";
+import type {Engine} from "excalibur";
+import {Actor, EasingFunctions} from "excalibur";
 
 export default class Tween extends Actor {
     private playing = false;
@@ -22,7 +23,9 @@ export default class Tween extends Actor {
         this.playing = true;
         this.time = 0;
 
-        return new Promise(resolve => (this.resolvePromise = resolve));
+        return new Promise(resolve => {
+            this.resolvePromise = resolve;
+        });
     }
 
     public update(engine: Engine, delta: number): void {

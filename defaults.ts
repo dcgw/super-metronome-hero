@@ -1,4 +1,4 @@
-import {LabelOptions} from "@dcgw/excalibur-extended-label";
+import type {LabelOptions} from "@dcgw/excalibur-extended-label";
 import {BaseAlign, Color} from "excalibur";
 
 export const defaultLabelOptions: LabelOptions = {

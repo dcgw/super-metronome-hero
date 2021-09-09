@@ -1,7 +1,8 @@
 import Label from "@dcgw/excalibur-extended-label";
-import {Actor, Color, Engine, Scene, TextAlign, Traits, Vector} from "excalibur";
+import type {Engine} from "excalibur";
+import {Actor, Color, Scene, TextAlign, Traits, Vector} from "excalibur";
 import {defaultLabelOptions} from "../defaults.js";
-import Game from "../game.js";
+import type Game from "../game.js";
 import Timer from "../metronome/timer.js";
 import resources from "../resources.js";
 

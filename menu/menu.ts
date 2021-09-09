@@ -1,6 +1,7 @@
 import {notNull} from "@softwareventures/nullable";
-import {Actor, EasingFunctions, Engine, Input, Scene, Vector} from "excalibur";
-import Game from "../game.js";
+import type {Engine} from "excalibur";
+import {Actor, EasingFunctions, Input, Scene, Vector} from "excalibur";
+import type Game from "../game.js";
 import resources from "../resources.js";
 import MenuItem from "./menu-item.js";
 
@@ -32,7 +33,7 @@ export default class Menu extends Scene {
         background.addDrawing(resources.titleBackground);
         this.add(background);
 
-        this.items.forEach(item => this.add(item));
+        this.items.forEach(item => void this.add(item));
 
         notNull(this.items[0]).locked = false;
         notNull(this.items[0]).selected = true;
@@ -48,7 +49,7 @@ export default class Menu extends Scene {
             selectedItem.stars = this.game.stars;
 
             const nextItem = this.items[this.selectedIndex + 1];
-            if (this.game.stars > 0 && nextItem?.locked) {
+            if (this.game.stars > 0 && nextItem != null && nextItem.locked) {
                 nextItem.locked = false;
             }
         }
@@ -60,7 +61,7 @@ export default class Menu extends Scene {
         if (this.game.engine.input.keyboard.wasPressed(13 /*Enter*/)) {
             resources.menuSelect.play().then(
                 () => void 0,
-                reason => console.error("", reason)
+                reason => void console.error("", reason)
             );
 
             const selectedItem = notNull(this.items[this.selectedIndex]);
@@ -79,7 +80,7 @@ export default class Menu extends Scene {
                 notNull(this.items[this.selectedIndex]).selected = false;
                 resources.menuBlip.play().then(
                     () => void 0,
-                    reason => console.error("", reason)
+                    reason => void console.error("", reason)
                 );
                 this.selectedIndex += itemChange;
 
@@ -107,7 +108,7 @@ export default class Menu extends Scene {
                         )
                         .then(
                             () => void 0,
-                            reason => console.error("", reason)
+                            reason => void console.error("", reason)
                         );
                 } else if (selectedItem.body.collider.bounds.top < this.camera.viewport.top) {
                     this.camera
@@ -121,7 +122,7 @@ export default class Menu extends Scene {
                         )
                         .then(
                             () => void 0,
-                            reason => console.error("", reason)
+                            reason => void console.error("", reason)
                         );
                 }
             }

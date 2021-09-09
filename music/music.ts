@@ -1,4 +1,5 @@
-import {Actor, Engine} from "excalibur";
+import type {Engine} from "excalibur";
+import {Actor} from "excalibur";
 import resources from "../resources.js";
 
 const fadeTime = (30 / 60) * 1000;
@@ -26,7 +27,7 @@ export default class Music extends Actor {
             this.playing = true;
             resources.music.play().then(
                 () => void 0,
-                reason => console.error("", reason)
+                reason => void console.error("", reason)
             );
         } else if (!this.playing) {
             this.time = 0;

@@ -1,4 +1,5 @@
-import {Actor, Engine, Vector} from "excalibur";
+import type {Engine} from "excalibur";
+import {Actor, Vector} from "excalibur";
 import resources from "../resources.js";
 
 export default class Arm extends Actor {
@@ -20,7 +21,7 @@ export default class Arm extends Actor {
         this.shake = (1 / 60) * 1000;
         resources.performanceMiss.play().then(
             () => void 0,
-            reason => console.error("", reason)
+            reason => void console.error("", reason)
         );
     }
 
@@ -28,7 +29,7 @@ export default class Arm extends Actor {
         this.tick = !this.tick;
         (this.tick ? resources.performanceTick : resources.performanceTock).play().then(
             () => void 0,
-            reason => console.error("", reason)
+            reason => void console.error("", reason)
         );
     }
 

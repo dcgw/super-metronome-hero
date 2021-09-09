@@ -1,5 +1,6 @@
 import Label from "@dcgw/excalibur-extended-label";
-import {Actor, Color, Engine, SpriteSheet, Vector} from "excalibur";
+import type {Engine} from "excalibur";
+import {Actor, Color, SpriteSheet, Vector} from "excalibur";
 import {defaultLabelOptions} from "../defaults.js";
 import resources from "../resources.js";
 
@@ -105,7 +106,7 @@ export default class MenuItem extends Actor {
 
         this.add(this.lockedText);
 
-        this.labelText.fontSize = options.textSize || 60;
+        this.labelText.fontSize = options.textSize ?? 60;
         this.labelText.text = options.tempo;
         this.add(this.labelText);
 

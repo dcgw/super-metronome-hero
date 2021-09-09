@@ -56,12 +56,12 @@ domready(() => {
         engine.screen.canvas.focus();
     };
 
-    let pointerTimeout = 0;
+    let pointerTimeout: number | null = null;
 
     const onMouseMove = (): void => {
         showPointer();
 
-        if (pointerTimeout) {
+        if (pointerTimeout != null) {
             clearTimeout(pointerTimeout);
         }
 

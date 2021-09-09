@@ -41,7 +41,7 @@ export default class Game {
                 this.engine.addScene("performance", new Performance(this));
                 this.engine.goToScene("title");
             },
-            reason => console.error("", reason)
+            reason => void console.error("", reason)
         );
     }
 

@@ -1,5 +1,6 @@
 import Label from "@dcgw/excalibur-extended-label";
-import {Color, Engine, Vector} from "excalibur";
+import type {Engine} from "excalibur";
+import {Color, Vector} from "excalibur";
 import {defaultLabelOptions} from "../defaults.js";
 
 const speed = 3 * 60;
