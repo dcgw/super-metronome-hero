@@ -47,6 +47,7 @@ export default class Arm extends Actor {
     public reset(): void {
         this.shake = 0;
         this.tick = false;
+        this.beat(0);
     }
 
     public beat(beat: number): void {
