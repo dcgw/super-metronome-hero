@@ -7540,14 +7540,7 @@ resolve-global@^1.0.0:
   dependencies:
     global-dirs "^0.1.1"
 
-resolve-typescript-plugin@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/resolve-typescript-plugin/-/resolve-typescript-plugin-1.1.0.tgz#06311be265a4621a350208e3c0791d20d215b686"
-  integrity sha512-jsj27SwAGynpAaspMB4gNyRQJA2YrhDrpU8yLY6yM9MglnBSS06dKGZR3RdRr0Y2+fO/kkl3cAsaoody8x2fyA==
-  dependencies:
-    tslib "2.3.0"
-
-resolve-typescript-plugin@^1.0.0-alpha.4:
+resolve-typescript-plugin@1.1.1, resolve-typescript-plugin@^1.0.0-alpha.4:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/resolve-typescript-plugin/-/resolve-typescript-plugin-1.1.1.tgz#ead6c77c1c8731cad60445a515eca428db8ef653"
   integrity sha512-Uc5S/W/Kn8mBDdwHIbx4fBvcGnVbraYIMInAyALLBoxIbglvMhYuIttdClTRN0YqmmvbjFakHXO9RPlF3gl2sQ==
