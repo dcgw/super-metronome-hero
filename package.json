@@ -40,7 +40,7 @@
   "devDependencies": {
     "@semantic-release/exec": "5.0.0",
     "@softwareventures/eslint-config": "5.0.0-alpha.5",
-    "@softwareventures/prettier-config": "1.0.3",
+    "@softwareventures/prettier-config": "2.0.0",
     "@softwareventures/webpack-config": "4.0.0-alpha.39",
     "ava": "3.15.0",
     "cz-conventional-changelog": "3.3.0",
