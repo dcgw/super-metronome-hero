@@ -535,10 +535,19 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
-"@softwareventures/array@4.1.3", "@softwareventures/array@^0.31.0 || ^0.33.0 || ^2.0.0 || ^3.0.0 || ^4.0.0":
+"@softwareventures/array@4.1.3":
   version "4.1.3"
   resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-4.1.3.tgz#fbcf5fb649c5ae8611e64c398bcb57203531a7d1"
   integrity sha512-/ThQEaiQb8PuipPfH6DdwRp4Xq6nsOzkUDWRtOQ+EstA8KXgSa9bzQNSYKkIBGQ4qjvfQKHOqVrh75CdZ3iE8Q==
+  dependencies:
+    "@softwareventures/nullable" "^1.0.0 || ^1.0.0 || ^1.2.1 || ^2.0.0"
+    "@softwareventures/ordered" "^0.2.0 || ^1.0.0"
+    tslib "^2.0.0"
+
+"@softwareventures/array@^0.31.0 || ^0.33.0 || ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/array/-/array-5.0.1.tgz#2d4d3cf6668ca281fbcc4909e2db3258af28363e"
+  integrity sha512-xvg0Oc0Cx9ENukNbtv2/zSOqOZ6qkF4KJ1CKfO+M7SWfn8j25znUwvNq+nOrZfOqlU93WRN35IO0rIIzxbL3bw==
   dependencies:
     "@softwareventures/nullable" "^1.0.0 || ^1.0.0 || ^1.2.1 || ^2.0.0"
     "@softwareventures/ordered" "^0.2.0 || ^1.0.0"
@@ -5840,10 +5849,15 @@ mime@1.6.0, mime@^1.4.1:
   resolved "https://registry.yarnpkg.com/mime/-/mime-1.6.0.tgz#32cd9e5c64553bd58d19a568af452acff04981b1"
   integrity sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==
 
-mime@^2.4.3, mime@^2.4.4:
+mime@^2.4.3:
   version "2.5.2"
   resolved "https://registry.yarnpkg.com/mime/-/mime-2.5.2.tgz#6e3dc6cc2b9510643830e5f19d5cb753da5eeabe"
   integrity sha512-tqkh47FzKeCPD2PUiPB6pkbMzsCasjxAfC62/Wap5qrUWcb+sFasXUC5I3gYM5iBM8v/Qpn4UK0x+j0iHyFPDg==
+
+"mime@^2.4.4 || ^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/mime/-/mime-3.0.0.tgz#b374550dca3a0c18443b0c950a6a58f1931cf7a7"
+  integrity sha512-jSCU7/VB1loIWBZe14aEYHU/+1UMEHoaO7qxCOVJOw9GgH72VAWppxNcjU+x9a2k3GSIBXNKxXQFqRvvZ7vr3A==
 
 mimic-fn@^1.0.0:
   version "1.2.0"
@@ -7793,18 +7807,18 @@ selfsigned@^1.10.11:
   dependencies:
     node-forge "^0.10.0"
 
-semantic-release-s3-upload@1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/semantic-release-s3-upload/-/semantic-release-s3-upload-1.0.3.tgz#0f73180b29713da80cdd1d18589c66b1daba7098"
-  integrity sha512-76Drgt95cuIk7nXFIGs/43ATwMANSTVnIG1Ufv/jOyr/Z6AYWdY3vWLbD4agY8ulawFeRBTSO/d8TI3rboIj2A==
+semantic-release-s3-upload@1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/semantic-release-s3-upload/-/semantic-release-s3-upload-1.0.6.tgz#cf51684d330380a95619459c00860f2ba360bbb7"
+  integrity sha512-E4jHjSNgkjpfw8EsuH7rwTSrmNDkU3fiFIvKNuJozhPzTMvbVwHkZsjULFi/P1YSiU9V737rKDRdREHocKDFDQ==
   dependencies:
-    "@softwareventures/array" "^0.31.0 || ^0.33.0 || ^2.0.0 || ^3.0.0 || ^4.0.0"
+    "@softwareventures/array" "^0.31.0 || ^0.33.0 || ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0"
     "@softwareventures/chain" "^0.1.2 || ^1.0.0"
     "@types/mime" "^2.0.1"
     aws-sdk "^2.553.0 || ^2.884.0"
     globby "^11.0.0"
-    mime "^2.4.4"
-    tslib "2.3.0"
+    mime "^2.4.4 || ^3.0.0"
+    tslib "2.3.1"
 
 semantic-release@17.4.7:
   version "17.4.7"
