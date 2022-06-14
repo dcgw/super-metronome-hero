@@ -46,7 +46,7 @@
     "cz-conventional-changelog": "3.3.0",
     "eslint": "7.32.0",
     "html-webpack-plugin": "5.5.0",
-    "prettier": "2.6.2",
+    "prettier": "2.7.0",
     "resolve-typescript-plugin": "1.2.0",
     "semantic-release": "17.4.7",
     "semantic-release-s3-upload": "1.0.6",
