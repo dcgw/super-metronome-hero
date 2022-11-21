@@ -55,7 +55,7 @@
     "eslint-plugin-sonarjs": "0.16.0",
     "html-webpack-plugin": "5.5.0",
     "prettier": "2.7.1",
-    "resolve-typescript-plugin": "1.2.0",
+    "resolve-typescript-plugin": "2.0.0",
     "semantic-release": "17.4.7",
     "semantic-release-s3-upload": "1.0.7",
     "ts-loader": "9.4.1",
