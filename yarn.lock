@@ -603,7 +603,15 @@
   resolved "https://registry.yarnpkg.com/@softwareventures/chain/-/chain-2.0.2.tgz#2267be08e338d543d7d08b972422ecdaa0bf18ed"
   integrity sha512-oE9Oo3QlO9YAWQW+chyl/IcLaU1H3vJUDydfO7fKVlKI0nW95amTPlYVjtPeIIuwE4VpWIAzrTzocQTRvqRFAA==
 
-"@softwareventures/dictionary@1.0.1", "@softwareventures/dictionary@^0.7.1 || ^0.8.0 || ^1.0.0":
+"@softwareventures/dictionary@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-2.0.1.tgz#067c479096b1a2172967bbd17e4b0648511e73fd"
+  integrity sha512-JJBxi5I87P/Zaa/HJeXsBkFCJ9L4Yzq9jwRQwUfgK5U/pGEAtCT6+HKFP5w4/aa5U5drc4e0vGej0UzzeIWYXg==
+  dependencies:
+    dictionary-types "^1.2.0 || ^2.0.0 || ^3.0.0"
+    tslib "2.4.1"
+
+"@softwareventures/dictionary@^0.7.1 || ^0.8.0 || ^1.0.0":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@softwareventures/dictionary/-/dictionary-1.0.1.tgz#e814796650820addae62fa4ced76a0900cb46b85"
   integrity sha512-DjQgflEuaDHsw8Jj67n9/XzkBLAmOITxEbWHQoOkv67P8w8KHLCASz3dZuBdcQCiUcwrJyWTIoTS+Zhj/lDjhg==
@@ -3276,6 +3284,11 @@ dezalgo@^1.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/dictionary-types/-/dictionary-types-2.0.1.tgz#9f0b9b4bcde6237e241bcd7ea1d255be450f6e22"
   integrity sha512-oGwLOZSgaS8JDIbe42MCTZ+/IUFLaSxfZ1agSwCojz+9K2MxnnAY/YPoKTGHawxnLKCHHN2bQDrP271Glpf7jA==
+
+"dictionary-types@^1.2.0 || ^2.0.0 || ^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/dictionary-types/-/dictionary-types-3.0.0.tgz#55e17fd87bf61053a660ae7cedc26d211b4b22aa"
+  integrity sha512-Wb0hqm1sCr0eCvy6VzBD892PDO4WTQn9Q2eWG8xUQ7lldb7w3oaR81gZLjB5VADlNIU9ICKPcj9atY7VNpToTg==
 
 diff@^4.0.1:
   version "4.0.2"
