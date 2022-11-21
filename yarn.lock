@@ -79,13 +79,14 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@dcgw/excalibur-extended-label@2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@dcgw/excalibur-extended-label/-/excalibur-extended-label-2.0.2.tgz#3946c47e94c4628726a8e284f37e492f7f40515e"
-  integrity sha512-mw7I8nnj0CKqeGz8FBM3K0PsugkgzNdrbuns0elNA5FFhtIjlCA7Z0kkGKAzMsh4XrSDQBUV76uJaSQkoHLCrQ==
+"@dcgw/excalibur-extended-label@4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@dcgw/excalibur-extended-label/-/excalibur-extended-label-4.0.0.tgz#56ed30c5a5297e088277ea734987c12a16329f4a"
+  integrity sha512-G6MW7/Qy45iI1VM2OdVD+Jc5WyXeuE16Nf1H4b5eqsfsaVfWbzQHO85hugyGWJLW3tvo0xeQn0nAN7NhFKo1nQ==
   dependencies:
     "@softwareventures/chain" "^0.1.2 || ^1.0.0"
     "@softwareventures/iterable" "^1.1.1 || ^1.1.1 || ^2.0.0"
+    "@typescript-eslint/parser" "5.43.0"
     tslib "^2.0.0"
 
 "@discoveryjs/json-ext@^0.5.0":
