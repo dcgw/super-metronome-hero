@@ -26,7 +26,7 @@
     "test": "ava"
   },
   "engines": {
-    "node": "^12 || ^14 || >=16"
+    "node": "^14 || ^16 || ^18 || >=19"
   },
   "dependencies": {
     "@dcgw/excalibur-extended-label": "2.0.2",
