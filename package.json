@@ -56,7 +56,7 @@
     "html-webpack-plugin": "5.5.0",
     "prettier": "2.7.1",
     "resolve-typescript-plugin": "2.0.0",
-    "semantic-release": "19.0.3",
+    "semantic-release": "19.0.5",
     "semantic-release-s3-upload": "2.0.3",
     "ts-loader": "9.4.1",
     "ts-node": "10.9.1",
