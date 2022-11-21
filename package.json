@@ -16,6 +16,7 @@
   "bugs": "https://github.com/dcgw/super-metronome-hero",
   "repository": "github:dcgw/super-metronome-hero",
   "license": "UNLICENSED",
+  "type": "module",
   "scripts": {
     "build": "webpack --env production",
     "fix": "tsc && eslint . --fix && prettier --write .",
@@ -117,6 +118,5 @@
   },
   "engine": {
     "node": ">= 12"
-  },
-  "type": "module"
+  }
 }
