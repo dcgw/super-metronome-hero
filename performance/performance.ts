@@ -1,6 +1,6 @@
 import Label from "@dcgw/excalibur-extended-label";
 import type {Engine, Sound} from "excalibur";
-import {Actor, Color, EasingFunctions, Scene, Sprite, TextAlign, Vector} from "excalibur";
+import {Actor, Color, EasingFunctions, Scene, TextAlign, Vector} from "excalibur";
 import {defaultLabelOptions} from "../defaults.js";
 import type Game from "../game.js";
 import resources from "../resources.js";
@@ -191,7 +191,7 @@ export class Performance extends Scene {
     ];
 
     public constructor(private readonly game: Game) {
-        super(game.engine);
+        super();
         this.timer = new Timer(0);
 
         const background = new Actor({
@@ -200,7 +200,7 @@ export class Performance extends Scene {
             height: 480,
             anchor: Vector.Zero
         });
-        background.addDrawing(resources.performanceBackground);
+        background.graphics.add(resources.performanceBackground.toSprite());
         this.add(background);
 
         this.add(this.arm);
@@ -211,7 +211,7 @@ export class Performance extends Scene {
             height: 480,
             anchor: Vector.Zero
         });
-        overlay.addDrawing(resources.performanceOverlay);
+        overlay.graphics.add(resources.performanceOverlay.toSprite());
         this.add(overlay);
 
         const vignette = new Actor({
@@ -220,7 +220,7 @@ export class Performance extends Scene {
             height: 480,
             anchor: Vector.Zero
         });
-        vignette.addDrawing(resources.performanceVignette);
+        vignette.graphics.add(resources.performanceVignette.toSprite());
         this.add(vignette);
 
         this.add(this.tempoText);
@@ -233,17 +233,17 @@ export class Performance extends Scene {
         this.add(this.messageFadeIn);
         this.add(this.messageFadeOut);
 
-        this.star1Blank.addDrawing(new Sprite(resources.performanceBigStarBlank, 0, 0, 158, 152));
+        this.star1Blank.graphics.add(resources.performanceBigStarBlank.toSprite());
         this.add(this.star1Blank);
-        this.star2Blank.addDrawing(new Sprite(resources.performanceBigStarBlank, 0, 0, 158, 152));
+        this.star2Blank.graphics.add(resources.performanceBigStarBlank.toSprite());
         this.add(this.star2Blank);
-        this.star3Blank.addDrawing(new Sprite(resources.performanceBigStarBlank, 0, 0, 158, 152));
+        this.star3Blank.graphics.add(resources.performanceBigStarBlank.toSprite());
         this.add(this.star3Blank);
-        this.star1.addDrawing(new Sprite(resources.performanceBigStar, 0, 0, 120, 115));
+        this.star1.graphics.add(resources.performanceBigStar.toSprite());
         this.add(this.star1);
-        this.star2.addDrawing(new Sprite(resources.performanceBigStar, 0, 0, 120, 115));
+        this.star2.graphics.add(resources.performanceBigStar.toSprite());
         this.add(this.star2);
-        this.star3.addDrawing(new Sprite(resources.performanceBigStar, 0, 0, 120, 115));
+        this.star3.graphics.add(resources.performanceBigStar.toSprite());
         this.add(this.star3);
 
         this.add(this.starBlankFadeIn);

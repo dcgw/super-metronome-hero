@@ -1,4 +1,5 @@
 import Label from "@dcgw/excalibur-extended-label";
+import {notNull} from "@softwareventures/nullable";
 import type {Engine} from "excalibur";
 import {Actor, Color, SpriteSheet, Vector} from "excalibur";
 import {defaultLabelOptions} from "../defaults.js";
@@ -14,23 +15,27 @@ export interface Options {
 const boxWidth = 500;
 const boxHeight = 100;
 
-const boxSpriteSheet = new SpriteSheet({
+const boxSpriteSheet = SpriteSheet.fromImageSource({
     image: resources.menuItem,
-    spWidth: boxWidth,
-    spHeight: boxHeight,
-    rows: 1,
-    columns: 4
+    grid: {
+        spriteWidth: boxWidth,
+        spriteHeight: boxHeight,
+        rows: 1,
+        columns: 4
+    }
 });
 
 const ratingWidth = 70;
 const ratingHeight = 70;
 
-const ratingSpriteSheet = new SpriteSheet({
+const ratingSpriteSheet = SpriteSheet.fromImageSource({
     image: resources.menuItemRatings,
-    spWidth: ratingWidth,
-    spHeight: ratingHeight,
-    rows: 1,
-    columns: 5
+    grid: {
+        spriteWidth: ratingWidth,
+        spriteHeight: ratingHeight,
+        rows: 1,
+        columns: 5
+    }
 });
 
 export default class MenuItem extends Actor {
@@ -91,35 +96,37 @@ export default class MenuItem extends Actor {
         this.tempo = options.tempo;
         this.bpm = options.bpm;
 
-        this.box.addDrawing("locked", boxSpriteSheet.getSprite(0));
-        this.box.addDrawing("unlocked", boxSpriteSheet.getSprite(1));
-        this.box.addDrawing("locked-glow", boxSpriteSheet.getSprite(2));
-        this.box.addDrawing("unlocked-glow", boxSpriteSheet.getSprite(3));
-        this.add(this.box);
+        this.box.graphics.add("locked", notNull(boxSpriteSheet.getSprite(0, 0)));
+        this.box.graphics.add("unlocked", notNull(boxSpriteSheet.getSprite(1, 0)));
+        this.box.graphics.add("locked-glow", notNull(boxSpriteSheet.getSprite(2, 0)));
+        this.box.graphics.add("unlocked-glow", notNull(boxSpriteSheet.getSprite(3, 0)));
+        this.addChild(this.box);
 
-        this.rating.addDrawing("locked", ratingSpriteSheet.getSprite(0));
-        this.rating.addDrawing("0", ratingSpriteSheet.getSprite(1));
-        this.rating.addDrawing("1", ratingSpriteSheet.getSprite(2));
-        this.rating.addDrawing("2", ratingSpriteSheet.getSprite(3));
-        this.rating.addDrawing("3", ratingSpriteSheet.getSprite(4));
-        this.add(this.rating);
+        this.rating.graphics.add("locked", notNull(ratingSpriteSheet.getSprite(0, 0)));
+        this.rating.graphics.add("0", notNull(ratingSpriteSheet.getSprite(1, 0)));
+        this.rating.graphics.add("1", notNull(ratingSpriteSheet.getSprite(2, 0)));
+        this.rating.graphics.add("2", notNull(ratingSpriteSheet.getSprite(3, 0)));
+        this.rating.graphics.add("3", notNull(ratingSpriteSheet.getSprite(4, 0)));
+        this.addChild(this.rating);
 
-        this.add(this.lockedText);
+        this.addChild(this.lockedText);
 
         this.labelText.fontSize = options.textSize ?? 60;
         this.labelText.text = options.tempo;
-        this.add(this.labelText);
+        this.addChild(this.labelText);
 
         this.subText.text = `${options.bpm} bpm`;
-        this.add(this.subText);
+        this.addChild(this.subText);
     }
 
     public update(engine: Engine, delta: number): void {
         super.update(engine, delta);
 
-        this.box.setDrawing((this.locked ? "locked" : "unlocked") + (this.selected ? "-glow" : ""));
+        this.box.graphics.show(
+            (this.locked ? "locked" : "unlocked") + (this.selected ? "-glow" : "")
+        );
 
-        this.rating.setDrawing(this.locked ? "locked" : this.stars.toString(10));
+        this.rating.graphics.show(this.locked ? "locked" : this.stars.toString(10));
 
         this.lockedText.visible = this.locked;
         this.labelText.visible = this.subText.visible = !this.locked;

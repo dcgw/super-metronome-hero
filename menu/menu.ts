@@ -24,13 +24,13 @@ export default class Menu extends Scene {
     ];
 
     public constructor(private readonly game: Game) {
-        super(game.engine);
+        super();
 
         const background = new Actor({
             pos: Vector.Zero,
             anchor: Vector.Zero
         });
-        background.addDrawing(resources.titleBackground);
+        background.graphics.add(resources.titleBackground.toSprite());
         this.add(background);
 
         this.items.forEach(item => void this.add(item));
@@ -58,7 +58,7 @@ export default class Menu extends Scene {
     public update(engine: Engine, delta: number): void {
         super.update(engine, delta);
 
-        if (this.game.engine.input.keyboard.wasPressed(13 /*Enter*/)) {
+        if (this.game.engine.input.keyboard.wasPressed("Enter" as Input.Keys)) {
             resources.menuSelect.play().then(
                 () => void 0,
                 reason => void console.error("", reason)
@@ -96,7 +96,7 @@ export default class Menu extends Scene {
 
                 selectedItem.selected = true;
 
-                if (selectedItem.body.collider.bounds.bottom > this.camera.viewport.bottom) {
+                if (selectedItem.collider.bounds.bottom > this.camera.viewport.bottom) {
                     this.camera
                         .move(
                             new Vector(
@@ -110,7 +110,7 @@ export default class Menu extends Scene {
                             () => void 0,
                             reason => void console.error("", reason)
                         );
-                } else if (selectedItem.body.collider.bounds.top < this.camera.viewport.top) {
+                } else if (selectedItem.collider.bounds.top < this.camera.viewport.top) {
                     this.camera
                         .move(
                             new Vector(

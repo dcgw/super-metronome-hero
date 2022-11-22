@@ -21,20 +21,20 @@ export default class Title extends Scene {
     });
 
     public constructor(private readonly game: Game) {
-        super(game.engine);
+        super();
 
         const background = new Actor({
             pos: Vector.Zero,
             anchor: Vector.Zero
         });
-        background.addDrawing(resources.titleBackground);
+        background.graphics.add(resources.titleBackground.toSprite());
         this.add(background);
 
         this.bigArm = new Actor({
             pos: new Vector(680, 1100),
             anchor: new Vector(129 / 257, 1300 / 1356)
         });
-        this.bigArm.addDrawing(resources.titleBigArm);
+        this.bigArm.graphics.add(resources.titleBigArm.toSprite());
 
         this.bigArm.traits.forEach((trait, index) => {
             if (trait instanceof Traits.OffscreenCulling) {
@@ -47,21 +47,21 @@ export default class Title extends Scene {
             pos: Vector.Zero,
             anchor: Vector.Zero
         });
-        body.addDrawing(resources.titleBody);
+        body.graphics.add(resources.titleBody.toSprite());
         this.add(body);
 
         this.smallArm = new Actor({
             pos: new Vector(480, 268),
             anchor: new Vector(11 / 22, 150 / 153)
         });
-        this.smallArm.addDrawing(resources.titleSmallArm);
+        this.smallArm.graphics.add(resources.titleSmallArm.toSprite());
         this.add(this.smallArm);
 
         const logo = new Actor({
             pos: Vector.Zero,
             anchor: Vector.Zero
         });
-        logo.addDrawing(resources.titleLogo);
+        logo.graphics.add(resources.titleLogo.toSprite());
         this.add(logo);
 
         this.add(this.startText);

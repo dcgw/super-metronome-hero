@@ -1,5 +1,4 @@
-import {forEach} from "@softwareventures/dictionary";
-import {Sound, Texture} from "excalibur";
+import {ImageSource, Sound} from "excalibur";
 import menuBlipMp3 from "./menu/blip.mp3";
 import menuBlipOgg from "./menu/blip.ogg";
 import menuItemRatings from "./menu/item-ratings.png";
@@ -50,21 +49,21 @@ import titleSmallArm from "./title/small-arm.png";
 
 const resources = {
     menuBlip: new Sound(menuBlipOgg, menuBlipMp3),
-    menuItemRatings: new Texture(menuItemRatings),
-    menuItem: new Texture(menuItem),
+    menuItemRatings: new ImageSource(menuItemRatings),
+    menuItem: new ImageSource(menuItem),
     menuSelect: new Sound(menuSelectOgg, menuSelectMp3),
     music: new Sound(musicOgg, musicMp3),
-    performanceArm: new Texture(performanceArm),
-    performanceBackground: new Texture(performanceBackground),
+    performanceArm: new ImageSource(performanceArm),
+    performanceBackground: new ImageSource(performanceBackground),
     performanceBoo: new Sound(performanceBooOgg, performanceBooMp3),
-    performanceBigStarBlank: new Texture(performanceBigStarBlank),
-    performanceBigStar: new Texture(performanceBigStar),
+    performanceBigStarBlank: new ImageSource(performanceBigStarBlank),
+    performanceBigStar: new ImageSource(performanceBigStar),
     performanceCheer: new Sound(performanceCheerOgg, performanceCheerMp3),
     performanceChime: new Sound(performanceChimeOgg, performanceChimeMp3),
     performanceFour: new Sound(performanceFourOgg, performanceFourMp3),
     performanceMiss: new Sound(performanceMissOgg, performanceMissMp3),
     performanceOne: new Sound(performanceOneOgg, performanceOneMp3),
-    performanceOverlay: new Texture(performanceOverlay),
+    performanceOverlay: new ImageSource(performanceOverlay),
     performanceReady: new Sound(performanceReadyOgg, performanceReadyMp3),
     performanceStar1: new Sound(performanceStar1Ogg, performanceStar1Mp3),
     performanceStar2: new Sound(performanceStar2Ogg, performanceStar2Mp3),
@@ -73,16 +72,12 @@ const resources = {
     performanceTick: new Sound(performanceTickOgg, performanceTickMp3),
     performanceTock: new Sound(performanceTockOgg, performanceTockMp3),
     performanceTwo: new Sound(performanceTwoOgg, performanceTwoMp3),
-    performanceVignette: new Texture(performanceVignette),
-    titleBackground: new Texture(titleBackground),
-    titleBigArm: new Texture(titleBigArm),
-    titleBody: new Texture(titleBody),
-    titleLogo: new Texture(titleLogo),
-    titleSmallArm: new Texture(titleSmallArm)
+    performanceVignette: new ImageSource(performanceVignette),
+    titleBackground: new ImageSource(titleBackground),
+    titleBigArm: new ImageSource(titleBigArm),
+    titleBody: new ImageSource(titleBody),
+    titleLogo: new ImageSource(titleLogo),
+    titleSmallArm: new ImageSource(titleSmallArm)
 };
-
-forEach(resources, resource => {
-    resource.bustCache = false;
-});
 
 export default resources;

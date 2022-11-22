@@ -14,7 +14,7 @@ export default class Arm extends Actor {
             height: 355
         });
 
-        this.addDrawing(resources.performanceArm);
+        this.graphics.add(resources.performanceArm.toSprite());
     }
 
     public miss(): void {

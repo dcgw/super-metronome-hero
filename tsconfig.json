@@ -2,6 +2,7 @@
   "extends": "@softwareventures/webpack-config/tsconfig/general",
   "compilerOptions": {
     "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
     "types": ["webpack-env", "@softwareventures/webpack-config/asset-loaders"]
   }
 }
