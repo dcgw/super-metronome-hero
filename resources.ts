@@ -1,4 +1,5 @@
 import {ImageSource, Sound} from "excalibur";
+import {FontLoader} from "./font-loader.js";
 import menuBlipMp3 from "./menu/blip.mp3";
 import menuBlipOgg from "./menu/blip.ogg";
 import menuItemRatings from "./menu/item-ratings.png";
@@ -48,6 +49,14 @@ import titleLogo from "./title/logo.png";
 import titleSmallArm from "./title/small-arm.png";
 
 const resources = {
+    font22px: new FontLoader("Strait", 22),
+    font24px: new FontLoader("Strait", 24),
+    font28px: new FontLoader("Strait", 28),
+    font32px: new FontLoader("Strait", 32),
+    font36px: new FontLoader("Strait", 36),
+    font48px: new FontLoader("Strait", 48),
+    font60px: new FontLoader("Strait", 60),
+    font72px: new FontLoader("Strait", 72),
     menuBlip: new Sound(menuBlipOgg, menuBlipMp3),
     menuItemRatings: new ImageSource(menuItemRatings),
     menuItem: new ImageSource(menuItem),
