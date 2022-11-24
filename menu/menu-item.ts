@@ -118,10 +118,12 @@ export default class MenuItem extends Actor {
     public override update(engine: Engine, delta: number): void {
         super.update(engine, delta);
 
+        this.box.graphics.hide();
         this.box.graphics.show(
             (this.locked ? "locked" : "unlocked") + (this.selected ? "-glow" : "")
         );
 
+        this.rating.graphics.hide();
         this.rating.graphics.show(this.locked ? "locked" : this.stars.toString(10));
 
         this.lockedText[1].visible = this.locked;
