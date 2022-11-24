@@ -1,4 +1,5 @@
 import {ImageSource, Sound} from "excalibur";
+import {hasProperty} from "unknown";
 import {FontLoader} from "./font-loader.js";
 import menuBlipMp3 from "./menu/blip.mp3";
 import menuBlipOgg from "./menu/blip.ogg";
@@ -88,5 +89,12 @@ const resources = {
     titleLogo: new ImageSource(titleLogo),
     titleSmallArm: new ImageSource(titleSmallArm)
 };
+
+// Hack: Don't add cache-busting query parameters to requests.
+Object.values(resources).forEach((resource: unknown) => {
+    if (hasProperty(resource, "_resource") && hasProperty(resource._resource, "bustCache")) {
+        resource._resource.bustCache = false;
+    }
+});
 
 export default resources;

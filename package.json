@@ -38,7 +38,8 @@
     "@types/webpack-env": "1.18.0",
     "domready": "1.0.8",
     "excalibur": "0.27.0",
-    "tslib": "2.4.1"
+    "tslib": "2.4.1",
+    "unknown": "0.2.5"
   },
   "devDependencies": {
     "@semantic-release/exec": "6.0.3",
