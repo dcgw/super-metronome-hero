@@ -30,9 +30,9 @@
   },
   "dependencies": {
     "@dcgw/excalibur-text": "1.1.1",
-    "@softwareventures/chain": "^2.0.2",
+    "@softwareventures/chain": "2.0.2",
     "@softwareventures/dictionary": "2.0.1",
-    "@softwareventures/iterable": "^3.2.0",
+    "@softwareventures/iterable": "3.2.0",
     "@softwareventures/nullable": "3.0.0",
     "@types/domready": "1.0.0",
     "@types/webpack-env": "1.18.0",

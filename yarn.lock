@@ -610,7 +610,7 @@
     "@softwareventures/ordered" "^1.1.0 || ^2.0.0"
     tslib "^2.0.0"
 
-"@softwareventures/chain@^0.1.2 || ^1.0.0 || ^2.0.0", "@softwareventures/chain@^2.0.2":
+"@softwareventures/chain@2.0.2", "@softwareventures/chain@^0.1.2 || ^1.0.0 || ^2.0.0", "@softwareventures/chain@^2.0.2":
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@softwareventures/chain/-/chain-2.0.2.tgz#2267be08e338d543d7d08b972422ecdaa0bf18ed"
   integrity sha512-oE9Oo3QlO9YAWQW+chyl/IcLaU1H3vJUDydfO7fKVlKI0nW95amTPlYVjtPeIIuwE4VpWIAzrTzocQTRvqRFAA==
@@ -630,7 +630,7 @@
   dependencies:
     tslib "^2.3.1"
 
-"@softwareventures/iterable@^3.2.0":
+"@softwareventures/iterable@3.2.0", "@softwareventures/iterable@^3.2.0":
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/@softwareventures/iterable/-/iterable-3.2.0.tgz#12607050966eaf317538e654bf0eeb86baa719c9"
   integrity sha512-owLvyhxigi4DhX0mTXWBbw58wrVRzkRW/cwF1L3dvvOs+y+VaT5BSkSDo8wfqZVie7qMv10483VZn/Nhcai15g==
