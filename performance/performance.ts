@@ -1,10 +1,9 @@
-import Label from "@dcgw/excalibur-extended-label";
 import type {Engine, Sound} from "excalibur";
 import {Actor, Color, EasingFunctions, Scene, TextAlign, Vector} from "excalibur";
-import {defaultLabelOptions} from "../defaults.js";
 import type Game from "../game.js";
 import resources from "../resources.js";
 import Timer from "../metronome/timer.js";
+import {textActor} from "../text-actor.js";
 import {ColorLerp} from "./color.js";
 import Floater from "./floater.js";
 import Tween from "./tween.js";
@@ -40,27 +39,23 @@ export class Performance extends Scene {
     private time = 0;
     private finalStars = 0;
 
-    private readonly tempoText = new Label({
-        ...defaultLabelOptions,
+    private readonly tempoText = textActor({
         pos: new Vector(22, 24),
         color: Color.fromHex("eeeeee"),
         fontSize: 36
     });
-    private readonly bpmText = new Label({
-        ...defaultLabelOptions,
+    private readonly bpmText = textActor({
         pos: new Vector(22, 58),
         color: Color.fromHex("eeeeee"),
         fontSize: 24
     });
-    private readonly scoreText = new Label({
-        ...defaultLabelOptions,
+    private readonly scoreText = textActor({
         pos: new Vector(618, 15),
         color: Color.fromHex("eeeeee"),
         fontSize: 48,
         textAlign: TextAlign.Right
     });
-    private readonly multiplierText = new Label({
-        ...defaultLabelOptions,
+    private readonly multiplierText = textActor({
         pos: new Vector(618, 58),
         fontSize: 28,
         textAlign: TextAlign.Right
@@ -68,7 +63,7 @@ export class Performance extends Scene {
     private readonly multiplierMissColorLerp = new ColorLerp(Color.fromHex("c41b18"), Color.White);
     private readonly multiplierMissTween = new Tween(
         (10 / 60) * 1000,
-        f => (this.multiplierText.color = this.multiplierMissColorLerp.lerp(f))
+        f => (this.multiplierText[0].color = this.multiplierMissColorLerp.lerp(f))
     );
     private readonly multiplierPerfectColorLerp = new ColorLerp(
         Color.fromHex("d3cd08"),
@@ -76,20 +71,22 @@ export class Performance extends Scene {
     );
     private readonly multiplierPerfectTween = new Tween(
         (10 / 60) * 1000,
-        f => (this.multiplierText.color = this.multiplierPerfectColorLerp.lerp(f))
+        f => (this.multiplierText[0].color = this.multiplierPerfectColorLerp.lerp(f))
     );
-    private readonly messageText = new Label({
-        ...defaultLabelOptions,
+    private readonly messageText = textActor({
         text: "Press ANY key in time with the pendulum",
         pos: new Vector(320, 167),
         color: Color.fromHex("eeeeee"),
         fontSize: 72,
         textAlign: TextAlign.Center
     });
-    private readonly messageFadeIn = new Tween((20 / 60) * 1000, f => (this.messageText.alpha = f));
+    private readonly messageFadeIn = new Tween(
+        (20 / 60) * 1000,
+        f => (this.messageText[0].opacity = f)
+    );
     private readonly messageFadeOut = new Tween(
         (20 / 60) * 1000,
-        f => (this.messageText.alpha = 1 - f)
+        f => (this.messageText[0].opacity = 1 - f)
     );
     private readonly arm = new Arm();
     private readonly star1Blank = new Actor({pos: new Vector(180, 300), width: 158, height: 152});
@@ -165,22 +162,21 @@ export class Performance extends Scene {
             this.transition(State.done);
         }
     );
-    private readonly instructionText = new Label({
-        ...defaultLabelOptions,
+    private readonly instructionText = textActor({
         text: "Press ANY key in time with the pendulum",
         pos: new Vector(320, 370),
         color: Color.fromHex("eeeeee"),
         fontSize: 32,
         textAlign: TextAlign.Center,
-        alpha: 0
+        opacity: 0
     });
     private readonly instructionFadeIn = new Tween(
         (30 / 60) * 1000,
-        f => (this.instructionText.alpha = f)
+        f => (this.instructionText[0].opacity = f)
     );
     private readonly instructionFadeOut = new Tween(
         (30 / 60) * 1000,
-        f => (this.instructionText.alpha = 1 - f)
+        f => (this.instructionText[0].opacity = 1 - f)
     );
 
     private readonly countdown: readonly Sound[] = [
@@ -223,13 +219,13 @@ export class Performance extends Scene {
         vignette.graphics.add(resources.performanceVignette.toSprite());
         this.add(vignette);
 
-        this.add(this.tempoText);
-        this.add(this.bpmText);
-        this.add(this.scoreText);
-        this.add(this.multiplierText);
+        this.add(this.tempoText[1]);
+        this.add(this.bpmText[1]);
+        this.add(this.scoreText[1]);
+        this.add(this.multiplierText[1]);
         this.add(this.multiplierMissTween);
         this.add(this.multiplierPerfectTween);
-        this.add(this.messageText);
+        this.add(this.messageText[1]);
         this.add(this.messageFadeIn);
         this.add(this.messageFadeOut);
 
@@ -251,7 +247,7 @@ export class Performance extends Scene {
         this.add(this.star2FadeIn);
         this.add(this.star3FadeIn);
 
-        this.add(this.instructionText);
+        this.add(this.instructionText[1]);
         this.add(this.instructionFadeIn);
         this.add(this.instructionFadeOut);
     }
@@ -268,8 +264,8 @@ export class Performance extends Scene {
         this.introBeat = 0;
         this.timer.reset(this.game.bpm);
         this.arm.reset();
-        this.tempoText.text = this.game.tempo;
-        this.bpmText.text = `${this.game.bpm}bpm`;
+        this.tempoText[0].text = this.game.tempo;
+        this.bpmText[0].text = `${this.game.bpm}bpm`;
         this.beats = 16;
         this.state = State.intro;
         this.time = introDuration;
@@ -285,10 +281,10 @@ export class Performance extends Scene {
         this.star3.scale = new Vector(0.6, 0.6);
 
         this.updateScoreAndMultiplierText();
-        this.multiplierText.color = Color.White;
+        this.multiplierText[0].color = Color.White;
 
-        this.messageText.text = "Ready?";
-        this.messageText.alpha = 0;
+        this.messageText[0].text = "Ready?";
+        this.messageText[0].opacity = 0;
         void this.messageFadeIn.play();
 
         resources.performanceReady.play().then(
@@ -332,7 +328,7 @@ export class Performance extends Scene {
                 }
 
                 if (this.game.wasAnyKeyPressed()) {
-                    if (this.showInstructions && this.instructionText.alpha === 1) {
+                    if (this.showInstructions && this.instructionText[0].opacity === 1) {
                         void this.instructionFadeOut.play();
                         this.showInstructions = false;
                     }
@@ -406,8 +402,8 @@ export class Performance extends Scene {
     }
 
     private updateScoreAndMultiplierText(): void {
-        this.scoreText.text = String(this.score).padStart(6, "0");
-        this.multiplierText.text = String(this.multiplier).padStart(3, "0");
+        this.scoreText[0].text = String(this.score).padStart(6, "0");
+        this.multiplierText[0].text = String(this.multiplier).padStart(3, "0");
     }
 
     private transition(state: State): void {
@@ -425,7 +421,8 @@ export class Performance extends Scene {
                 void this.messageFadeOut.play();
                 break;
             case State.outro:
-                this.messageText.text = this.missedBeats <= maxMissedBeats ? "Great!" : "You Suck";
+                this.messageText[0].text =
+                    this.missedBeats <= maxMissedBeats ? "Great!" : "You Suck";
                 void this.messageFadeIn.play();
 
                 this.starBlankFadeIn.play().catch(reason => void console.error("", reason));

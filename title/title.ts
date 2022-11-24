@@ -1,10 +1,9 @@
-import Label from "@dcgw/excalibur-extended-label";
 import type {Engine} from "excalibur";
 import {Actor, Color, Scene, TextAlign, Traits, Vector} from "excalibur";
-import {defaultLabelOptions} from "../defaults.js";
 import type Game from "../game.js";
 import Timer from "../metronome/timer.js";
 import resources from "../resources.js";
+import {textActor} from "../text-actor.js";
 
 export default class Title extends Scene {
     private readonly smallTimer = new Timer(60);
@@ -12,8 +11,7 @@ export default class Title extends Scene {
     private readonly smallArm: Actor;
     private readonly bigArm: Actor;
 
-    private readonly startText = new Label({
-        ...defaultLabelOptions,
+    private readonly startText = textActor({
         text: "Press ANY key to start",
         pos: new Vector(320, 385),
         color: Color.fromHex("eeeeee"),
@@ -64,7 +62,7 @@ export default class Title extends Scene {
         logo.graphics.add(resources.titleLogo.toSprite());
         this.add(logo);
 
-        this.add(this.startText);
+        this.add(this.startText[1]);
     }
 
     public onActivate(): void {

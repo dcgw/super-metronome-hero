@@ -1,9 +1,9 @@
-import Label from "@dcgw/excalibur-extended-label";
+import type Text from "@dcgw/excalibur-text";
 import {notNull} from "@softwareventures/nullable";
 import type {Engine} from "excalibur";
 import {Actor, Color, SpriteSheet, Vector} from "excalibur";
-import {defaultLabelOptions} from "../defaults.js";
 import resources from "../resources.js";
+import {textActor} from "../text-actor.js";
 
 export interface Options {
     readonly pos: Vector;
@@ -60,25 +60,17 @@ export default class MenuItem extends Actor {
         anchor: Vector.Zero
     });
 
-    private readonly lockedText = new Label({
-        ...defaultLabelOptions,
+    private readonly lockedText = textActor({
         text: "Locked",
         pos: new Vector(100, 20),
         fontSize: 60,
         color: Color.fromHex("999999")
     });
 
-    private readonly labelText = new Label({
-        ...defaultLabelOptions,
-        pos: new Vector(100, 10),
-        fontFamily: "Strait",
-        visible: false
-    });
+    private readonly labelText: readonly [Text, Actor];
 
-    private readonly subText = new Label({
-        ...defaultLabelOptions,
+    private readonly subText = textActor({
         pos: new Vector(100, 65),
-        fontFamily: "Strait",
         fontSize: 22,
         outlineColor: Color.fromRGB(0, 0, 0, 0.45),
         shadowBlurRadius: 1.5,
@@ -109,14 +101,18 @@ export default class MenuItem extends Actor {
         this.rating.graphics.add("3", notNull(ratingSpriteSheet.getSprite(4, 0)));
         this.addChild(this.rating);
 
-        this.addChild(this.lockedText);
+        this.addChild(this.lockedText[1]);
 
-        this.labelText.fontSize = options.textSize ?? 60;
-        this.labelText.text = options.tempo;
-        this.addChild(this.labelText);
+        this.labelText = textActor({
+            pos: new Vector(100, 10),
+            text: options.tempo,
+            fontSize: options.textSize ?? 60,
+            visible: false
+        });
+        this.addChild(this.labelText[1]);
 
-        this.subText.text = `${options.bpm} bpm`;
-        this.addChild(this.subText);
+        this.subText[0].text = `${options.bpm} bpm`;
+        this.addChild(this.subText[1]);
     }
 
     public update(engine: Engine, delta: number): void {
@@ -128,7 +124,7 @@ export default class MenuItem extends Actor {
 
         this.rating.graphics.show(this.locked ? "locked" : this.stars.toString(10));
 
-        this.lockedText.visible = this.locked;
-        this.labelText.visible = this.subText.visible = !this.locked;
+        this.lockedText[1].visible = this.locked;
+        this.labelText[1].visible = this.subText[1].visible = !this.locked;
     }
 }
