@@ -79,10 +79,10 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@dcgw/excalibur-text@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@dcgw/excalibur-text/-/excalibur-text-1.1.0.tgz#ceee55bf349b85454ae42ebb3bb360469e31689c"
-  integrity sha512-TJb1Lo+qhmDUoOLQG8urlSmZ77dxzfSDv3OUWb3RBQSlovHj97xqtLk5hi/CjWVXME2s7vPLpoc5uKr1YKKSXw==
+"@dcgw/excalibur-text@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@dcgw/excalibur-text/-/excalibur-text-1.1.1.tgz#b9753841f700c29235ec77c19e25d10a0eaa61fe"
+  integrity sha512-n/F6x9ofKDrnp8m532a9xkwVDLnTg22rYDHHg9y+dFg91PCS8QXC7VfQvhvbJAPxAfnzotPwdig8MRmXCvLFyg==
   dependencies:
     "@softwareventures/chain" "^2.0.2"
     "@softwareventures/iterable" "^3.2.0"
