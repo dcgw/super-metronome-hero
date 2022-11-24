@@ -65,10 +65,12 @@ export default class Menu extends Scene {
             );
 
             const selectedItem = notNull(this.items[this.selectedIndex]);
-            this.game.tempo = selectedItem.tempo;
-            this.game.bpm = selectedItem.bpm;
+            if (!selectedItem.locked) {
+                this.game.tempo = selectedItem.tempo;
+                this.game.bpm = selectedItem.bpm;
 
-            this.game.engine.goToScene("performance");
+                this.game.engine.goToScene("performance");
+            }
         } else {
             const itemChange = this.game.engine.input.keyboard.wasPressed(Input.Keys.Up)
                 ? -1
