@@ -8,6 +8,11 @@ import MenuItem from "./menu-item.js";
 export default class Menu extends Scene {
     private selectedIndex = 0;
 
+    private readonly background = new Actor({
+        pos: Vector.Zero,
+        anchor: Vector.Zero
+    });
+
     private readonly items: readonly MenuItem[] = [
         new MenuItem({pos: new Vector(70, 50), tempo: "Grave", bpm: 40}),
         new MenuItem({pos: new Vector(70, 170), tempo: "Adagio", bpm: 60}),
@@ -26,12 +31,8 @@ export default class Menu extends Scene {
     public constructor(private readonly game: Game) {
         super();
 
-        const background = new Actor({
-            pos: Vector.Zero,
-            anchor: Vector.Zero
-        });
-        background.graphics.add(resources.titleBackground.toSprite());
-        this.add(background);
+        this.background.graphics.add(resources.titleBackground.toSprite());
+        this.add(this.background);
 
         this.items.forEach(item => void this.add(item));
 
@@ -129,5 +130,7 @@ export default class Menu extends Scene {
                 }
             }
         }
+
+        this.background.pos.y = this.camera.y - this.game.height * 0.5;
     }
 }
