@@ -6,8 +6,15 @@ export class FontLoader implements Loadable<void> {
     public data = undefined;
     private readonly font: string;
 
-    public constructor (fontFamily: string, fontSize: number, fontStyle = FontStyle.Normal, bold = false) {
-        this.font = `${lookupFontStyle(fontStyle)} ${lookupFontWeight(bold)} ${fontSize}px ${fontFamily}`;
+    public constructor(
+        fontFamily: string,
+        fontSize: number,
+        fontStyle = FontStyle.Normal,
+        bold = false
+    ) {
+        this.font = `${lookupFontStyle(fontStyle)} ${lookupFontWeight(
+            bold
+        )} ${fontSize}px ${fontFamily}`;
     }
 
     public async load(): Promise<void> {
