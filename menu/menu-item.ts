@@ -115,7 +115,7 @@ export default class MenuItem extends Actor {
         this.addChild(this.subText[1]);
     }
 
-    public update(engine: Engine, delta: number): void {
+    public override update(engine: Engine, delta: number): void {
         super.update(engine, delta);
 
         this.box.graphics.show(

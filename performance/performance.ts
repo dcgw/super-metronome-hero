@@ -252,7 +252,7 @@ export class Performance extends Scene {
         this.add(this.instructionFadeOut);
     }
 
-    public onActivate(): void {
+    public override onActivate(): void {
         this.game.music.kill();
         this.add(this.game.music);
         this.game.music.stop();
@@ -293,7 +293,7 @@ export class Performance extends Scene {
         );
     }
 
-    public update(engine: Engine, delta: number): void {
+    public override update(engine: Engine, delta: number): void {
         super.update(engine, delta);
 
         this.timer.update(delta);

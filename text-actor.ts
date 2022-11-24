@@ -14,7 +14,7 @@ export function textActor(options: TextActorOptions): readonly [Text, Actor] {
 
     const actor = new Actor({
         pos: options.pos,
-        visible: options.visible
+        ...(options.visible == null ? {} : {visible: options.visible})
     });
 
     actor.graphics.add(graphic);

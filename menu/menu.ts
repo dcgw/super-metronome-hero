@@ -40,7 +40,7 @@ export default class Menu extends Scene {
         notNull(this.items[0]).selected = true;
     }
 
-    public onActivate(): void {
+    public override onActivate(): void {
         this.game.music.kill();
         this.add(this.game.music);
         this.game.music.play();
@@ -56,7 +56,7 @@ export default class Menu extends Scene {
         }
     }
 
-    public update(engine: Engine, delta: number): void {
+    public override update(engine: Engine, delta: number): void {
         super.update(engine, delta);
 
         if (this.game.engine.input.keyboard.wasPressed("Enter" as Input.Keys)) {

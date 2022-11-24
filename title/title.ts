@@ -65,7 +65,7 @@ export default class Title extends Scene {
         this.add(this.startText[1]);
     }
 
-    public onActivate(): void {
+    public override onActivate(): void {
         if (this.game.music.scene != null) {
             this.game.music.kill();
         }
@@ -75,7 +75,7 @@ export default class Title extends Scene {
         this.bigTimer.start();
     }
 
-    public update(engine: Engine, delta: number): void {
+    public override update(engine: Engine, delta: number): void {
         super.update(engine, delta);
 
         if (this.game.active) {

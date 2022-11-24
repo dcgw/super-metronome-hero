@@ -28,7 +28,7 @@ export default class Tween extends Actor {
         });
     }
 
-    public update(engine: Engine, delta: number): void {
+    public override update(engine: Engine, delta: number): void {
         super.update(engine, delta);
 
         if (this.playing) {

@@ -24,6 +24,6 @@ export function textGraphic(options: TextOptions): Text {
         outlineWidth: 1,
         shadowColor: Color.Black,
         shadowBlurRadius: options.shadowBlurRadius ?? 2,
-        opacity: options.opacity
+        ...(options.opacity == null ? {} : {opacity: options.opacity})
     });
 }

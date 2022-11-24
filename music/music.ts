@@ -10,7 +10,7 @@ export default class Music extends Actor {
     private playing = false;
     private time = 0;
 
-    public update(engine: Engine, delta: number): void {
+    public override update(engine: Engine, delta: number): void {
         super.update(engine, delta);
 
         if (this.playing && resources.music.volume < 1) {

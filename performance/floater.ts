@@ -25,7 +25,7 @@ export default class Floater extends Actor {
         this.graphics.add(this.textGraphic);
     }
 
-    public update(engine: Engine, delta: number): void {
+    public override update(engine: Engine, delta: number): void {
         super.update(engine, delta);
 
         const opacity = Math.max(0, this.textGraphic.opacity - (0.05 * delta * 60) / 1000);
