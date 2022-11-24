@@ -665,10 +665,10 @@
   resolved "https://registry.yarnpkg.com/@softwareventures/tsconfig/-/tsconfig-7.0.0.tgz#fd7ee45badff849ae67c2475177cb45ee4baeccd"
   integrity sha512-1vHU4p6jt0zNKXmdc8sU1oD5rvIIe5TQsxgt1nXgt2mMNn7Fd/LL4l+038BNExvS94TEVlAqM6uDppFmULnK2Q==
 
-"@softwareventures/webpack-config@5.0.10":
-  version "5.0.10"
-  resolved "https://registry.yarnpkg.com/@softwareventures/webpack-config/-/webpack-config-5.0.10.tgz#2323a55fd1bd973eccf5f4fd6b68a560a3dd7163"
-  integrity sha512-zg0wxcKjP7W7RVPk60uLaQ5djkK1flja3AjmmjI5IO5Ict+Ev0shttQNK1I1g+yLDrniS0SsLoyNAIodmwJg5A==
+"@softwareventures/webpack-config@5.0.11":
+  version "5.0.11"
+  resolved "https://registry.yarnpkg.com/@softwareventures/webpack-config/-/webpack-config-5.0.11.tgz#2cd226bf21cfc00486320fb598aaf1fda9788475"
+  integrity sha512-P7X5jYgHP92yEjg6WSleOLL+SziXSgP/jKP1DV94HZXLFadR1w2G/bRshWGYYdGwEshIlxGNG91DuPW/lq+Xow==
   dependencies:
     "@softwareventures/array" "6.0.3"
     "@softwareventures/dictionary" "^0.7.1 || ^0.8.0 || ^1.0.0 || ^2.0.0"
