@@ -126,7 +126,7 @@ export default class MenuItem extends Actor {
         this.rating.graphics.hide();
         this.rating.graphics.show(this.locked ? "locked" : this.stars.toString(10));
 
-        this.lockedText[1].visible = this.locked;
-        this.labelText[1].visible = this.subText[1].visible = !this.locked;
+        this.lockedText[1].graphics.visible = this.locked;
+        this.labelText[1].graphics.visible = this.subText[1].graphics.visible = !this.locked;
     }
 }

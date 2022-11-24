@@ -1,5 +1,5 @@
 import type {Engine} from "excalibur";
-import {Actor, Color, Scene, TextAlign, Traits, Vector} from "excalibur";
+import {Actor, Color, Scene, TextAlign, Vector} from "excalibur";
 import type Game from "../game.js";
 import Timer from "../metronome/timer.js";
 import resources from "../resources.js";
@@ -33,12 +33,6 @@ export default class Title extends Scene {
             anchor: new Vector(129 / 257, 1300 / 1356)
         });
         this.bigArm.graphics.add(resources.titleBigArm.toSprite());
-
-        this.bigArm.traits.forEach((trait, index) => {
-            if (trait instanceof Traits.OffscreenCulling) {
-                this.bigArm.traits.splice(index, 1);
-            }
-        });
         this.add(this.bigArm);
 
         const body = new Actor({
