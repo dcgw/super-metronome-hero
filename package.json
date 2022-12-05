@@ -45,7 +45,7 @@
     "@softwareventures/prettier-config": "4.0.0",
     "@softwareventures/webpack-config": "5.0.11",
     "@typescript-eslint/eslint-plugin": "5.45.1",
-    "@typescript-eslint/parser": "5.45.0",
+    "@typescript-eslint/parser": "5.45.1",
     "ava": "5.1.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.29.0",
