@@ -55,7 +55,7 @@
     "eslint-plugin-prefer-arrow": "1.2.3",
     "eslint-plugin-sonarjs": "0.19.0",
     "html-webpack-plugin": "5.5.1",
-    "prettier": "2.8.7",
+    "prettier": "2.8.8",
     "resolve-typescript-plugin": "2.0.1",
     "semantic-release": "19.0.5",
     "semantic-release-s3-upload": "2.1.1",
