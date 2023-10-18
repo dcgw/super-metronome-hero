@@ -812,10 +812,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/domready@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@types/domready/-/domready-1.0.0.tgz#26b8de42e279b0e4e68d56ad06fde3fd2a2c9af2"
-  integrity sha512-z6KzANiu6UaHOi1NaZHcYZfKTeHC0C9Lhb0brTrej1AMHSqIjyRgR+vlc93pJOxmY2JXtPbyIZAuYiRFs9iKBg==
+"@types/domready@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@types/domready/-/domready-1.0.1.tgz#baa92d9b50b163192750b117b12d66b0770f528e"
+  integrity sha512-MfksbOwCiNMlrW6d6lurOMMUdHi4OkzikwAt5eZysBs/pL6rmbdlxe8t5QiBA7tioIfR9O/ZoL//iuhk9MaT9g==
 
 "@types/eslint-scope@^3.7.3":
   version "3.7.5"
