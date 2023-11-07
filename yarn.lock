@@ -786,10 +786,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/domready@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@types/domready/-/domready-1.0.1.tgz#baa92d9b50b163192750b117b12d66b0770f528e"
-  integrity sha512-MfksbOwCiNMlrW6d6lurOMMUdHi4OkzikwAt5eZysBs/pL6rmbdlxe8t5QiBA7tioIfR9O/ZoL//iuhk9MaT9g==
+"@types/domready@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@types/domready/-/domready-1.0.2.tgz#2bfa12b133a35d5c042777b3ff1b827ae9223229"
+  integrity sha512-OC/Cij8ZxiVnxHMiKmVd3a8YTsQOf1FbIic6g7Xbizod8zCaeUYzYDbno7zEcemgqkl7WVoUoXVcJTqTKHeaPA==
 
 "@types/eslint-scope@^3.7.3":
   version "3.7.6"

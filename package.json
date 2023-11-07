@@ -32,7 +32,7 @@
     "@dcgw/excalibur-text": "1.1.1",
     "@softwareventures/dictionary": "2.1.1",
     "@softwareventures/nullable": "3.1.0",
-    "@types/domready": "1.0.1",
+    "@types/domready": "1.0.2",
     "@types/webpack-env": "1.18.3",
     "domready": "1.0.8",
     "excalibur": "0.26.0",
