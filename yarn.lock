@@ -656,10 +656,10 @@
     "@softwareventures/nullable" "^3.1.0"
     tslib "2.5.0"
 
-"@softwareventures/eslint-config@7.1.4":
-  version "7.1.4"
-  resolved "https://registry.yarnpkg.com/@softwareventures/eslint-config/-/eslint-config-7.1.4.tgz#e74d20ace5314a9d1b0f1bd0d7492c5f7e9a800e"
-  integrity sha512-DDYCIbWLcsim6A9LxVoYXVurkj1nd6ebWOgQAXU6lfkVc2O3FkQs35lqivKHH/XwezAc69IoNLFV7y748AWLPQ==
+"@softwareventures/eslint-config@7.4.1":
+  version "7.4.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/eslint-config/-/eslint-config-7.4.1.tgz#8cfa3783f2cf8bc86c7de5ff2e32f1d7ff33f370"
+  integrity sha512-jPk+Ui6UNpS1Qt/jSugKISRqgFKuSYL9eIyoRbnh8sKVHCsvWiCFvLvo3MTF0o/dqpUbaNmrRYRluJidAQlV4g==
   dependencies:
     tslib "^2.3.1"
 
