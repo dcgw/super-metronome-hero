@@ -12,7 +12,6 @@ export default class Title extends Scene {
     private readonly bigArm: Actor;
 
     private readonly startText = textActor({
-        text: "Press ANY key to start",
         pos: new Vector(320, 385),
         color: Color.fromHex("eeeeee"),
         textAlign: TextAlign.Center
@@ -73,7 +72,10 @@ export default class Title extends Scene {
         super.update(engine, delta);
 
         if (this.game.active) {
+            this.startText[0].text = "Press ANY key to start";
             this.game.music.play();
+        } else {
+            this.startText[0].text = "Click Here";
         }
 
         this.smallTimer.update(delta);

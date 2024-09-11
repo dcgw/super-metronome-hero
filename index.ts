@@ -52,8 +52,12 @@ domready(() => {
         }
     };
 
-    const onMouseButton = (): void => {
-        engine.screen.canvas.focus();
+    let clicked = false;
+
+    const onClick = (): void => {
+        clicked = true;
+        hidePointer();
+        game.active = true;
     };
 
     let pointerTimeout: number | null = null;
@@ -73,8 +77,10 @@ domready(() => {
     };
 
     const onFocus = (): void => {
-        hidePointer();
-        game.active = true;
+        if (clicked) {
+            hidePointer();
+            game.active = true;
+        }
     };
 
     const onBlur = (): void => {
@@ -96,9 +102,7 @@ domready(() => {
     window.addEventListener("keydown", onKey);
     window.addEventListener("keypress", onKey);
     window.addEventListener("keyup", onKey);
-    engine.canvas.addEventListener("mousedown", onMouseButton);
-    engine.canvas.addEventListener("click", onMouseButton);
-    engine.canvas.addEventListener("mouseup", onMouseButton);
+    window.addEventListener("click", onClick, true);
     window.addEventListener("mousemove", onMouseMove, true);
     window.addEventListener("focus", onFocus, true);
     window.addEventListener("blur", onBlur, true);
