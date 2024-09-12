@@ -37,7 +37,7 @@
     "domready": "1.0.8",
     "excalibur": "0.26.0",
     "tslib": "2.6.2",
-    "unknown": "0.2.5"
+    "unknown": "0.2.6"
   },
   "devDependencies": {
     "@semantic-release/exec": "6.0.3",
