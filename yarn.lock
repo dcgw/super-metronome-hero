@@ -689,10 +689,10 @@
     "@softwareventures/nullable" "^3.1.0"
     tslib "2.5.0"
 
-"@softwareventures/eslint-config@7.9.0":
-  version "7.9.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/eslint-config/-/eslint-config-7.9.0.tgz#57676ad9961ba51a46ec6926a994399adbb0e93e"
-  integrity sha512-+lsBGhqWOAkHKM18LBpSX6rvLMdR31+gNwobdgsMyNkjWZTe+cQPMBmczGBb4KtS0dXT/gt04WtfUJMpid/b+g==
+"@softwareventures/eslint-config@9.0.0":
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/@softwareventures/eslint-config/-/eslint-config-9.0.0.tgz#43c15fef25d2a31f4a76069838b55ae52d465dcd"
+  integrity sha512-pfiZCcOkULyImPn5HbEUmJ99zi33Mv9oV/Q2tInBygE4U0hKxeq7PFXpUpqyDa7+3sMN4kvWqyEcAMBduPUVsg==
   dependencies:
     tslib "^2.3.1"
 
