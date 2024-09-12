@@ -76,8 +76,8 @@ export default class Menu extends Scene {
             const itemChange = this.game.engine.input.keyboard.wasPressed(Input.Keys.Up)
                 ? -1
                 : this.game.engine.input.keyboard.wasPressed(Input.Keys.Down)
-                ? 1
-                : 0;
+                  ? 1
+                  : 0;
 
             if (itemChange !== 0) {
                 notNull(this.items[this.selectedIndex]).selected = false;
