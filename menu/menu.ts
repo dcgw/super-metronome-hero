@@ -50,7 +50,7 @@ export default class Menu extends Scene {
             selectedItem.stars = this.game.stars;
 
             const nextItem = this.items[this.selectedIndex + 1];
-            if (this.game.stars > 0 && nextItem != null && nextItem.locked) {
+            if (this.game.stars > 0 && nextItem?.locked === true) {
                 nextItem.locked = false;
             }
         }
