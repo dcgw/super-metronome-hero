@@ -4113,11 +4113,6 @@ core-js-compat@^3.37.1, core-js-compat@^3.38.0:
   dependencies:
     browserslist "^4.25.3"
 
-core-js@3.22.5:
-  version "3.22.5"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.22.5.tgz#a5f5a58e663d5c0ebb4e680cd7be37536fb2a9cf"
-  integrity sha512-VP/xYuvJ0MJWRAobcmQ8F2H6Bsn+s7zqAAjFaHGBMc5AQm7zaelhD1LGduFn2EehEcQcU+br6t+fwbpQ5d1ZWA==
-
 core-js@^2.4.0, core-js@^2.5.0:
   version "2.6.12"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.12.tgz#d9333dfa7b065e347cc5682219d6f690859cc2ec"
@@ -5310,12 +5305,10 @@ events@^3.2.0:
   resolved "https://registry.yarnpkg.com/events/-/events-3.3.0.tgz#31a95ad0a924e2d2c419a813aeb2c4e878ea7400"
   integrity sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==
 
-excalibur@0.26.0:
-  version "0.26.0"
-  resolved "https://registry.yarnpkg.com/excalibur/-/excalibur-0.26.0.tgz#0c60b85dbf309a0b088fbe83edde9b8baf178034"
-  integrity sha512-TbQ9K/RA99CJW8ksTpgxVbg3hECv3hk+tTgovltL0oba4WuoXlL0DY9hWuoID5G9wbpVJiXiE8dA0Wyfd8ksfg==
-  dependencies:
-    core-js "3.22.5"
+excalibur@0.31.0:
+  version "0.31.0"
+  resolved "https://registry.yarnpkg.com/excalibur/-/excalibur-0.31.0.tgz#1d0d797829d363b4d144fe2c328e5f2015f2a549"
+  integrity sha512-xVNiRdv4N13XRG9lMbQdwhjSIB3TdXEd1v8dtx876k14rJZb0KyzfO7EHpU7nz/NB/mr8aobh45yo4o5JeaOrw==
 
 execa@^5.0.0:
   version "5.1.1"
