@@ -63,7 +63,7 @@
     "tsimp": "2.0.12",
     "typescript": "5.9.2",
     "webpack": "5.102.0",
-    "webpack-cli": "5.1.4",
+    "webpack-cli": "6.0.1",
     "webpack-dev-server": "4.15.2"
   },
   "eslintConfig": {
