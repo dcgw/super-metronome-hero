@@ -62,7 +62,7 @@
     "ts-loader": "9.6.2",
     "tsimp": "2.0.12",
     "typescript": "5.9.3",
-    "webpack": "5.107.0",
+    "webpack": "5.110.3",
     "webpack-cli": "5.1.4",
     "webpack-dev-server": "4.15.2"
   },
